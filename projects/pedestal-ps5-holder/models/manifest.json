@@ -1,0 +1,72 @@
+{
+  "units": "millimetres",
+  "accepted_print_revision": null,
+  "files": [
+    {
+      "path": "models/archive/pedestal-v03-bottom-001.stl",
+      "sha256": "2a25d0a05992d7724578a48c4fd724f8df980ed20bcffc2f4e39166841458f59",
+      "triangles": 1198,
+      "dimensions_mm": [
+        251.545,
+        108.73862,
+        4.23339
+      ],
+      "status": "original archive; unchanged"
+    },
+    {
+      "path": "models/archive/pedestal-v03-measure-bottom.stl",
+      "sha256": "bb570cfee8fa0997f584580fd924cd507b716bbd4bb0ef0541091cc5a3d924aa",
+      "triangles": 1332,
+      "dimensions_mm": [
+        251.545,
+        113.59208,
+        49.76377
+      ],
+      "status": "original archive; unchanged"
+    },
+    {
+      "path": "models/archive/pedestal_v001-proto-flat.stl",
+      "sha256": "1db49bc6e1a4d4329cd0b87a9a7b703659cf565aeef5374a2e9672ad38904e0c",
+      "triangles": 1028,
+      "dimensions_mm": [
+        251.57857,
+        108.85956,
+        39.71241
+      ],
+      "status": "original archive; unchanged"
+    },
+    {
+      "path": "models/archive/pedestal_v001.stl",
+      "sha256": "f3bd81efc80bb369681ea2fa7ac3e0e56727707b74517577ccc20d8b1e4c9580",
+      "triangles": 1432,
+      "dimensions_mm": [
+        251.57857,
+        130.85956,
+        130.0
+      ],
+      "status": "original archive; unchanged"
+    },
+    {
+      "path": "models/archive/pedestal_v002.stl",
+      "sha256": "df3f6d56b72b259dcfc2ddca58abeaa9d22d5d6e4e2fb668128fc7bf34bde6ed",
+      "triangles": 1782,
+      "dimensions_mm": [
+        251.67357,
+        133.85956,
+        137.0
+      ],
+      "status": "original archive; unchanged"
+    },
+    {
+      "path": "models/candidates/pedestal-holder-scene-v03.stl",
+      "sha256": "f80e8a6d855f0608a34146fa54027a22583df19fbe75d51c0bb2773262410f03",
+      "triangles": 4114,
+      "dimensions_mm": [
+        251.67357,
+        133.85957,
+        137.00001
+      ],
+      "status": "candidate exported from scene; not physically validated"
+    }
+  ]
+}

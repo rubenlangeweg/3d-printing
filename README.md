@@ -8,10 +8,11 @@ Printable models, editable sources and product media. Each project keeps its des
 | --- | --- | --- |
 | [Volvo XC60 phone holder](projects/volvo-xc60-holder/) | Rounded base without ribs and separate 17 mm ball module | Digital geometry and slicing checked. Physical fit testing pending. |
 | [Leander Linea accessories](projects/leander-linea/) | Shelf V4 and organizer | Selected for printing. Physical load testing pending. |
+| [Pedestal PS5 holder](projects/pedestal-ps5-holder/) | Complete scene holder and original STL revisions | Geometry checked. Final print revision and physical fit unconfirmed. |
 
 ![Shelf and organizer mounted on the Leander Linea changing table](projects/leander-linea/renders/linea-hero.png)
 
-Open the project README for print files, previews, animations and simulation results. STL dimensions are in millimetres. The published STL is the accepted print file; generators write new candidates to `generated/`.
+Open the project README for print files, previews, animations and simulation results. STL dimensions are in millimetres. Each project identifies accepted print files; archived and candidate revisions are labelled separately. Generators write rebuilds to `generated/`.
 
 ## Repository layout
 

@@ -10,6 +10,8 @@ Suggested credit: “Leander Linea accessories by Ruben Langeweg — [3d-printin
 
 The original renders and animations in `projects/volvo-xc60-holder/` also use CC BY-NC 4.0. They contain only the holder geometry and a procedural studio background.
 
+The holder geometry, clean source scene and standalone media in `projects/pedestal-ps5-holder/` also use CC BY-NC 4.0. No Pedestal frame, television or PlayStation reference meshes or context media are distributed in that project. Their publication terms have not been established. Pedestal and PlayStation names and designs retain their respective rights; this independent accessory is not an official or endorsed product.
+
 ## Scripts
 
 The original Python, Swift, JavaScript and HTML source code and rendering preset configurations are licensed under the [MIT License](LICENSES/MIT.txt). The numerical result and mesh data bundles in `projects/leander-linea/analysis/`, including `data.js` and `mount-data.js` files, are analysis data covered by CC BY-NC 4.0 despite their JavaScript file extensions. The generated models and media retain the license described above; using a script does not replace those asset terms.

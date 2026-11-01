@@ -1,0 +1,16 @@
+{
+  "base-front-down.stl": {
+    "unchanged": true,
+    "sha256": "320ace41e92fb2a40bed5f473900502800d0a23d0226ac147310f2905f31ab50"
+  },
+  "ball-module.stl": {
+    "unchanged": true,
+    "sha256": "dd382e30e6a8c68652bf3c7aace1a74e92517d4c35feee11d516aace9facf4f4"
+  },
+  "3mf": {
+    "changed_members": [
+      "Metadata/model_settings.config"
+    ],
+    "change": "Replaced absolute source STL paths with filenames. Geometry and print settings unchanged."
+  }
+}

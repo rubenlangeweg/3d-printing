@@ -6,6 +6,7 @@ Printable models, editable sources and product media. Each project keeps its des
 
 | Project | Models | Status |
 | --- | --- | --- |
+| [Volvo XC60 phone holder](projects/volvo-xc60-holder/) | Rounded base without ribs and separate 17 mm ball module | Digital geometry and slicing checked. Physical fit testing pending. |
 | [Leander Linea accessories](projects/leander-linea/) | Shelf V4 and organizer | Selected for printing. Physical load testing pending. |
 
 ![Shelf and organizer mounted on the Leander Linea changing table](projects/leander-linea/renders/linea-hero.png)

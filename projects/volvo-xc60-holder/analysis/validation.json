@@ -1,0 +1,23 @@
+{
+  "status": "Digital checks only; physical fit and strength not validated",
+  "fillet_end_setback_mm": 0,
+  "inner_root_radius_mm": 5,
+  "outer_corner_radius_mm": 1.5,
+  "overall_width_mm": 56.572242736816406,
+  "hook_profile_y_minus24_to_plus24_below_z_minus6_difference_mm3": 0.00354305640757957,
+  "seated_ball_intersection_mm3": 0.0,
+  "parts": [
+    {
+      "non_manifold_edges": 0,
+      "volume_mm3": 26186.858529417445,
+      "vertices": 1632
+    },
+    {
+      "non_manifold_edges": 0,
+      "volume_mm3": 3295.530267678837,
+      "vertices": 9903
+    }
+  ],
+  "ball": "Unchanged from v07",
+  "root_clearance": "Fillets extend 5 mm inward and 5 mm rearward at each root"
+}

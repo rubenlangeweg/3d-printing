@@ -1,0 +1,86 @@
+{
+    "error_string": "Success.",
+    "export_time": 579,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 1,
+    "prepare_time": 75,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 71.73994445800781,
+                "Bridge": 128.71124267578125,
+                "Custom": 488.0975646972656,
+                "Flush": 29.0,
+                "Gap infill": 17.385883331298828,
+                "Inner wall": 1076.630615234375,
+                "Internal solid infill": 273.35968017578125,
+                "Outer wall": 654.1019897460938,
+                "Overhang wall": 1.4016005992889404,
+                "Sparse infill": 313.13018798828125,
+                "Top surface": 83.3067626953125,
+                "Travel": 198.96751403808594,
+                "Undefined": 183.6410675048828
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFG50",
+                    "id": 1,
+                    "main_used_g": 25.67890167236328,
+                    "total_used_g": 25.67890167236328
+                }
+            ],
+            "generate_support_material_time": 10,
+            "id": 1,
+            "infill_time": 64,
+            "layer_filament_change": 0,
+            "main_predication": 2789.7529296875,
+            "make_perimeters_time": 102,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 16.99999237060547,
+                        "height": 24.612001419067383,
+                        "width": 16.999984741210938,
+                        "x": 156.5685272216797,
+                        "y": 91.54405975341797,
+                        "z": 0.0
+                    },
+                    "id": 5,
+                    "name": "XC60 v10 ball",
+                    "triangle_count": 19802
+                },
+                {
+                    "bbox": {
+                        "depth": 50.379486083984375,
+                        "height": 28.000003814697266,
+                        "width": 56.57223892211914,
+                        "x": 71.71388244628906,
+                        "y": 74.81025695800781,
+                        "z": 0.0
+                    },
+                    "id": 9,
+                    "name": "XC60 v10 base",
+                    "triangle_count": 3260
+                }
+            ],
+            "sliced_time": 624,
+            "sliced_time_with_cache": 406,
+            "total_predication": 3320.493408203125,
+            "triangle_count": 23062,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 25.0,
+    "upward_compatible_machine": [
+        "Bambu Lab P1S 0.4 nozzle",
+        "Bambu Lab P1P 0.4 nozzle",
+        "Bambu Lab X1 0.4 nozzle",
+        "Bambu Lab X1E 0.4 nozzle",
+        "Bambu Lab A1 0.4 nozzle",
+        "Bambu Lab H2D 0.4 nozzle"
+    ],
+    "wall_loops": 6
+}

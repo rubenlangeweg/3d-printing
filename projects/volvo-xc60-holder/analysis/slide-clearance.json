@@ -1,0 +1,33 @@
+{
+  "method": "Mesh Boolean intersection at seven translation samples; digital geometry only",
+  "samples": [
+    {
+      "offset_y_mm": 42,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 34,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 30,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 24,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 16,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 8,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 0,
+      "intersection_mm3": 0.0
+    }
+  ]
+}

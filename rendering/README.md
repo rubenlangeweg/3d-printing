@@ -8,6 +8,7 @@ The shared presets change named product materials while preserving geometry and 
 | --- | --- |
 | `warm-ivory` | Soft ivory accessories with warm neutral surroundings |
 | `neutral-technical` | Neutral satin material for geometry comparisons |
+| `graphite` | Satin graphite holder on a warm grey ground |
 
 Presets use Blender linear RGB input values and AgX. Lighting, exposure and scale still affect the result. Keep the actual host product visible in published accessory images and animations.
 

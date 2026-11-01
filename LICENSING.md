@@ -8,6 +8,8 @@ The independently modeled accessories, clean accessory Blender scenes, documenta
 
 Suggested credit: “Leander Linea accessories by Ruben Langeweg — [3d-printing](https://github.com/rubenlangeweg/3d-printing), CC BY-NC 4.0.” Identify any changes you make.
 
+The original renders and assembly animation in `projects/volvo-xc60-holder/` also use CC BY-NC 4.0. They contain only the holder geometry and a procedural studio background.
+
 ## Scripts
 
 The original Python, Swift, JavaScript and HTML source code and rendering preset configurations are licensed under the [MIT License](LICENSES/MIT.txt). The result arrays in `projects/leander-linea/analysis/organizer/data.js` are analysis data covered by CC BY-NC 4.0, despite their JavaScript file extension. The generated models and media retain the license described above; using a script does not replace those asset terms.

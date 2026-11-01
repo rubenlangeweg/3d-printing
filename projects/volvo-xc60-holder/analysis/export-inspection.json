@@ -1,0 +1,25 @@
+{
+  "source": "reimported base-front-down.stl",
+  "connected_solids": 1,
+  "non_manifold_edges": 0,
+  "end_triangles_checked": 1678,
+  "maximum_end_plane_error_mm": 3.2186508178710938e-06,
+  "sampled_hook_end_alignment_max_mm": 0.30831262469291687,
+  "bounding_box_mm": [
+    [
+      -28.286121368408203,
+      28.286121368408203
+    ],
+    [
+      -25.18974494934082,
+      25.189743041992188
+    ],
+    [
+      -21.000003814697266,
+      7.0
+    ]
+  ],
+  "bmesh_float_area_estimate_below_1e_minus10_mm2": 30,
+  "zero_area_triangles_double_precision": 0,
+  "3mf_maximum_coordinate_difference_from_stl_mm": 4.9975586335904154e-08
+}

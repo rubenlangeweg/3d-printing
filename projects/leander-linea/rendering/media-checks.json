@@ -1,0 +1,109 @@
+{
+  "product_context": "All product images and animations show the accessories mounted on the actual Linea table reference by Shopot / 3dsky.",
+  "accepted_print_files_unchanged": true,
+  "complete_table_scenes_distributed": false,
+  "videos": [
+    {
+      "file": "../animations/combination.mp4",
+      "sha256": "759008ed232d5ab3bdb309689ec99a9492db092c3e55f867a22457de7d4b5623",
+      "bytes": 4968144,
+      "codec": "H.264",
+      "resolution": [
+        1280,
+        960
+      ],
+      "fps": 24,
+      "duration_seconds": 8,
+      "decoded_frame_count": 192,
+      "audio_tracks": 0,
+      "decoded_frames_visually_checked": [
+        1,
+        97,
+        192
+      ],
+      "table_visible_throughout": true
+    },
+    {
+      "file": "../animations/shelf-v4.mp4",
+      "sha256": "d1f46bf2d07f737c66c01c36310e46c8f5705cc643cccf71a5ab8e02a9e7b329",
+      "bytes": 2941241,
+      "codec": "H.264",
+      "resolution": [
+        1280,
+        960
+      ],
+      "fps": 24,
+      "duration_seconds": 6,
+      "decoded_frame_count": 144,
+      "audio_tracks": 0,
+      "decoded_frames_visually_checked": [
+        1,
+        73,
+        144
+      ],
+      "table_visible_throughout": true
+    },
+    {
+      "file": "../animations/organizer.mp4",
+      "sha256": "ae286ade604c4310d7fd972a0ca1ce316cb41d8cd4640e69f5a118a08b8c392e",
+      "bytes": 9567690,
+      "codec": "H.264",
+      "resolution": [
+        1280,
+        960
+      ],
+      "fps": 24,
+      "duration_seconds": 6,
+      "decoded_frame_count": 144,
+      "audio_tracks": 0,
+      "decoded_frames_visually_checked": [
+        1,
+        73,
+        144
+      ],
+      "table_visible_throughout": true
+    }
+  ],
+  "images": [
+    {
+      "file": "../renders/combination-poster.png",
+      "sha256": "ce189263fff752c0374c588b166afff4966b68efe97f1d8318ac5d922e1d4d15",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/linea-hero.png",
+      "sha256": "de1df57bd3265102fab1d413c438b86560331be09e4b88d9f9972207379c65dc",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/organizer-hero.png",
+      "sha256": "4af0be182cccfe9e08c5d21b9956708b1c6899ecc80efc7bb12d11c3795ab473",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/organizer-on-linea.png",
+      "sha256": "1ff59168b6d2a3b1287bfa0fde875a1fa2e42c696ec8f3e94b961a8438bdcac9",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/organizer-orbit-poster.png",
+      "sha256": "1ff59168b6d2a3b1287bfa0fde875a1fa2e42c696ec8f3e94b961a8438bdcac9",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/shelf-detail.png",
+      "sha256": "6559da25a1f41c667538925f887579cd5ae4440a9f7099574365783275ae45bc",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/shelf-hero.png",
+      "sha256": "2e6d763470235914597500a1a5ff39341ecd4fb2367737559c44a53e30869282",
+      "table_context_visually_checked": true
+    },
+    {
+      "file": "../renders/shelf-orbit-poster.png",
+      "sha256": "502f034c1157a2bfccbf8e987225cd3f75ba3c89c7d06a31c7d6dfa754e66e49",
+      "table_context_visually_checked": true
+    }
+  ]
+}

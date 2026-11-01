@@ -1,0 +1,2081 @@
+{
+  "title": "V3 versus V4 recessed-rib contact sensitivity",
+  "mesh_pitch_mm": 2,
+  "modulus_GPa": 2.06,
+  "poisson_ratio": 0.35,
+  "density_kg_m3": 1240,
+  "nominal_rail_thickness_mm": 13,
+  "rail_angle_from_vertical_deg": 26,
+  "versions": {
+    "v3": {
+      "gravity_only": {
+        "title": "V3 idealized zero-clearance rigid rail contact",
+        "pitch_mm": 2.0,
+        "penalty_factor": 1.0,
+        "youngs_modulus_GPa": 2.06,
+        "poisson_ratio": 0.35,
+        "density_kg_m3": 1240.0,
+        "added_mass_g": 0.0,
+        "position": "gravity",
+        "body_mass_g": 386.10624000000007,
+        "self_weight_included": true,
+        "total_vertical_load_N": 3.786408758495999,
+        "maximum_total_displacement_mm": 0.012414359386039287,
+        "patch_weighted_total_vertical_displacement_mm": -0.0,
+        "peak_element_von_mises_MPa": 0.04782685315014358,
+        "maximum_contact_penetration_mm": 2.1572407399523414e-05,
+        "reaction_N": [
+          0.0,
+          6.665850527803885e-10,
+          3.7864087589036055
+        ],
+        "force_balance_error_N": 7.820194851048474e-10,
+        "moment_balance_error_Nm": 9.159308248605089e-11,
+        "gauge_reaction_N": -2.1566395813285566e-09,
+        "contact_residual": 1.9933518004416605e-08,
+        "active_contacts": 813,
+        "contact_candidates": 6370,
+        "groups": {
+          "outer": {
+            "candidate_nodes": 3822,
+            "active_nodes": 631,
+            "normal_force_N": 5.191538431072711,
+            "reaction_N": [
+              0.0,
+              4.666123832981471,
+              -2.275820655628912
+            ],
+            "force_weighted_position_mm": [
+              2.0526010821784322e-08,
+              -12.096804323249161,
+              -25.206623222507126
+            ]
+          },
+          "inner": {
+            "candidate_nodes": 1638,
+            "active_nodes": 91,
+            "normal_force_N": 6.851390780326368,
+            "reaction_N": [
+              0.0,
+              -6.157989242226343,
+              3.003452033471782
+            ],
+            "force_weighted_position_mm": [
+              2.5693829788549342e-08,
+              -12.0,
+              6.000000000000007
+            ]
+          },
+          "seat": {
+            "candidate_nodes": 910,
+            "active_nodes": 91,
+            "normal_force_N": 3.403201649649789,
+            "reaction_N": [
+              0.0,
+              1.4918654099114583,
+              3.058777381060735
+            ],
+            "force_weighted_position_mm": [
+              1.3933594400178081e-08,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "iterations": [
+          {
+            "active_iteration": 0,
+            "active_contacts": 917,
+            "cg_iterations": 5631,
+            "true_contact_residual": 44.30921358246708
+          },
+          {
+            "active_iteration": 1,
+            "active_contacts": 891,
+            "cg_iterations": 5381,
+            "true_contact_residual": 1.0708831945277086
+          },
+          {
+            "active_iteration": 2,
+            "active_contacts": 834,
+            "cg_iterations": 5287,
+            "true_contact_residual": 0.2888926662914383
+          },
+          {
+            "active_iteration": 3,
+            "active_contacts": 816,
+            "cg_iterations": 4912,
+            "true_contact_residual": 0.05852960837470588
+          },
+          {
+            "active_iteration": 4,
+            "active_contacts": 812,
+            "cg_iterations": 3962,
+            "true_contact_residual": 8.783067737959036e-05
+          },
+          {
+            "active_iteration": 5,
+            "active_contacts": 813,
+            "cg_iterations": 772,
+            "true_contact_residual": 1.9933518004416605e-08
+          }
+        ],
+        "assumptions": [
+          "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+          "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+          "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+          "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+          "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+        ],
+        "source_model_sha256": "fc78027d68f371b23a49c9b1468cce6613f72f58043ab3960d2abe3a309f8f3e",
+        "group_force_checks_N": {
+          "seat_minus_W_cos26": 6.585647582824095e-10,
+          "inner_minus_outer_minus_W_sin26": -4.2044123738094186e-10
+        },
+        "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals"
+      },
+      "scenarios": {
+        "front-300g": {
+          "title": "V3 idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 300.0,
+          "position": "front",
+          "body_mass_g": 386.10624000000007,
+          "self_weight_included": true,
+          "total_vertical_load_N": 6.728403758495998,
+          "maximum_total_displacement_mm": 0.07148498096812768,
+          "patch_weighted_total_vertical_displacement_mm": 0.052942709404376065,
+          "peak_element_von_mises_MPa": 0.2503695846352593,
+          "maximum_contact_penetration_mm": 6.714192258194508e-05,
+          "reaction_N": [
+            0.0,
+            5.052079496067896e-09,
+            6.728403764457856
+          ],
+          "force_balance_error_N": 7.815948600071153e-09,
+          "moment_balance_error_Nm": 1.3263928980255267e-10,
+          "gauge_reaction_N": -3.503185068420844e-11,
+          "contact_residual": 1.969671479642273e-08,
+          "active_contacts": 914,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 732,
+              "normal_force_N": 18.7523025866458,
+              "reaction_N": [
+                0.0,
+                16.854457919277724,
+                -8.22046838984371
+              ],
+              "force_weighted_position_mm": [
+                -1.67694669293516e-11,
+                -12.141077922504289,
+                -25.265512345633038
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 91,
+              "normal_force_N": 21.70184065639037,
+              "reaction_N": [
+                0.0,
+                -19.50548517569687,
+                9.513460775975673
+              ],
+              "force_weighted_position_mm": [
+                1.4427510602030945e-10,
+                -12.000000000000004,
+                6.000000000000005
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 91,
+              "normal_force_N": 6.047449246806313,
+              "reaction_N": [
+                0.0,
+                2.651027261471225,
+                5.435411378325896
+              ],
+              "force_weighted_position_mm": [
+                -3.746646904489143e-10,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 925,
+              "cg_iterations": 3362,
+              "true_contact_residual": 11.625654437530729
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 914,
+              "cg_iterations": 3319,
+              "true_contact_residual": 0.04756228054496271
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 914,
+              "cg_iterations": 2877,
+              "true_contact_residual": 1.9696714796422728e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "fc78027d68f371b23a49c9b1468cce6613f72f58043ab3960d2abe3a309f8f3e",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": 7.573171423302938e-09,
+            "inner_minus_outer_minus_W_sin26": -1.9272596851749313e-09
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.05907158563161581,
+          "patch_weighted_additional_vertical_displacement_mm": 0.043275808773778304,
+          "maximum_downward_total_displacement_mm": 0.07130957744714662,
+          "maximum_downward_additional_displacement_mm": 0.05894016572632717,
+          "maximum_total_displacement_location_mm": [
+            0.0,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            -1.0000000000000009,
+            85.0,
+            -1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.07728232617255329,
+          "front_deck_stress_p99_MPa": 0.06726583701393492,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 28.16310084142291,
+          "outer_contact_normal_force_N": 18.7523025866458,
+          "inner_contact_normal_force_N": 21.70184065639037,
+          "seat_contact_normal_force_N": 6.047449246806313,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 2.941995,
+          "patch_mm": {
+            "center": [
+              0.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -5.052079496067896e-09,
+            -6.728403764457856
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -0.5285132436615121,
+            -5.260978284959972e-13,
+            4.08997163393876e-12
+          ]
+        },
+        "front-2000g": {
+          "title": "V3 idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 2000.0,
+          "position": "front",
+          "body_mass_g": 386.10624000000007,
+          "self_weight_included": true,
+          "total_vertical_load_N": 23.399708758495997,
+          "maximum_total_displacement_mm": 0.40639746592057957,
+          "patch_weighted_total_vertical_displacement_mm": 0.2982947666412538,
+          "peak_element_von_mises_MPa": 1.4820299633668153,
+          "maximum_contact_penetration_mm": 0.0003242640471664218,
+          "reaction_N": [
+            0.0,
+            5.409188635896456e-08,
+            23.39970863478288
+          ],
+          "force_balance_error_N": 1.3502079634770168e-07,
+          "moment_balance_error_Nm": 1.5624639466466357e-09,
+          "gauge_reaction_N": -1.9085431846033174e-10,
+          "contact_residual": 1.9751626836465566e-08,
+          "active_contacts": 925,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 787,
+              "normal_force_N": 95.6677132999105,
+              "reaction_N": [
+                0.0,
+                85.98557113701536,
+                -41.937965189970384
+              ],
+              "force_weighted_position_mm": [
+                1.6089496034040385e-11,
+                -12.144307617848865,
+                -25.26540510728046
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 91,
+              "normal_force_N": 105.92547036005314,
+              "reaction_N": [
+                0.0,
+                -95.20518211105467,
+                46.43466991590892
+              ],
+              "force_weighted_position_mm": [
+                2.1396748322954972e-10,
+                -12.000000000000002,
+                6.000000000000006
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 47,
+              "normal_force_N": 21.031518829790297,
+              "reaction_N": [
+                0.0,
+                9.219611028131247,
+                18.903003908844337
+              ],
+              "force_weighted_position_mm": [
+                -5.085096077382335e-10,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 1005,
+              "cg_iterations": 3194,
+              "true_contact_residual": 175.5730337126028
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 2692,
+              "cg_iterations": 2998,
+              "true_contact_residual": 7.174966696156758
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 1727,
+              "cg_iterations": 3057,
+              "true_contact_residual": 2.4212944111532186
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 1326,
+              "cg_iterations": 3043,
+              "true_contact_residual": 0.8420287736778789
+            },
+            {
+              "active_iteration": 4,
+              "active_contacts": 1144,
+              "cg_iterations": 2986,
+              "true_contact_residual": 0.2476709359250622
+            },
+            {
+              "active_iteration": 5,
+              "active_contacts": 1114,
+              "cg_iterations": 2948,
+              "true_contact_residual": 0.04646094450445554
+            },
+            {
+              "active_iteration": 6,
+              "active_contacts": 1025,
+              "cg_iterations": 2870,
+              "true_contact_residual": 0.02826916015119646
+            },
+            {
+              "active_iteration": 7,
+              "active_contacts": 979,
+              "cg_iterations": 2747,
+              "true_contact_residual": 0.018642011539471846
+            },
+            {
+              "active_iteration": 8,
+              "active_contacts": 945,
+              "cg_iterations": 2561,
+              "true_contact_residual": 0.00963609043097088
+            },
+            {
+              "active_iteration": 9,
+              "active_contacts": 933,
+              "cg_iterations": 1422,
+              "true_contact_residual": 0.0009404887698967299
+            },
+            {
+              "active_iteration": 10,
+              "active_contacts": 929,
+              "cg_iterations": 649,
+              "true_contact_residual": 0.0004053612826688126
+            },
+            {
+              "active_iteration": 11,
+              "active_contacts": 925,
+              "cg_iterations": 1884,
+              "true_contact_residual": 1.9751626836465566e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "fc78027d68f371b23a49c9b1468cce6613f72f58043ab3960d2abe3a309f8f3e",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": -8.748038027306393e-08,
+            "inner_minus_outer_minus_W_sin26": -1.0284967366658293e-07
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.3939841946594856,
+          "patch_weighted_additional_vertical_displacement_mm": 0.28862786601065604,
+          "maximum_downward_total_displacement_mm": 0.4054698315328007,
+          "maximum_downward_additional_displacement_mm": 0.39310041981198124,
+          "maximum_total_displacement_location_mm": [
+            0.0,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            1.0000000000000009,
+            85.0,
+            -1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.5054926259955084,
+          "front_deck_stress_p99_MPa": 0.4382074679150154,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 28.16442026148206,
+          "outer_contact_normal_force_N": 95.6677132999105,
+          "inner_contact_normal_force_N": 105.92547036005314,
+          "seat_contact_normal_force_N": 21.031518829790297,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 19.6133,
+          "patch_mm": {
+            "center": [
+              0.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -5.409188635896456e-08,
+            -23.39970863478288
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -2.6957828919666302,
+            -3.516375558787477e-13,
+            2.367545135634197e-11
+          ]
+        },
+        "corner-300g": {
+          "title": "V3 idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 300.0,
+          "position": "corner",
+          "body_mass_g": 386.10624000000007,
+          "self_weight_included": true,
+          "total_vertical_load_N": 6.728403758495998,
+          "maximum_total_displacement_mm": 0.09926951702639263,
+          "patch_weighted_total_vertical_displacement_mm": 0.06737584211177687,
+          "peak_element_von_mises_MPa": 0.2921995956749243,
+          "maximum_contact_penetration_mm": 0.00011546487657380708,
+          "reaction_N": [
+            0.0,
+            5.957726409433484e-09,
+            6.728403741775316
+          ],
+          "force_balance_error_N": 1.774864334727907e-08,
+          "moment_balance_error_Nm": 2.0760530705771437e-09,
+          "gauge_reaction_N": 3.1631231847879283e-08,
+          "contact_residual": 1.9765007103387218e-08,
+          "active_contacts": 917,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 740,
+              "normal_force_N": 18.623606880469683,
+              "reaction_N": [
+                0.0,
+                16.73878698478237,
+                -8.164051905540443
+              ],
+              "force_weighted_position_mm": [
+                31.903655362599043,
+                -12.233195046829525,
+                -25.43711497793313
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 86,
+              "normal_force_N": 21.573144939456885,
+              "reaction_N": [
+                0.0,
+                -19.38981423153286,
+                9.457044286956696
+              ],
+              "force_weighted_position_mm": [
+                31.427532226359155,
+                -12.000000000000002,
+                6.000000000000006
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 91,
+              "normal_force_N": 6.047449226816374,
+              "reaction_N": [
+                0.0,
+                2.6510272527082144,
+                5.4354113603590575
+              ],
+              "force_weighted_position_mm": [
+                28.421254751544666,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 862,
+              "cg_iterations": 5698,
+              "true_contact_residual": 136.351637509736
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1353,
+              "cg_iterations": 5400,
+              "true_contact_residual": 6.385769217941506
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 1091,
+              "cg_iterations": 5332,
+              "true_contact_residual": 3.4771870576007244
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 1031,
+              "cg_iterations": 5311,
+              "true_contact_residual": 1.2830810446161207
+            },
+            {
+              "active_iteration": 4,
+              "active_contacts": 969,
+              "cg_iterations": 5292,
+              "true_contact_residual": 0.7027177947751838
+            },
+            {
+              "active_iteration": 5,
+              "active_contacts": 936,
+              "cg_iterations": 5228,
+              "true_contact_residual": 0.31380683125604475
+            },
+            {
+              "active_iteration": 6,
+              "active_contacts": 922,
+              "cg_iterations": 5147,
+              "true_contact_residual": 0.05219346290203391
+            },
+            {
+              "active_iteration": 7,
+              "active_contacts": 917,
+              "cg_iterations": 4625,
+              "true_contact_residual": 0.00019541165422552585
+            },
+            {
+              "active_iteration": 8,
+              "active_contacts": 917,
+              "cg_iterations": 1811,
+              "true_contact_residual": 1.976500710338722e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "fc78027d68f371b23a49c9b1468cce6613f72f58043ab3960d2abe3a309f8f3e",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": -1.241676717000928e-08,
+            "inner_minus_outer_minus_W_sin26": -1.2684628014625332e-08
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.08831775046788423,
+          "patch_weighted_additional_vertical_displacement_mm": 0.05859838240969173,
+          "maximum_downward_total_displacement_mm": 0.09890355188402633,
+          "maximum_downward_additional_displacement_mm": 0.08799987541127069,
+          "maximum_total_displacement_location_mm": [
+            84.00000000000001,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            65.0,
+            85.0,
+            -1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.10291148275817685,
+          "front_deck_stress_p99_MPa": 0.06868782843471269,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 28.357717755092864,
+          "outer_contact_normal_force_N": 18.623606880469683,
+          "inner_contact_normal_force_N": 21.573144939456885,
+          "seat_contact_normal_force_N": 6.047449226816374,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 2.941995,
+          "patch_mm": {
+            "center": [
+              65.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -5.957726409433484e-09,
+            -6.728403741775316
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -0.5285132424016734,
+            0.19122967668990948,
+            -4.2834661425489307e-10
+          ]
+        },
+        "corner-2000g": {
+          "title": "V3 idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 2000.0,
+          "position": "corner",
+          "body_mass_g": 386.10624000000007,
+          "self_weight_included": true,
+          "total_vertical_load_N": 23.399708758495997,
+          "maximum_total_displacement_mm": 0.5995014705604411,
+          "patch_weighted_total_vertical_displacement_mm": 0.39936799933883227,
+          "peak_element_von_mises_MPa": 1.7886043954416804,
+          "maximum_contact_penetration_mm": 0.0006625292557412884,
+          "reaction_N": [
+            0.0,
+            8.59708202682885e-08,
+            23.399708928154784
+          ],
+          "force_balance_error_N": 1.9019844863026372e-07,
+          "moment_balance_error_Nm": 1.3662866280848388e-08,
+          "gauge_reaction_N": 6.837273142795697e-08,
+          "contact_residual": 1.9906851164697536e-08,
+          "active_contacts": 862,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 740,
+              "normal_force_N": 98.42156007507484,
+              "reaction_N": [
+                0.0,
+                88.4607122229531,
+                -43.14517215888064
+              ],
+              "force_weighted_position_mm": [
+                37.34304208136223,
+                -11.851696098723162,
+                -24.637364637646513
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 77,
+              "normal_force_N": 108.67931723517066,
+              "reaction_N": [
+                0.0,
+                -97.68032328682982,
+                47.641876928635725
+              ],
+              "force_weighted_position_mm": [
+                38.96071829445924,
+                -12.000000000000002,
+                6.000000000000006
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 45,
+              "normal_force_N": 21.03151910744612,
+              "reaction_N": [
+                0.0,
+                9.21961114984755,
+                18.903004158399746
+              ],
+              "force_weighted_position_mm": [
+                54.48206620680158,
+                -0.39655480702120866,
+                0.20420920718382057
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 914,
+              "cg_iterations": 5319,
+              "true_contact_residual": 23.37510245357018
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1519,
+              "cg_iterations": 5067,
+              "true_contact_residual": 1.4023035167922235
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 1187,
+              "cg_iterations": 5207,
+              "true_contact_residual": 0.7620727440583321
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 1005,
+              "cg_iterations": 5283,
+              "true_contact_residual": 0.4134288080402788
+            },
+            {
+              "active_iteration": 4,
+              "active_contacts": 932,
+              "cg_iterations": 5350,
+              "true_contact_residual": 0.2556909465682786
+            },
+            {
+              "active_iteration": 5,
+              "active_contacts": 888,
+              "cg_iterations": 5247,
+              "true_contact_residual": 0.09319101569683683
+            },
+            {
+              "active_iteration": 6,
+              "active_contacts": 872,
+              "cg_iterations": 5026,
+              "true_contact_residual": 0.002911857487768082
+            },
+            {
+              "active_iteration": 7,
+              "active_contacts": 865,
+              "cg_iterations": 1337,
+              "true_contact_residual": 0.0008552507672193495
+            },
+            {
+              "active_iteration": 8,
+              "active_contacts": 862,
+              "cg_iterations": 692,
+              "true_contact_residual": 1.9906851164697536e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "fc78027d68f371b23a49c9b1468cce6613f72f58043ab3960d2abe3a309f8f3e",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": 1.901754416167023e-07,
+            "inner_minus_outer_minus_W_sin26": -2.896490158832421e-09
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.5885497550226014,
+          "patch_weighted_additional_vertical_displacement_mm": 0.3905905396367472,
+          "maximum_downward_total_displacement_mm": 0.5973643594896905,
+          "maximum_downward_additional_displacement_mm": 0.5864606830169348,
+          "maximum_total_displacement_location_mm": [
+            84.00000000000001,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            67.0,
+            85.0,
+            -1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.6545504333170851,
+          "front_deck_stress_p99_MPa": 0.44105336284987345,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 27.471668779337307,
+          "outer_contact_normal_force_N": 98.42156007507484,
+          "inner_contact_normal_force_N": 108.67931723517066,
+          "seat_contact_normal_force_N": 21.03151910744612,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 19.6133,
+          "patch_mm": {
+            "center": [
+              65.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -8.59708202682885e-08,
+            -23.399708928154784
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -2.6957829016246957,
+            1.2748644905645534,
+            -5.666085978878188e-09
+          ]
+        }
+      }
+    },
+    "v4": {
+      "gravity_only": {
+        "title": "V4 recessed ribs: idealized zero-clearance rigid rail contact",
+        "pitch_mm": 2.0,
+        "penalty_factor": 1.0,
+        "version": "v4",
+        "reference_version": "v3",
+        "same_grid_as_v3": true,
+        "same_mount_contacts_as_v3": true,
+        "same_added_load_patch_as_v3": true,
+        "youngs_modulus_GPa": 2.06,
+        "poisson_ratio": 0.35,
+        "density_kg_m3": 1240.0,
+        "added_mass_g": 0.0,
+        "position": "gravity",
+        "body_mass_g": 375.39264,
+        "self_weight_included": true,
+        "total_vertical_load_N": 3.6813442330559987,
+        "maximum_total_displacement_mm": 0.0183614745350538,
+        "patch_weighted_total_vertical_displacement_mm": -0.0,
+        "peak_element_von_mises_MPa": 0.05167794519384218,
+        "maximum_contact_penetration_mm": 2.270673974147623e-05,
+        "reaction_N": [
+          0.0,
+          2.7772647376300696e-10,
+          3.681344231671205
+        ],
+        "force_balance_error_N": 1.4112888781069072e-09,
+        "moment_balance_error_Nm": 7.777374915645227e-12,
+        "gauge_reaction_N": -1.3040413367193526e-11,
+        "contact_residual": 1.9980092464269208e-08,
+        "active_contacts": 846,
+        "contact_candidates": 6370,
+        "groups": {
+          "outer": {
+            "candidate_nodes": 3822,
+            "active_nodes": 664,
+            "normal_force_N": 5.768778965878832,
+            "reaction_N": [
+              0.0,
+              5.184944188947758,
+              -2.5288662508450117
+            ],
+            "force_weighted_position_mm": [
+              1.9720940363399437e-10,
+              -10.47417366137426,
+              -21.88600864275342
+            ]
+          },
+          "inner": {
+            "candidate_nodes": 1638,
+            "active_nodes": 91,
+            "normal_force_N": 7.382574058192271,
+            "reaction_N": [
+              0.0,
+              -6.635413609865897,
+              3.236307456145041
+            ],
+            "force_weighted_position_mm": [
+              3.4535889031323076e-10,
+              -12.000000000000002,
+              6.000000000000004
+            ]
+          },
+          "seat": {
+            "candidate_nodes": 910,
+            "active_nodes": 91,
+            "normal_force_N": 3.308770277925607,
+            "reaction_N": [
+              0.0,
+              1.450469421195863,
+              2.973903026371176
+            ],
+            "force_weighted_position_mm": [
+              -1.2123434252879792e-10,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "iterations": [
+          {
+            "active_iteration": 0,
+            "active_contacts": 813,
+            "cg_iterations": 3538,
+            "true_contact_residual": 13.296437097351903
+          },
+          {
+            "active_iteration": 1,
+            "active_contacts": 919,
+            "cg_iterations": 3465,
+            "true_contact_residual": 0.802124496222908
+          },
+          {
+            "active_iteration": 2,
+            "active_contacts": 854,
+            "cg_iterations": 3322,
+            "true_contact_residual": 0.05923123328567394
+          },
+          {
+            "active_iteration": 3,
+            "active_contacts": 846,
+            "cg_iterations": 2978,
+            "true_contact_residual": 1.9980092464269208e-08
+          }
+        ],
+        "assumptions": [
+          "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+          "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+          "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+          "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+          "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+        ],
+        "source_model_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+        "group_force_checks_N": {
+          "seat_minus_W_cos26": -1.1228977747634872e-09,
+          "inner_minus_outer_minus_W_sin26": -8.566758413763864e-10
+        },
+        "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals"
+      },
+      "scenarios": {
+        "front-300g": {
+          "title": "V4 recessed ribs: idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "version": "v4",
+          "reference_version": "v3",
+          "same_grid_as_v3": true,
+          "same_mount_contacts_as_v3": true,
+          "same_added_load_patch_as_v3": true,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 300.0,
+          "position": "front",
+          "body_mass_g": 375.39264,
+          "self_weight_included": true,
+          "total_vertical_load_N": 6.623339233055997,
+          "maximum_total_displacement_mm": 0.10281806709154649,
+          "patch_weighted_total_vertical_displacement_mm": 0.07682065587463147,
+          "peak_element_von_mises_MPa": 0.3047796511756366,
+          "maximum_contact_penetration_mm": 7.26676115699006e-05,
+          "reaction_N": [
+            0.0,
+            1.0442172748009737e-08,
+            6.623339237117326
+          ],
+          "force_balance_error_N": 1.1204751117432325e-08,
+          "moment_balance_error_Nm": 6.286086173113156e-11,
+          "gauge_reaction_N": -4.9580442182395323e-11,
+          "contact_residual": 1.9851834591628434e-08,
+          "active_contacts": 937,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 771,
+              "normal_force_N": 21.22064650714106,
+              "reaction_N": [
+                0.0,
+                19.072990739237593,
+                -9.302519144941073
+              ],
+              "force_weighted_position_mm": [
+                -2.7437081741168388e-11,
+                -10.598027337774491,
+                -22.105680097831634
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 91,
+              "normal_force_N": 24.12412731470392,
+              "reaction_N": [
+                0.0,
+                -21.68262200261899,
+                10.575321356232466
+              ],
+              "force_weighted_position_mm": [
+                1.2372545722693967e-10,
+                -11.999999999999995,
+                6.0000000000000036
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 75,
+              "normal_force_N": 5.953017877518278,
+              "reaction_N": [
+                0.0,
+                2.6096312738235676,
+                5.350537025825934
+              ],
+              "force_weighted_position_mm": [
+                -5.543327480049357e-10,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 914,
+              "cg_iterations": 3427,
+              "true_contact_residual": 5.251607476622089
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1024,
+              "cg_iterations": 3320,
+              "true_contact_residual": 0.376680988220727
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 960,
+              "cg_iterations": 3305,
+              "true_contact_residual": 0.045387052554891505
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 937,
+              "cg_iterations": 3157,
+              "true_contact_residual": 1.9851834591628434e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": 8.227855730069678e-09,
+            "inner_minus_outer_minus_W_sin26": -7.604985086118177e-09
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.08445728238282749,
+          "patch_weighted_additional_vertical_displacement_mm": 0.06255814253227802,
+          "maximum_downward_total_displacement_mm": 0.10262266134686562,
+          "maximum_downward_additional_displacement_mm": 0.08430983431259036,
+          "maximum_total_displacement_location_mm": [
+            0.0,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            1.0000000000000009,
+            77.0,
+            1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.08320847303509303,
+          "front_deck_stress_p99_MPa": 0.07442256001419938,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 24.646633575413336,
+          "outer_contact_normal_force_N": 21.22064650714106,
+          "inner_contact_normal_force_N": 24.12412731470392,
+          "seat_contact_normal_force_N": 5.953017877518278,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 2.941995,
+          "patch_mm": {
+            "center": [
+              0.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -1.0442172748009737e-08,
+            -6.623339237117326
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -0.5234016597396725,
+            -1.4021292807364638e-12,
+            4.652691209736104e-12
+          ]
+        },
+        "front-2000g": {
+          "title": "V4 recessed ribs: idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "version": "v4",
+          "reference_version": "v3",
+          "same_grid_as_v3": true,
+          "same_mount_contacts_as_v3": true,
+          "same_added_load_patch_as_v3": true,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 2000.0,
+          "position": "front",
+          "body_mass_g": 375.39264,
+          "self_weight_included": true,
+          "total_vertical_load_N": 23.294644233055998,
+          "maximum_total_displacement_mm": 0.5816128396823631,
+          "patch_weighted_total_vertical_displacement_mm": 0.43145953655207947,
+          "peak_element_von_mises_MPa": 1.7704129754849542,
+          "maximum_contact_penetration_mm": 0.00035447598537194,
+          "reaction_N": [
+            0.0,
+            9.86960919761859e-08,
+            23.294644163269943
+          ],
+          "force_balance_error_N": 1.20875573797154e-07,
+          "moment_balance_error_Nm": 1.0754641901004838e-09,
+          "gauge_reaction_N": -2.7673533603556066e-10,
+          "contact_residual": 1.982980372031569e-08,
+          "active_contacts": 990,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 852,
+              "normal_force_N": 108.7797784394526,
+              "reaction_N": [
+                0.0,
+                97.77061721912244,
+                -47.68591622196466
+              ],
+              "force_weighted_position_mm": [
+                -9.48693783590497e-13,
+                -10.634473983880909,
+                -22.17243698570807
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 91,
+              "normal_force_N": 118.99147822664123,
+              "reaction_N": [
+                0.0,
+                -106.94883219044208,
+                52.162430768340265
+              ],
+              "force_weighted_position_mm": [
+                2.3522097428514627e-10,
+                -12.0,
+                6.000000000000004
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 47,
+              "normal_force_N": 20.937087527870265,
+              "reaction_N": [
+                0.0,
+                9.178215070015781,
+                18.818129616894343
+              ],
+              "force_weighted_position_mm": [
+                -7.983236642733836e-10,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 925,
+              "cg_iterations": 3347,
+              "true_contact_residual": 3.5092833693326315
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1218,
+              "cg_iterations": 3084,
+              "true_contact_residual": 0.28808474810048595
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 1084,
+              "cg_iterations": 3028,
+              "true_contact_residual": 0.07634575232750251
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 1020,
+              "cg_iterations": 2974,
+              "true_contact_residual": 0.008968106261229779
+            },
+            {
+              "active_iteration": 4,
+              "active_contacts": 1000,
+              "cg_iterations": 2761,
+              "true_contact_residual": 0.0017666652396626545
+            },
+            {
+              "active_iteration": 5,
+              "active_contacts": 992,
+              "cg_iterations": 700,
+              "true_contact_residual": 0.0004886564807027478
+            },
+            {
+              "active_iteration": 6,
+              "active_contacts": 990,
+              "cg_iterations": 797,
+              "true_contact_residual": 1.982980372031569e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": -1.945769056987956e-08,
+            "inner_minus_outer_minus_W_sin26": -1.19299691903052e-07
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.5632521452927254,
+          "patch_weighted_additional_vertical_displacement_mm": 0.41719702320972607,
+          "maximum_downward_total_displacement_mm": 0.5805747311470688,
+          "maximum_downward_additional_displacement_mm": 0.5622619041127935,
+          "maximum_total_displacement_location_mm": [
+            0.0,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            1.0000000000000009,
+            77.0,
+            1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.5428811938979198,
+          "front_deck_stress_p99_MPa": 0.4841199059659375,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 24.722611426836423,
+          "outer_contact_normal_force_N": 108.7797784394526,
+          "inner_contact_normal_force_N": 118.99147822664123,
+          "seat_contact_normal_force_N": 20.937087527870265,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 19.6133,
+          "patch_mm": {
+            "center": [
+              0.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            -9.86960919761859e-08,
+            -23.294644163269943
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -2.6906713087273557,
+            -2.7079467140866953e-12,
+            3.257841045545273e-11
+          ]
+        },
+        "corner-300g": {
+          "title": "V4 recessed ribs: idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "version": "v4",
+          "reference_version": "v3",
+          "same_grid_as_v3": true,
+          "same_mount_contacts_as_v3": true,
+          "same_added_load_patch_as_v3": true,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 300.0,
+          "position": "corner",
+          "body_mass_g": 375.39264,
+          "self_weight_included": true,
+          "total_vertical_load_N": 6.623339233055997,
+          "maximum_total_displacement_mm": 0.14249488189333742,
+          "patch_weighted_total_vertical_displacement_mm": 0.09845909903027449,
+          "peak_element_von_mises_MPa": 0.3685820317925406,
+          "maximum_contact_penetration_mm": 0.00012414395331197228,
+          "reaction_N": [
+            0.0,
+            -7.2426293157290544e-09,
+            6.623339234096422
+          ],
+          "force_balance_error_N": 7.3172079923306465e-09,
+          "moment_balance_error_Nm": 2.0954255905984127e-09,
+          "gauge_reaction_N": 3.3247352608262604e-08,
+          "contact_residual": 2.000245890713996e-08,
+          "active_contacts": 936,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 757,
+              "normal_force_N": 21.040682955872725,
+              "reaction_N": [
+                0.0,
+                18.911240570806765,
+                -9.22362831659133
+              ],
+              "force_weighted_position_mm": [
+                29.202605515258714,
+                -10.693328551921407,
+                -22.29374139409612
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 88,
+              "normal_force_N": 23.9441637780063,
+              "reaction_N": [
+                0.0,
+                -21.520871847284234,
+                10.496430534270111
+              ],
+              "force_weighted_position_mm": [
+                29.16252748804542,
+                -12.000000000000002,
+                6.000000000000004
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 91,
+              "normal_force_N": 5.953017867050595,
+              "reaction_N": [
+                0.0,
+                2.609631269234837,
+                5.350537016417642
+              ],
+              "force_weighted_position_mm": [
+                28.872094517491618,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 917,
+              "cg_iterations": 5669,
+              "true_contact_residual": 3.2829983279755486
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1004,
+              "cg_iterations": 5459,
+              "true_contact_residual": 0.1639915666783826
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 949,
+              "cg_iterations": 5123,
+              "true_contact_residual": 0.01198538792225899
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 936,
+              "cg_iterations": 4214,
+              "true_contact_residual": 2.0002458907139967e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": -2.2398269905465895e-09,
+            "inner_minus_outer_minus_W_sin26": 6.9657275503232086e-09
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.12585966702994017,
+          "patch_weighted_additional_vertical_displacement_mm": 0.08526856964005713,
+          "maximum_downward_total_displacement_mm": 0.1421243878807349,
+          "maximum_downward_additional_displacement_mm": 0.12554179740302057,
+          "maximum_total_displacement_location_mm": [
+            84.00000000000001,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            65.0,
+            77.0,
+            1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.08788902510843274,
+          "front_deck_stress_p99_MPa": 0.076356775549533,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 24.857439251371133,
+          "outer_contact_normal_force_N": 21.040682955872725,
+          "inner_contact_normal_force_N": 23.9441637780063,
+          "seat_contact_normal_force_N": 5.953017867050595,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 2.941995,
+          "patch_mm": {
+            "center": [
+              65.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            7.2426293157290544e-09,
+            -6.623339234096422
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -0.5234016594296858,
+            0.1912296752905729,
+            -2.0414458483039577e-09
+          ]
+        },
+        "corner-2000g": {
+          "title": "V4 recessed ribs: idealized zero-clearance rigid rail contact",
+          "pitch_mm": 2.0,
+          "penalty_factor": 1.0,
+          "version": "v4",
+          "reference_version": "v3",
+          "same_grid_as_v3": true,
+          "same_mount_contacts_as_v3": true,
+          "same_added_load_patch_as_v3": true,
+          "youngs_modulus_GPa": 2.06,
+          "poisson_ratio": 0.35,
+          "density_kg_m3": 1240.0,
+          "added_mass_g": 2000.0,
+          "position": "corner",
+          "body_mass_g": 375.39264,
+          "self_weight_included": true,
+          "total_vertical_load_N": 23.294644233055998,
+          "maximum_total_displacement_mm": 0.8557438817963471,
+          "patch_weighted_total_vertical_displacement_mm": 0.581715838069777,
+          "peak_element_von_mises_MPa": 2.2209364298592535,
+          "maximum_contact_penetration_mm": 0.0007218851009642636,
+          "reaction_N": [
+            0.0,
+            -2.1656184365226316e-07,
+            23.294644212230743
+          ],
+          "force_balance_error_N": 2.1756077120282068e-07,
+          "moment_balance_error_Nm": 7.131170317268411e-09,
+          "gauge_reaction_N": -9.437885948107572e-08,
+          "contact_residual": 1.9721608761043956e-08,
+          "active_contacts": 916,
+          "contact_candidates": 6370,
+          "groups": {
+            "outer": {
+              "candidate_nodes": 3822,
+              "active_nodes": 786,
+              "normal_force_N": 110.01071109413066,
+              "reaction_N": [
+                0.0,
+                98.87697216054234,
+                -48.22552158141591
+              ],
+              "force_weighted_position_mm": [
+                35.39262276522386,
+                -10.521656276226638,
+                -21.92584766005777
+              ]
+            },
+            "inner": {
+              "candidate_nodes": 1638,
+              "active_nodes": 79,
+              "normal_force_N": 120.22241118613424,
+              "reaction_N": [
+                0.0,
+                -108.05518740582787,
+                52.702036261413696
+              ],
+              "force_weighted_position_mm": [
+                37.03495356277994,
+                -12.000000000000005,
+                6.000000000000007
+              ]
+            },
+            "seat": {
+              "candidate_nodes": 910,
+              "active_nodes": 51,
+              "normal_force_N": 20.93708743367584,
+              "reaction_N": [
+                0.0,
+                9.178215028723661,
+                18.818129532232955
+              ],
+              "force_weighted_position_mm": [
+                54.727794441219736,
+                -0.026024913582200288,
+                0.013012456791100156
+              ]
+            }
+          },
+          "iterations": [
+            {
+              "active_iteration": 0,
+              "active_contacts": 862,
+              "cg_iterations": 5715,
+              "true_contact_residual": 3.4842964809207255
+            },
+            {
+              "active_iteration": 1,
+              "active_contacts": 1035,
+              "cg_iterations": 5445,
+              "true_contact_residual": 0.2214130021082596
+            },
+            {
+              "active_iteration": 2,
+              "active_contacts": 949,
+              "cg_iterations": 5435,
+              "true_contact_residual": 0.04239115792499222
+            },
+            {
+              "active_iteration": 3,
+              "active_contacts": 919,
+              "cg_iterations": 5081,
+              "true_contact_residual": 0.004709769940794788
+            },
+            {
+              "active_iteration": 4,
+              "active_contacts": 917,
+              "cg_iterations": 4383,
+              "true_contact_residual": 0.0006687405327368913
+            },
+            {
+              "active_iteration": 5,
+              "active_contacts": 916,
+              "cg_iterations": 3637,
+              "true_contact_residual": 1.972160876104395e-08
+            }
+          ],
+          "assumptions": [
+            "Rigid wooden rail, nominal thickness 13 mm; no rail flex or furniture joints modelled",
+            "Small-displacement frictionless compression-only contact, zero initial clearance; no adhesion or tensile contact",
+            "Surface-node contacts near nominal CAD planes reset to zero initial gap; voxel stair-step offsets are not actual measured clearance",
+            "Single X translation gauge, its reaction checked negligible; no fixed Y/Z nodes",
+            "Uniform isotropic solid PLA reference E2.06 GPa, not printed infill/layer bonding/creep or load capacity"
+          ],
+          "source_model_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+          "group_force_checks_N": {
+            "seat_minus_W_cos26": -1.1365211705083311e-07,
+            "inner_minus_outer_minus_W_sin26": 1.8551525471366404e-07
+          },
+          "contact_discretization": "Exposed faces pointing toward the wood; full nominal cavity spans, with 0.6 voxel endpoint/plane tolerance; cavity corner nodes may carry two independent normals",
+          "maximum_additional_displacement_mm": 0.8391087664423817,
+          "patch_weighted_additional_vertical_displacement_mm": 0.5685253086795596,
+          "maximum_downward_total_displacement_mm": 0.8535849948397813,
+          "maximum_downward_additional_displacement_mm": 0.837002404362067,
+          "maximum_total_displacement_location_mm": [
+            84.00000000000001,
+            150.0,
+            11.999999999999996
+          ],
+          "peak_stress_cell_center_mm": [
+            65.0,
+            77.0,
+            1.0000000000000009
+          ],
+          "front_deck_peak_von_mises_MPa": 0.5604464846259981,
+          "front_deck_stress_p99_MPa": 0.4936276836403534,
+          "front_deck_stress_region": "Assembly Y >= 110 mm, Z >= 6 mm; common outer deck region in both models. Coarse stress comparison, not a failure threshold.",
+          "pitch_direction_contact_separation_mm": 24.45152238117849,
+          "outer_contact_normal_force_N": 110.01071109413066,
+          "inner_contact_normal_force_N": 120.22241118613424,
+          "seat_contact_normal_force_N": 20.93708743367584,
+          "additional_definition": "Nodewise difference between gravity-plus-added-load and gravity-only equilibrium, including contact redistribution",
+          "added_load_force_N": 19.6133,
+          "patch_mm": {
+            "center": [
+              65.0,
+              130.0,
+              12.0
+            ],
+            "width": 30.0,
+            "depth": 30.0
+          },
+          "shelf_to_rail_force_N": [
+            -0.0,
+            2.1656184365226316e-07,
+            -23.294644212230743
+          ],
+          "shelf_to_rail_moment_about_clip_origin_Nm": [
+            -2.6906713084779,
+            1.2748644974264738,
+            6.517397820428664e-09
+          ]
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "front-300g": {
+      "maximum_total_displacement_mm": {
+        "v3": 0.07148498096812768,
+        "v4": 0.10281806709154649,
+        "ratio_v4_over_v3": 1.4383170520446664,
+        "change_percent": 43.831705204466644
+      },
+      "maximum_additional_displacement_mm": {
+        "v3": 0.05907158563161581,
+        "v4": 0.08445728238282749,
+        "ratio_v4_over_v3": 1.4297446306845867,
+        "change_percent": 42.97446306845867
+      },
+      "patch_weighted_total_vertical_displacement_mm": {
+        "v3": 0.052942709404376065,
+        "v4": 0.07682065587463147,
+        "ratio_v4_over_v3": 1.451014818449804,
+        "change_percent": 45.1014818449804
+      },
+      "patch_weighted_additional_vertical_displacement_mm": {
+        "v3": 0.043275808773778304,
+        "v4": 0.06255814253227802,
+        "ratio_v4_over_v3": 1.4455684204377777,
+        "change_percent": 44.55684204377776
+      },
+      "peak_element_von_mises_MPa": {
+        "v3": 0.2503695846352593,
+        "v4": 0.3047796511756366,
+        "ratio_v4_over_v3": 1.2173189951153307,
+        "change_percent": 21.731899511533072
+      },
+      "front_deck_peak_von_mises_MPa": {
+        "v3": 0.07728232617255329,
+        "v4": 0.08320847303509303,
+        "ratio_v4_over_v3": 1.0766817868461678,
+        "change_percent": 7.668178684616778
+      },
+      "front_deck_stress_p99_MPa": {
+        "v3": 0.06726583701393492,
+        "v4": 0.07442256001419938,
+        "ratio_v4_over_v3": 1.106394617505196,
+        "change_percent": 10.639461750519597
+      },
+      "pitch_direction_contact_separation_mm": {
+        "v3": 28.16310084142291,
+        "v4": 24.646633575413336,
+        "ratio_v4_over_v3": 0.8751392012616211,
+        "change_percent": -12.486079873837886
+      },
+      "outer_contact_normal_force_N": {
+        "v3": 18.7523025866458,
+        "v4": 21.22064650714106,
+        "ratio_v4_over_v3": 1.1316288444627092,
+        "change_percent": 13.162884446270917
+      },
+      "inner_contact_normal_force_N": {
+        "v3": 21.70184065639037,
+        "v4": 24.12412731470392,
+        "ratio_v4_over_v3": 1.1116166456415428,
+        "change_percent": 11.161664564154282
+      },
+      "seat_contact_normal_force_N": {
+        "v3": 6.047449246806313,
+        "v4": 5.953017877518278,
+        "ratio_v4_over_v3": 0.984384925704353,
+        "change_percent": -1.5615074295647013
+      }
+    },
+    "front-2000g": {
+      "maximum_total_displacement_mm": {
+        "v3": 0.40639746592057957,
+        "v4": 0.5816128396823631,
+        "ratio_v4_over_v3": 1.4311428797049268,
+        "change_percent": 43.11428797049268
+      },
+      "maximum_additional_displacement_mm": {
+        "v3": 0.3939841946594856,
+        "v4": 0.5632521452927254,
+        "ratio_v4_over_v3": 1.4296313225954038,
+        "change_percent": 42.96313225954038
+      },
+      "patch_weighted_total_vertical_displacement_mm": {
+        "v3": 0.2982947666412538,
+        "v4": 0.43145953655207947,
+        "ratio_v4_over_v3": 1.4464200676741243,
+        "change_percent": 44.64200676741243
+      },
+      "patch_weighted_additional_vertical_displacement_mm": {
+        "v3": 0.28862786601065604,
+        "v4": 0.41719702320972607,
+        "ratio_v4_over_v3": 1.4454495644378402,
+        "change_percent": 44.544956443784024
+      },
+      "peak_element_von_mises_MPa": {
+        "v3": 1.4820299633668153,
+        "v4": 1.7704129754849542,
+        "ratio_v4_over_v3": 1.194586492342572,
+        "change_percent": 19.458649234257198
+      },
+      "front_deck_peak_von_mises_MPa": {
+        "v3": 0.5054926259955084,
+        "v4": 0.5428811938979198,
+        "ratio_v4_over_v3": 1.073964615861169,
+        "change_percent": 7.396461586116909
+      },
+      "front_deck_stress_p99_MPa": {
+        "v3": 0.4382074679150154,
+        "v4": 0.4841199059659375,
+        "ratio_v4_over_v3": 1.1047732898514322,
+        "change_percent": 10.47732898514322
+      },
+      "pitch_direction_contact_separation_mm": {
+        "v3": 28.16442026148206,
+        "v4": 24.722611426836423,
+        "ratio_v4_over_v3": 0.8777958572308094,
+        "change_percent": -12.220414276919056
+      },
+      "outer_contact_normal_force_N": {
+        "v3": 95.6677132999105,
+        "v4": 108.7797784394526,
+        "ratio_v4_over_v3": 1.137058414874377,
+        "change_percent": 13.705841487437699
+      },
+      "inner_contact_normal_force_N": {
+        "v3": 105.92547036005314,
+        "v4": 118.99147822664123,
+        "ratio_v4_over_v3": 1.12335095442272,
+        "change_percent": 12.335095442272003
+      },
+      "seat_contact_normal_force_N": {
+        "v3": 21.031518829790297,
+        "v4": 20.937087527870265,
+        "ratio_v4_over_v3": 0.9955100103475991,
+        "change_percent": -0.4489989652400883
+      }
+    },
+    "corner-300g": {
+      "maximum_total_displacement_mm": {
+        "v3": 0.09926951702639263,
+        "v4": 0.14249488189333742,
+        "ratio_v4_over_v3": 1.43543442299062,
+        "change_percent": 43.543442299061994
+      },
+      "maximum_additional_displacement_mm": {
+        "v3": 0.08831775046788423,
+        "v4": 0.12585966702994017,
+        "ratio_v4_over_v3": 1.425077816896023,
+        "change_percent": 42.5077816896023
+      },
+      "patch_weighted_total_vertical_displacement_mm": {
+        "v3": 0.06737584211177687,
+        "v4": 0.09845909903027449,
+        "ratio_v4_over_v3": 1.461341275214495,
+        "change_percent": 46.1341275214495
+      },
+      "patch_weighted_additional_vertical_displacement_mm": {
+        "v3": 0.05859838240969173,
+        "v4": 0.08526856964005713,
+        "ratio_v4_over_v3": 1.455135212502971,
+        "change_percent": 45.5135212502971
+      },
+      "peak_element_von_mises_MPa": {
+        "v3": 0.2921995956749243,
+        "v4": 0.3685820317925406,
+        "ratio_v4_over_v3": 1.2614050027728057,
+        "change_percent": 26.140500277280566
+      },
+      "front_deck_peak_von_mises_MPa": {
+        "v3": 0.10291148275817685,
+        "v4": 0.08788902510843274,
+        "ratio_v4_over_v3": 0.8540254474319048,
+        "change_percent": -14.597455256809521
+      },
+      "front_deck_stress_p99_MPa": {
+        "v3": 0.06868782843471269,
+        "v4": 0.076356775549533,
+        "ratio_v4_over_v3": 1.1116492876479507,
+        "change_percent": 11.164928764795068
+      },
+      "pitch_direction_contact_separation_mm": {
+        "v3": 28.357717755092864,
+        "v4": 24.857439251371133,
+        "ratio_v4_over_v3": 0.8765669884314614,
+        "change_percent": -12.343301156853858
+      },
+      "outer_contact_normal_force_N": {
+        "v3": 18.623606880469683,
+        "v4": 21.040682955872725,
+        "ratio_v4_over_v3": 1.129785604416822,
+        "change_percent": 12.978560441682196
+      },
+      "inner_contact_normal_force_N": {
+        "v3": 21.573144939456885,
+        "v4": 23.9441637780063,
+        "ratio_v4_over_v3": 1.1099060357311588,
+        "change_percent": 10.990603573115877
+      },
+      "seat_contact_normal_force_N": {
+        "v3": 6.047449226816374,
+        "v4": 5.953017867050595,
+        "ratio_v4_over_v3": 0.9843849272273276,
+        "change_percent": -1.5615072772672378
+      }
+    },
+    "corner-2000g": {
+      "maximum_total_displacement_mm": {
+        "v3": 0.5995014705604411,
+        "v4": 0.8557438817963471,
+        "ratio_v4_over_v3": 1.427425825988982,
+        "change_percent": 42.7425825988982
+      },
+      "maximum_additional_displacement_mm": {
+        "v3": 0.5885497550226014,
+        "v4": 0.8391087664423817,
+        "ratio_v4_over_v3": 1.4257227350475379,
+        "change_percent": 42.57227350475379
+      },
+      "patch_weighted_total_vertical_displacement_mm": {
+        "v3": 0.39936799933883227,
+        "v4": 0.581715838069777,
+        "ratio_v4_over_v3": 1.4565910113800504,
+        "change_percent": 45.65910113800504
+      },
+      "patch_weighted_additional_vertical_displacement_mm": {
+        "v3": 0.3905905396367472,
+        "v4": 0.5685253086795596,
+        "ratio_v4_over_v3": 1.4555531969829412,
+        "change_percent": 45.55531969829411
+      },
+      "peak_element_von_mises_MPa": {
+        "v3": 1.7886043954416804,
+        "v4": 2.2209364298592535,
+        "ratio_v4_over_v3": 1.241714733296746,
+        "change_percent": 24.171473329674598
+      },
+      "front_deck_peak_von_mises_MPa": {
+        "v3": 0.6545504333170851,
+        "v4": 0.5604464846259981,
+        "ratio_v4_over_v3": 0.8562311719599763,
+        "change_percent": -14.376882804002367
+      },
+      "front_deck_stress_p99_MPa": {
+        "v3": 0.44105336284987345,
+        "v4": 0.4936276836403534,
+        "ratio_v4_over_v3": 1.1192017230086857,
+        "change_percent": 11.92017230086857
+      },
+      "pitch_direction_contact_separation_mm": {
+        "v3": 27.471668779337307,
+        "v4": 24.45152238117849,
+        "ratio_v4_over_v3": 0.8900632348759822,
+        "change_percent": -10.993676512401784
+      },
+      "outer_contact_normal_force_N": {
+        "v3": 98.42156007507484,
+        "v4": 110.01071109413066,
+        "ratio_v4_over_v3": 1.1177501251780173,
+        "change_percent": 11.77501251780173
+      },
+      "inner_contact_normal_force_N": {
+        "v3": 108.67931723517066,
+        "v4": 120.22241118613424,
+        "ratio_v4_over_v3": 1.1062124261048267,
+        "change_percent": 10.621242610482673
+      },
+      "seat_contact_normal_force_N": {
+        "v3": 21.03151910744612,
+        "v4": 20.93708743367584,
+        "ratio_v4_over_v3": 0.9955099927262578,
+        "change_percent": -0.4490007273742158
+      }
+    }
+  },
+  "stl_volume_cm3": {
+    "v3": 308.2731673467066,
+    "v4": 300.11008313425964
+  },
+  "ideal_solid_mass_g": {
+    "v3": 382.2587275099162,
+    "v4": 372.1365030864819
+  },
+  "voxel_mass_g": {
+    "v3": 386.10624000000007,
+    "v4": 375.39264
+  },
+  "gravity_m_s2": 9.80665,
+  "solid_model_volume_change_percent": -2.6480034842819022,
+  "validation": {
+    "checks": [
+      {
+        "version": "v3",
+        "case": "gravity-0g",
+        "compression_only": true,
+        "recomputed_force_error_N": 7.813308391573388e-10,
+        "moment_balance_error_Nm": 9.159308248605089e-11,
+        "nonlinear_residual": 1.9933518004416605e-08
+      },
+      {
+        "version": "v3",
+        "case": "front-300g",
+        "compression_only": true,
+        "recomputed_force_error_N": 7.81455264115194e-09,
+        "recomputed_moment_error_Nm": 1.326517181288784e-10,
+        "nonlinear_residual": 1.969671479642273e-08
+      },
+      {
+        "version": "v3",
+        "case": "front-2000g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.3502173057789742e-07,
+        "recomputed_moment_error_Nm": 1.562473715458875e-09,
+        "nonlinear_residual": 1.9751626836465566e-08
+      },
+      {
+        "version": "v3",
+        "case": "corner-300g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.7750374377105196e-08,
+        "recomputed_moment_error_Nm": 2.0760466955634485e-09,
+        "nonlinear_residual": 1.9765007103387218e-08
+      },
+      {
+        "version": "v3",
+        "case": "corner-2000g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.9019749157062106e-07,
+        "recomputed_moment_error_Nm": 1.3662858210590622e-08,
+        "nonlinear_residual": 1.9906851164697536e-08
+      },
+      {
+        "version": "v4",
+        "case": "gravity-0g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.4123691355629838e-09,
+        "moment_balance_error_Nm": 7.777374915645227e-12,
+        "nonlinear_residual": 1.9980092464269208e-08
+      },
+      {
+        "version": "v4",
+        "case": "front-300g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.1204166677167583e-08,
+        "recomputed_moment_error_Nm": 6.284846366539138e-11,
+        "nonlinear_residual": 1.9851834591628434e-08
+      },
+      {
+        "version": "v4",
+        "case": "front-2000g",
+        "compression_only": true,
+        "recomputed_force_error_N": 1.2087601888613092e-07,
+        "recomputed_moment_error_Nm": 1.0754743991279798e-09,
+        "nonlinear_residual": 1.982980372031569e-08
+      },
+      {
+        "version": "v4",
+        "case": "corner-300g",
+        "compression_only": true,
+        "recomputed_force_error_N": 7.316977458660193e-09,
+        "recomputed_moment_error_Nm": 2.0954234813017883e-09,
+        "nonlinear_residual": 2.000245890713996e-08
+      },
+      {
+        "version": "v4",
+        "case": "corner-2000g",
+        "compression_only": true,
+        "recomputed_force_error_N": 2.1756084975772034e-07,
+        "recomputed_moment_error_Nm": 7.131173442041501e-09,
+        "nonlinear_residual": 1.9721608761043956e-08
+      }
+    ],
+    "same_grid_mount_and_patch": true,
+    "v4_voxelization": {
+      "version": "v4",
+      "pitch_mm": 2.0,
+      "dims": [
+        90,
+        91,
+        39
+      ],
+      "origin_m": [
+        -0.09,
+        -0.032,
+        -0.066
+      ],
+      "grid_origin": [
+        -0.09,
+        -0.032,
+        -0.066
+      ],
+      "top_node_z_m": 0.011999999999999997,
+      "ordering": "np.meshgrid(xs,ys,zs,indexing='ij'), C flatten; Z fastest",
+      "active_elements": 37842,
+      "total_elements": 319410,
+      "stl_volume_cm3": 300.11008313425964,
+      "voxel_volume_cm3": 302.736,
+      "volume_error_percent": 0.8749845517738164,
+      "seconds": 1.3321809170302004,
+      "maximum_ray_hits": 8,
+      "ray_direction_normalized": [
+        0.9999681711196899,
+        0.007329866755753756,
+        0.0031336003448814154
+      ],
+      "hit_step_m": 1e-08,
+      "repeated_face_handling": "Count each triangle once; double step on float32 re-hit using cumulative double ray parameter",
+      "ray_length_m": 0.5,
+      "stl_sha256": "f4b72caa150caf6074195886c5f17ab97ba6aece4b9b1771673398fc90422076",
+      "reverse_ray_checked_candidates": 307800,
+      "direction_disagreement_cells": [],
+      "consensus_corrections": [],
+      "single_connected_component": true
+    },
+    "source_code_sha256": "f62d8428be7444acf38d8fcaef96f58e81425d069cb2136552440dcf3fd3d5d3"
+  },
+  "scope": "Direct comparison at the same 2 mm voxel resolution with the same validated small-displacement compression-only contact solver. Each design includes its own solid-model self-weight. User confirmed the 13 mm clip fits nicely; exactly zero clearance and a rigid wooden rail remain idealizations. No print-layer/infill/creep, wood flex, furniture-joint response, failure or load rating is computed.",
+  "accuracy": "V3 prior 2 to 1.25 mm check changed maximum front 2 kg movement by about 6.2%. V4 has not been independently mesh-refined; numerical ratios are preliminary and should not be presented as certified strength."
+}

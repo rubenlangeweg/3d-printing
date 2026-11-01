@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Leander Linea · Shelf &amp; organizer</title>
+  <style>
+    :root{--paper:#f6f2e9;--ink:#36372e;--muted:#747264;--line:#d9d3c5;--accent:#56624e}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:1180px;margin:auto;padding:68px 32px 30px}
+    header{max-width:720px;margin-bottom:38px}
+    .eyebrow{margin:0 0 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    h1{margin:0 0 18px;font:400 clamp(38px,5.5vw,64px)/1.08 Georgia,serif;letter-spacing:-.025em}
+    .intro{max-width:590px;margin:0;color:var(--muted)}
+    nav{display:flex;flex-wrap:wrap;gap:10px 25px;margin-top:23px}
+    a{color:var(--accent);text-underline-offset:5px;text-decoration-thickness:1px}
+    a:hover{color:var(--ink)}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:2px}
+    figure{margin:0}
+    video,.hero img{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#e9e3d8;border-radius:8px;object-fit:contain}
+    .hero{margin-bottom:44px}
+    figcaption{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:18px 0 0}
+    h2{font-size:18px;font-weight:550;letter-spacing:-.025em;line-height:1.4;margin:0 0 4px}
+    figcaption p{margin:0;color:var(--muted);font-size:13px}
+    .download{white-space:nowrap;font-size:13px;margin-top:2px}
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px}
+    footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:48px;padding-top:20px;font-size:12px;color:var(--muted)}
+    footer p{margin:0;max-width:700px}
+    @media(max-width:700px){main{padding:36px 20px 24px}.pair{grid-template-columns:1fr;gap:32px;margin-top:32px}figcaption{gap:12px}footer{margin-top:36px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Leander Linea accessories</p>
+      <h1>Shelf &amp; organizer</h1>
+      <p class="intro">Two small additions, mounted on the Leander Linea changing table. Soft corners, curved supports and a warm ivory finish.</p>
+      <nav aria-label="Project files">
+        <a href="models/shelf-v4.stl" download>Print the shelf</a>
+        <a href="models/organizer.stl" download>Print the organizer</a>
+        <a href="analysis/organizer/index.html">Explore the strength study</a>
+      </nav>
+    </header>
+
+    <figure class="hero">
+      <img src="renders/linea-hero.png" alt="Full Leander Linea changing table with the shelf and organizer mounted on its wooden edge">
+      <figcaption><div><h2>At the changing table</h2><p>The shelf and organizer in place on the Linea.</p></div></figcaption>
+    </figure>
+
+    <figure>
+      <video controls playsinline preload="metadata" poster="renders/combination-poster.png" aria-label="Shelf and organizer together on the Leander Linea table">
+        <source src="animations/combination.mp4" type="video/mp4">
+        <a href="animations/combination.mp4">Download the combination video</a>.
+      </video>
+      <figcaption>
+        <div><h2>Together on the Linea</h2><p>Both accessories mounted on the table. 8 seconds, no audio.</p></div>
+        <a class="download" href="animations/combination.mp4" download>Download MP4</a>
+      </figcaption>
+    </figure>
+
+    <section class="pair" aria-label="Individual product animations">
+      <figure>
+        <video controls playsinline preload="metadata" poster="renders/shelf-orbit-poster.png" aria-label="Curved-rib shelf V4 mounted on the Leander Linea table">
+          <source src="animations/shelf-v4.mp4" type="video/mp4">
+          <a href="animations/shelf-v4.mp4">Download the shelf video</a>.
+        </video>
+        <figcaption>
+          <div><h2>Shelf V4</h2><p>180 × 150 mm, mounted on the Linea. 6 seconds, no audio.</p></div>
+          <a class="download" href="animations/shelf-v4.mp4" download>Download MP4</a>
+        </figcaption>
+      </figure>
+      <figure>
+        <video controls playsinline preload="metadata" poster="renders/organizer-orbit-poster.png" aria-label="Original organizer mounted on the Leander Linea table">
+          <source src="animations/organizer.mp4" type="video/mp4">
+          <a href="animations/organizer.mp4">Download the organizer video</a>.
+        </video>
+        <figcaption>
+          <div><h2>Organizer</h2><p>140 × 115 × 110 mm, mounted on the Linea. 6 seconds, no audio.</p></div>
+          <a class="download" href="animations/organizer.mp4" download>Download MP4</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      <p>Independent accessories for the Linea. Table model by <a href="https://3dsky.org/3dmodels/show/pielienal_nyi_stolik_i_komod_ot_leander">Shopot on 3dsky</a>. Print and load testing of the shelf revision is still pending.</p>
+      <div><a href="README.md">Project notes</a> · <a href="rendering/README.md">Render these scenes</a></div>
+    </footer>
+  </main>
+</body>
+</html>

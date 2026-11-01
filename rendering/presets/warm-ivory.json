@@ -1,0 +1,9 @@
+{
+  "name": "Warm ivory",
+  "description": "Soft ivory plastic and a warm cream ground, based on the Leander product views.",
+  "color_space": "Blender linear RGB input values",
+  "product": {"base_color": [0.78, 0.735, 0.645, 1.0], "roughness": 0.52, "specular_ior_level": 0.28},
+  "floor": {"base_color": [0.72, 0.665, 0.575, 1.0], "roughness": 0.82},
+  "world": {"color": [0.90, 0.855, 0.76, 1.0], "strength": 0.22},
+  "view_transform": "AgX"
+}

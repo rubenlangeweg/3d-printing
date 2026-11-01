@@ -1,0 +1,1101 @@
+{
+  "title": "Original Leander organizer \u2014 PLA fixed-lip screening study",
+  "status": "Preliminary linear-elastic screen; not an actual rail-contact or load-capacity test",
+  "model_sha256": "50074256d1cd19a7dc24c63b2539be8eb138bf3d6efa253f5f6cd4d318084d19",
+  "display_pitch_mm": 1.0,
+  "material_reference": {
+    "title": "Bambu PLA Basic Technical Data Sheet V3.0",
+    "url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+    "youngs_modulus_GPa": 2.06,
+    "poisson_ratio_assumed": 0.35,
+    "density_kg_m3": 1240,
+    "note": "One uniform isotropic sensitivity case using published Z modulus; source specimens used 100% infill and were annealed/dried at 55\u00b0C for 8 h. Not measured properties for the eventual print."
+  },
+  "source_orientation": "Actual saved mounted-scene rigid rotation 26 degrees; original model unchanged",
+  "assumptions": [
+    "Fully fixed lip suppresses contact motion and some hook bending; not directly comparable to the shelf contact model",
+    "Homogeneous isotropic PLA reference, no print layers, infill, creep, fracture or capacity rating",
+    "Thin 2.3 mm walls are only about two cells thick; stress peaks are not mesh-converged",
+    "Reference mounting rotation26 degrees is taken from the saved mounted scene; table and wood flexibility are absent",
+    "Distributed imposed gravity-direction floor traction, including floor shear; assumes low contents remain on floor. No sliding, loose contents or tall-bottle moment is modelled.",
+    "Fully fixed lip constraints highlight an artificial fixture, not actual wood pressure. Low floor contents are near the mounting line after tilt; tall or sliding contents create different moments.",
+    "Self-weight included. Scalar von Mises stresses are recovered from complete vector solutions, not added or force-rescaled with gravity."
+  ],
+  "solver": "VoxelSim FEA 2.5.6 active Hex8, fully integrated linear elasticity, Jacobi-PCG CPU, 4 threads",
+  "scenarios": [
+    {
+      "true_relative_residual": 1.0222857249591978e-07,
+      "force_balance_error_N": 5.6887183951465245e-09,
+      "moment_balance_error_Nm": 2.560565034384456e-10,
+      "reaction_native_N": [
+        1.0923984841704204e-09,
+        2.184406568244542,
+        4.478697170984355
+      ],
+      "applied_force_native_N": [
+        0.0,
+        -2.184406567297141,
+        -4.478697176486229
+      ],
+      "applied_moment_native_Nm": [
+        0.07735898461559652,
+        -9.874428231460641e-05,
+        4.816080441942424e-05
+      ],
+      "strain_energy_J": 2.922262078938368e-05,
+      "external_work_J": 2.9222620789496664e-05,
+      "title": "Original organizer \u2014 idealized fully fixed top lip",
+      "pitch_mm": 1.0,
+      "support_strip": "full",
+      "support_model": "All three displacement components fixed on exposed underside of top-lip strip; not wood bearing/contact",
+      "support_node_bounds_native_mm": [
+        [
+          -63.77000000000001,
+          44.17,
+          107.19
+        ],
+        [
+          64.22999999999999,
+          54.169999999999995,
+          107.19
+        ]
+      ],
+      "fixed_nodes": 1419,
+      "active_elements": 167843,
+      "active_dofs": 705963,
+      "voxel_volume_cm3": 167.84300000000002,
+      "solid_stl_volume_cm3": 168.86266014099533,
+      "body_mass_g": 208.12532000000002,
+      "youngs_modulus_GPa": 2.06,
+      "poisson_ratio_assumed": 0.35,
+      "density_kg_m3": 1240.0,
+      "gravity_native": [
+        0.0,
+        -0.43837114678907746,
+        -0.898794046299167
+      ],
+      "mount_rotation_native_to_world": [
+        [
+          0.0,
+          -0.898794046299167,
+          0.43837114678907746
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.43837114678907746,
+          0.898794046299167
+        ]
+      ],
+      "mount_anchor_native_mm": [
+        0.0,
+        48.7,
+        107.5
+      ],
+      "floor_patch_native_mm": {
+        "x": [
+          -50,
+          50
+        ],
+        "y": [
+          -40,
+          20
+        ],
+        "area_mm2": 6000.000000000002,
+        "nodal_centroid": [
+          5.014435047745458e-15,
+          -9.999999999999998,
+          4.189999999999881
+        ]
+      },
+      "contents_load_model": "Distributed imposed gravity-direction floor traction, including floor shear; assumes low contents remain on floor. No sliding, loose contents or tall-bottle moment is modelled.",
+      "self_weight_included": true,
+      "original_model_sha256": "50074256d1cd19a7dc24c63b2539be8eb138bf3d6efa253f5f6cd4d318084d19",
+      "limitations": [
+        "Fully fixed lip suppresses contact motion and some hook bending; not directly comparable to the shelf contact model",
+        "Homogeneous isotropic PLA reference, no print layers, infill, creep, fracture or capacity rating",
+        "Thin 2.3 mm walls are only about two cells thick; stress peaks are not mesh-converged",
+        "Reference mounting rotation26 degrees is taken from the saved mounted scene; table and wood flexibility are absent"
+      ],
+      "added_contents_mass_g": 300,
+      "maximum_total_displacement_mm": 0.14979992456400743,
+      "maximum_additional_displacement_mm": 0.020662096186867936,
+      "maximum_downward_total_displacement_mm": 0.10002845513136686,
+      "patch_weighted_total_downward_displacement_mm": 0.008352149442357806,
+      "peak_element_von_mises_MPa": 0.47586566533634417,
+      "contents_resultant_native_N": [
+        0.0,
+        -1.2896857219977318,
+        -2.644247590241918
+      ],
+      "contents_moment_native_Nm": [
+        0.03184625907758973,
+        6.453544025130514e-18,
+        -3.0851057521369754e-18
+      ],
+      "method": "Linear superposition of independently solved gravity-only and1N floor-load vector fields; stresses recovered from combined displacement, not added scalar von Mises values",
+      "applied_force_world_N": [
+        6.199707414111799e-12,
+        0.0,
+        -4.983007169362352
+      ],
+      "applied_moment_about_mount_anchor_world_Nm": [
+        0.00010986308011407985,
+        0.06064783112603324,
+        3.867891250342037e-17
+      ],
+      "contents_centroid_relative_to_mount_world_mm": [
+        7.471087342981457,
+        5.014435047745458e-15,
+        -118.5867992396859
+      ],
+      "contents_moment_about_mount_anchor_world_Nm": [
+        -1.47524428382919e-17,
+        0.02197990160761476,
+        7.703719777548943e-34
+      ]
+    },
+    {
+      "true_relative_residual": 9.963102816196039e-08,
+      "force_balance_error_N": 2.069243713185045e-08,
+      "moment_balance_error_Nm": 1.345586507170717e-09,
+      "reaction_native_N": [
+        4.112439472292451e-09,
+        9.492625653828014,
+        19.46276683485984
+      ],
+      "applied_force_native_N": [
+        0.0,
+        -9.492625658584403,
+        -19.462766854573832
+      ],
+      "applied_moment_native_Nm": [
+        0.2578211193885999,
+        -9.874428231464176e-05,
+        4.8160804419433835e-05
+      ],
+      "strain_energy_J": 0.00045970304504911407,
+      "external_work_J": 0.0004597030450574984,
+      "title": "Original organizer \u2014 idealized fully fixed top lip",
+      "pitch_mm": 1.0,
+      "support_strip": "full",
+      "support_model": "All three displacement components fixed on exposed underside of top-lip strip; not wood bearing/contact",
+      "support_node_bounds_native_mm": [
+        [
+          -63.77000000000001,
+          44.17,
+          107.19
+        ],
+        [
+          64.22999999999999,
+          54.169999999999995,
+          107.19
+        ]
+      ],
+      "fixed_nodes": 1419,
+      "active_elements": 167843,
+      "active_dofs": 705963,
+      "voxel_volume_cm3": 167.84300000000002,
+      "solid_stl_volume_cm3": 168.86266014099533,
+      "body_mass_g": 208.12532000000002,
+      "youngs_modulus_GPa": 2.06,
+      "poisson_ratio_assumed": 0.35,
+      "density_kg_m3": 1240.0,
+      "gravity_native": [
+        0.0,
+        -0.43837114678907746,
+        -0.898794046299167
+      ],
+      "mount_rotation_native_to_world": [
+        [
+          0.0,
+          -0.898794046299167,
+          0.43837114678907746
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.43837114678907746,
+          0.898794046299167
+        ]
+      ],
+      "mount_anchor_native_mm": [
+        0.0,
+        48.7,
+        107.5
+      ],
+      "floor_patch_native_mm": {
+        "x": [
+          -50,
+          50
+        ],
+        "y": [
+          -40,
+          20
+        ],
+        "area_mm2": 6000.000000000002,
+        "nodal_centroid": [
+          5.014435047745458e-15,
+          -9.999999999999998,
+          4.189999999999881
+        ]
+      },
+      "contents_load_model": "Distributed imposed gravity-direction floor traction, including floor shear; assumes low contents remain on floor. No sliding, loose contents or tall-bottle moment is modelled.",
+      "self_weight_included": true,
+      "original_model_sha256": "50074256d1cd19a7dc24c63b2539be8eb138bf3d6efa253f5f6cd4d318084d19",
+      "limitations": [
+        "Fully fixed lip suppresses contact motion and some hook bending; not directly comparable to the shelf contact model",
+        "Homogeneous isotropic PLA reference, no print layers, infill, creep, fracture or capacity rating",
+        "Thin 2.3 mm walls are only about two cells thick; stress peaks are not mesh-converged",
+        "Reference mounting rotation26 degrees is taken from the saved mounted scene; table and wood flexibility are absent"
+      ],
+      "added_contents_mass_g": 2000,
+      "maximum_total_displacement_mm": 0.25036026814479806,
+      "maximum_additional_displacement_mm": 0.1377473079124529,
+      "maximum_downward_total_displacement_mm": 0.16850719341169282,
+      "patch_weighted_total_downward_displacement_mm": 0.04329112914454349,
+      "peak_element_von_mises_MPa": 0.9632780751110972,
+      "contents_resultant_native_N": [
+        0.0,
+        -8.597904813318213,
+        -17.628317268279453
+      ],
+      "contents_moment_native_Nm": [
+        0.21230839385059613,
+        -2.944286524655948e-18,
+        -2.5526184898455595e-17
+      ],
+      "method": "Linear superposition of independently solved gravity-only and1N floor-load vector fields; stresses recovered from combined displacement, not added scalar von Mises values",
+      "applied_force_world_N": [
+        -4.560618549476203e-11,
+        0.0,
+        -21.654312169392796
+      ],
+      "applied_moment_about_mount_anchor_world_Nm": [
+        0.00010986308011411582,
+        0.1852006069085223,
+        3.181455749887152e-17
+      ],
+      "contents_centroid_relative_to_mount_world_mm": [
+        7.471087342981457,
+        5.014435047745458e-15,
+        -118.5867992396859
+      ],
+      "contents_moment_about_mount_anchor_world_Nm": [
+        -9.834961892194601e-17,
+        0.14653267738409836,
+        0.0
+      ]
+    }
+  ],
+  "numerical_verification": [
+    {
+      "pitch_mm": 1.25,
+      "voxelization": {
+        "version": "organizer",
+        "reverse_ray_sample_count": 906752,
+        "reverse_ray_disagreements": 8,
+        "majority_ray_corrections": [
+          {
+            "index": 59619,
+            "center_mm": [
+              -62.83750000000002,
+              -52.91250000000001,
+              48.362500000000004
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 353957,
+            "center_mm": [
+              -20.33750000000001,
+              39.5875,
+              95.8625
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 396265,
+            "center_mm": [
+              -14.08750000000001,
+              39.5875,
+              105.8625
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 412844,
+            "center_mm": [
+              -11.587500000000015,
+              35.83749999999999,
+              17.1125
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 575182,
+            "center_mm": [
+              12.162499999999993,
+              57.0875,
+              102.11250000000001
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 664441,
+            "center_mm": [
+              25.91249999999999,
+              4.587499999999994,
+              75.8625
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 712625,
+            "center_mm": [
+              33.41249999999999,
+              -30.412500000000005,
+              5.8625
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 861344,
+            "center_mm": [
+              54.6625,
+              37.0875,
+              54.612500000000004
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          }
+        ],
+        "pitch_mm": 1.25,
+        "dims": [
+          115,
+          94,
+          90
+        ],
+        "origin_m": [
+          -0.07221250000000001,
+          -0.058537500000000006,
+          -0.0010125
+        ],
+        "grid_origin": [
+          -0.07221250000000001,
+          -0.058537500000000006,
+          -0.0010125
+        ],
+        "top_node_z_m": 0.1114875,
+        "ordering": "np.meshgrid(xs,ys,zs,indexing='ij'), C flatten; Z fastest",
+        "active_elements": 85139,
+        "total_elements": 972900,
+        "stl_volume_cm3": 168.8626601409972,
+        "voxel_volume_cm3": 166.28710937500003,
+        "volume_error_percent": -1.5252340356634475,
+        "seconds": 10.766124541987665,
+        "maximum_ray_hits": 7,
+        "ray_direction_normalized": [
+          0.9999681711196899,
+          0.007329866755753756,
+          0.0031336003448814154
+        ],
+        "hit_step_m": 1e-08,
+        "repeated_face_handling": "Count each triangle once; double step on float32 re-hit using cumulative double ray parameter",
+        "ray_length_m": 0.5,
+        "stl_sha256": "50074256d1cd19a7dc24c63b2539be8eb138bf3d6efa253f5f6cd4d318084d19"
+      },
+      "basis_solutions": {
+        "gravity": {
+          "true_relative_residual": 1.4834405035327644e-07,
+          "force_balance_error_N": 2.145743854898666e-09,
+          "moment_balance_error_Nm": 1.0000480596556143e-10,
+          "reaction_native_N": [
+            1.8994909811720362e-10,
+            0.8864268582042515,
+            1.8174443893882277
+          ],
+          "applied_force_native_N": [
+            0.0,
+            -0.8864268576135743,
+            -1.8174443914423057
+          ],
+          "applied_moment_native_Nm": [
+            0.045056953610873626,
+            0.00014348965649804403,
+            -6.998458159621292e-05
+          ],
+          "strain_energy_J": 1.4552283457259312e-05,
+          "external_work_J": 1.455228345712794e-05,
+          "iterations": 16077,
+          "seconds": 137.8903670310974
+        },
+        "floor-unit": {
+          "true_relative_residual": 9.992885874624723e-08,
+          "force_balance_error_N": 1.999508860651808e-09,
+          "moment_balance_error_Nm": 2.9012433332623626e-11,
+          "reaction_native_N": [
+            -4.58776551470752e-10,
+            0.43837114627174334,
+            0.8987940444229519
+          ],
+          "applied_force_native_N": [
+            0.0,
+            -0.4383711467890763,
+            -0.8987940462990985
+          ],
+          "applied_moment_native_Nm": [
+            0.01073594541081297,
+            2.1870390698106035e-18,
+            -1.0631322279225537e-18
+          ],
+          "strain_energy_J": 1.1394016439025204e-06,
+          "external_work_J": 1.139401643900647e-06,
+          "iterations": 15889,
+          "seconds": 137.27291703224182
+        }
+      }
+    },
+    {
+      "pitch_mm": 1.0,
+      "voxelization": {
+        "version": "organizer",
+        "reverse_ray_sample_count": 1771000,
+        "reverse_ray_disagreements": 40,
+        "majority_ray_corrections": [
+          {
+            "index": 24167,
+            "center_mm": [
+              -69.27000000000001,
+              38.669999999999995,
+              86.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 40080,
+            "center_mm": [
+              -67.27000000000001,
+              -55.330000000000005,
+              95.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 156457,
+            "center_mm": [
+              -59.27000000000002,
+              39.669999999999995,
+              104.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 225153,
+            "center_mm": [
+              -53.27000000000001,
+              -54.330000000000005,
+              32.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 235697,
+            "center_mm": [
+              -53.27000000000001,
+              39.669999999999995,
+              48.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 248452,
+            "center_mm": [
+              -52.27000000000001,
+              35.669999999999995,
+              35.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 283992,
+            "center_mm": [
+              -49.27000000000001,
+              -1.3300000000000047,
+              71.68999999999998
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 327728,
+            "center_mm": [
+              -46.27000000000001,
+              35.669999999999995,
+              15.690000000000003
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 463033,
+            "center_mm": [
+              -35.27000000000001,
+              -54.330000000000005,
+              24.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 476505,
+            "center_mm": [
+              -34.27000000000002,
+              -52.330000000000005,
+              56.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 486672,
+            "center_mm": [
+              -34.27000000000002,
+              38.669999999999995,
+              31.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 539401,
+            "center_mm": [
+              -30.270000000000014,
+              37.669999999999995,
+              8.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 564222,
+            "center_mm": [
+              -28.27000000000001,
+              22.669999999999995,
+              77.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 568816,
+            "center_mm": [
+              -27.27000000000001,
+              -54.330000000000005,
+              79.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 645126,
+            "center_mm": [
+              -22.27000000000001,
+              37.669999999999995,
+              5.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 648020,
+            "center_mm": [
+              -21.27000000000001,
+              -55.330000000000005,
+              99.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 870064,
+            "center_mm": [
+              -5.270000000000011,
+              39.669999999999995,
+              47.690000000000005
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 909718,
+            "center_mm": [
+              -2.270000000000008,
+              39.669999999999995,
+              53.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 943466,
+            "center_mm": [
+              0.7299999999999945,
+              -13.330000000000009,
+              89.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 966295,
+            "center_mm": [
+              2.7299999999999827,
+              -45.33000000000001,
+              70.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 967162,
+            "center_mm": [
+              2.7299999999999827,
+              -37.330000000000005,
+              41.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1150509,
+            "center_mm": [
+              16.729999999999993,
+              -52.330000000000005,
+              44.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1173779,
+            "center_mm": [
+              17.729999999999983,
+              37.669999999999995,
+              18.689999999999998
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1176526,
+            "center_mm": [
+              18.729999999999983,
+              -56.330000000000005,
+              77.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1239763,
+            "center_mm": [
+              22.729999999999986,
+              36.669999999999995,
+              34.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1253497,
+            "center_mm": [
+              23.729999999999986,
+              40.669999999999995,
+              104.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1282480,
+            "center_mm": [
+              26.72999999999999,
+              -54.330000000000005,
+              79.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1295788,
+            "center_mm": [
+              27.72999999999999,
+              -53.33000000000001,
+              59.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1467579,
+            "center_mm": [
+              40.72999999999999,
+              -53.33000000000001,
+              42.690000000000005
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1517399,
+            "center_mm": [
+              43.72999999999999,
+              37.669999999999995,
+              22.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1544137,
+            "center_mm": [
+              45.72999999999999,
+              39.669999999999995,
+              104.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1560181,
+            "center_mm": [
+              47.73,
+              -52.330000000000005,
+              20.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1577444,
+            "center_mm": [
+              48.73,
+              -16.330000000000005,
+              35.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1612879,
+            "center_mm": [
+              51.72999999999998,
+              -54.330000000000005,
+              78.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1616198,
+            "center_mm": [
+              51.72999999999998,
+              -24.330000000000005,
+              37.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1678943,
+            "center_mm": [
+              56.72999999999999,
+              -54.330000000000005,
+              62.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1702687,
+            "center_mm": [
+              57.72999999999999,
+              39.669999999999995,
+              62.69
+            ],
+            "first": true,
+            "reverse": false,
+            "third": true,
+            "final": true
+          },
+          {
+            "index": 1742110,
+            "center_mm": [
+              60.72999999999999,
+              37.669999999999995,
+              61.690000000000005
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1784579,
+            "center_mm": [
+              64.72999999999999,
+              -55.330000000000005,
+              82.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          },
+          {
+            "index": 1794994,
+            "center_mm": [
+              64.72999999999999,
+              37.669999999999995,
+              81.69
+            ],
+            "first": false,
+            "reverse": true,
+            "third": false,
+            "final": false
+          }
+        ],
+        "pitch_mm": 1.0,
+        "dims": [
+          142,
+          118,
+          112
+        ],
+        "origin_m": [
+          -0.07077000000000001,
+          -0.05883000000000001,
+          -0.00081
+        ],
+        "grid_origin": [
+          -0.07077000000000001,
+          -0.05883000000000001,
+          -0.00081
+        ],
+        "top_node_z_m": 0.11119,
+        "ordering": "np.meshgrid(xs,ys,zs,indexing='ij'), C flatten; Z fastest",
+        "active_elements": 167843,
+        "total_elements": 1876672,
+        "stl_volume_cm3": 168.8626601409972,
+        "voxel_volume_cm3": 167.84300000000002,
+        "volume_error_percent": -0.6038399135402717,
+        "seconds": 20.449494000000414,
+        "maximum_ray_hits": 5,
+        "ray_direction_normalized": [
+          0.9999681711196899,
+          0.007329866755753756,
+          0.0031336003448814154
+        ],
+        "hit_step_m": 1e-08,
+        "repeated_face_handling": "Count each triangle once; double step on float32 re-hit using cumulative double ray parameter",
+        "ray_length_m": 0.5,
+        "stl_sha256": "50074256d1cd19a7dc24c63b2539be8eb138bf3d6efa253f5f6cd4d318084d19"
+      },
+      "basis_solutions": {
+        "gravity": {
+          "true_relative_residual": 2.5622047010328647e-07,
+          "force_balance_error_N": 3.6423687761965144e-09,
+          "moment_balance_error_Nm": 6.594216409866135e-11,
+          "reaction_native_N": [
+            5.594498822536487e-10,
+            0.8947208472591983,
+            1.834449583241646
+          ],
+          "applied_force_native_N": [
+            0.0,
+            -0.894720845300197,
+            -1.8344495862609473
+          ],
+          "applied_moment_native_Nm": [
+            0.04551272553799412,
+            -9.874428231461205e-05,
+            4.8160804419429986e-05
+          ],
+          "strain_energy_J": 1.3720371559354655e-05,
+          "external_work_J": 1.3720371559221073e-05,
+          "iterations": 20585,
+          "seconds": 352.28199005126953
+        },
+        "floor-unit": {
+          "true_relative_residual": 9.974253251474645e-08,
+          "force_balance_error_N": 9.341970380614772e-10,
+          "moment_balance_error_Nm": 6.53909812876743e-11,
+          "reaction_native_N": [
+            1.8115200745710824e-10,
+            0.4383711464449527,
+            0.8987940454496764
+          ],
+          "applied_force_native_N": [
+            0.0,
+            -0.43837114678914074,
+            -0.8987940462990542
+          ],
+          "applied_moment_native_Nm": [
+            0.01082471556803798,
+            3.2100431118569847e-18,
+            -1.6212210610447308e-18
+          ],
+          "strain_energy_J": 1.0478777666610677e-06,
+          "external_work_J": 1.0478777666831022e-06,
+          "iterations": 19888,
+          "seconds": 346.68935799598694
+        }
+      }
+    }
+  ],
+  "mesh_sensitivity": [
+    {
+      "added_contents_mass_g": 300,
+      "coarse_pitch_mm": 1.25,
+      "fine_pitch_mm": 1.0,
+      "maximum_total_displacement_coarse_mm": 0.15881031897848877,
+      "maximum_total_displacement_fine_mm": 0.14979992456400743,
+      "maximum_total_displacement_change_percent": -5.673683216832925,
+      "peak_stress_coarse_MPa": 0.4356698231449428,
+      "peak_stress_fine_MPa": 0.47586566533634417,
+      "interpretation": "Single refinement and voxel/support geometry changes; not proof of mesh-converged stress or real printed strength"
+    },
+    {
+      "added_contents_mass_g": 2000,
+      "coarse_pitch_mm": 1.25,
+      "fine_pitch_mm": 1.0,
+      "maximum_total_displacement_coarse_mm": 0.2586170560171592,
+      "maximum_total_displacement_fine_mm": 0.25036026814479806,
+      "maximum_total_displacement_change_percent": -3.192669501199985,
+      "peak_stress_coarse_MPa": 0.861432210668244,
+      "peak_stress_fine_MPa": 0.9632780751110972,
+      "interpretation": "Single refinement and voxel/support geometry changes; not proof of mesh-converged stress or real printed strength"
+    }
+  ],
+  "independent_voxel_checks": [
+    {
+      "cache": "organizer-1.25mm.json",
+      "disagreements_rechecked": 8,
+      "all_match_independent_trimesh_contains": true
+    },
+    {
+      "cache": "organizer-1mm.json",
+      "disagreements_rechecked": 40,
+      "all_match_independent_trimesh_contains": true
+    }
+  ]
+}

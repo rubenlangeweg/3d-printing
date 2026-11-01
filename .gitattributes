@@ -1,0 +1,7 @@
+* text=auto
+*.stl binary
+*.blend binary
+*.png binary
+*.jpg binary
+*.mp4 binary
+**/analysis/**/data.js -diff

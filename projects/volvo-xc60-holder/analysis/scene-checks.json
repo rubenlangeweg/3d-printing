@@ -46,7 +46,7 @@
     "external_images": [],
     "render_output": "//../generated/orbit-frames/",
     "orbit_degrees": 360,
-    "frames": 96,
+    "frames": 288,
     "part_colour": "black"
   }
 }

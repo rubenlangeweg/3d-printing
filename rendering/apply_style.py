@@ -33,7 +33,8 @@ def apply_material(name, settings):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--preset', choices=['warm-ivory', 'neutral-technical'], default='warm-ivory')
+    presets = sorted(p.stem for p in (Path(__file__).resolve().parent / 'presets').glob('*.json'))
+    parser.add_argument('--preset', choices=presets, default='warm-ivory')
     parser.add_argument('--material', action='append', required=True, help='Exact product-material name; repeat for multiple materials.')
     parser.add_argument('--floor-material', action='append', default=[])
     parser.add_argument('--world', action='store_true')

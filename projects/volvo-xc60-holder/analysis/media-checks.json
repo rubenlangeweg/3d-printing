@@ -1,0 +1,83 @@
+{
+  "status": "Standalone technical previews. Mounted-product requirement remains outstanding.",
+  "host_product": {
+    "required": "Accurate 2022 Volvo XC60 vent/dashboard model",
+    "present": false,
+    "excluded": "Earlier approximate vent reconstruction, rejected as unsuitable"
+  },
+  "shared_preset": "rendering/presets/black.json",
+  "shared_style_command_verified": true,
+  "files": {
+    "animations/assembly.gif": {
+      "sha256": "a8c2133b9afac257e3508d6fc060fa56fa89782fb42025e22b02990077e85538",
+      "bytes": 584879,
+      "dimensions": [
+        600,
+        600
+      ]
+    },
+    "animations/assembly.mp4": {
+      "sha256": "d5b6c0c94207c513c94d8a0f251bd08713dd647cd0e51c394bcb124009c87692",
+      "bytes": 1315578,
+      "decoded_frame_count": 144,
+      "duration_seconds": 6,
+      "nominal_fps": 24,
+      "width": 800,
+      "height": 800,
+      "visual_review": "First, middle and last decoded frames checked: framing, orientation, black finish and motion endpoints.",
+      "reviewed_frame_numbers": [
+        1,
+        73,
+        144
+      ]
+    },
+    "animations/orbit.gif": {
+      "sha256": "0188973b6366897bdb6de55ff9d3f3acdb5e525abf36af8bd77ae0ae55a9cd2b",
+      "bytes": 7618009,
+      "dimensions": [
+        480,
+        480
+      ]
+    },
+    "animations/orbit.mp4": {
+      "sha256": "680ac2352cca5608c236634f09b767780dfb2b185b153715a53097040948defd",
+      "bytes": 9993248,
+      "decoded_frame_count": 288,
+      "duration_seconds": 12,
+      "nominal_fps": 24,
+      "width": 800,
+      "height": 800,
+      "visual_review": "First, middle and last decoded frames checked: framing, orientation, black finish and motion endpoints.",
+      "reviewed_frame_numbers": [
+        1,
+        145,
+        288
+      ]
+    },
+    "renders/assembled.png": {
+      "sha256": "7637152c0665ae130144f98cc3d8c3e79afcacb95862c32ead53f12212285ccb",
+      "bytes": 1234519,
+      "dimensions": [
+        1400,
+        1100
+      ]
+    },
+    "renders/exploded.png": {
+      "sha256": "cd4af2a206fca46691cf8eaf04c33e5ba07a9d253c6757f34664570c57e8063e",
+      "bytes": 1612181,
+      "dimensions": [
+        1400,
+        1400
+      ]
+    },
+    "renders/rear-roots.png": {
+      "sha256": "bc7cead6b6b21cdfffa454e27d49635aab410144fa60e6ecb8e8285483fc3581",
+      "bytes": 1265512,
+      "dimensions": [
+        1400,
+        1100
+      ]
+    }
+  },
+  "accepted_print_file_hashes_verified": true
+}

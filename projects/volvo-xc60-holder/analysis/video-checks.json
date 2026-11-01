@@ -1,18 +1,38 @@
 {
-  "audio_track_count": 0,
-  "decoded_frame_count": 144,
-  "duration_seconds": 6,
-  "file_bytes": 351381,
-  "height": 1080,
-  "nominal_fps": 24,
-  "output": "animations/assembly.mp4",
-  "width": 1080,
-  "gif": {
-    "size": [
-      600,
-      600
-    ],
-    "duration_ms": 6000,
-    "stored_frames": 44
+  "assembly": {
+    "audio_track_count": 0,
+    "decoded_frame_count": 144,
+    "duration_seconds": 6,
+    "file_bytes": 1315578,
+    "height": 800,
+    "nominal_fps": 24,
+    "output": "animations/assembly.mp4",
+    "width": 800,
+    "gif": {
+      "size": [
+        600,
+        600
+      ],
+      "duration_ms": 6000,
+      "stored_frames": 44
+    }
+  },
+  "orbit": {
+    "audio_track_count": 0,
+    "decoded_frame_count": 96,
+    "duration_seconds": 4,
+    "file_bytes": 2038221,
+    "height": 800,
+    "nominal_fps": 24,
+    "output": "animations/orbit.mp4",
+    "width": 800,
+    "gif": {
+      "size": [
+        600,
+        600
+      ],
+      "duration_ms": 4000,
+      "stored_frames": 48
+    }
   }
 }

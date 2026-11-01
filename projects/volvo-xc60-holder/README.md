@@ -21,13 +21,21 @@ The base is approximately **56.57 × 50.38 × 28.00 mm**. The ball diameter is *
 
 The saved profile uses a Bambu X1 Carbon, PETG-CF, a 0.4 mm nozzle, 0.2 mm layers, six walls and 25% infill. Both parts were sliced without supports. The base has an approximately 12 mm bridge across its recessed slide. The recorded slicer estimate is **55 minutes and 25.7 g** for both parts. Check the preview and material settings for your printer.
 
+## Rotation view
+
+Both parts are shown in black, matching the intended print colour.
+
+![Rotation around the black holder](animations/orbit.gif)
+
+[Download the four-second rotation video](animations/orbit.mp4).
+
 ## Assembly
 
 Slide the ball module down into the dovetail from the open top until it reaches the stop. Check the vent clearance and phone position before gluing the module in place. The design uses glue rather than a retaining screw; the animation shows the dry assembly motion.
 
 ![Ball module sliding into the base](animations/assembly.gif)
 
-[Download the six-second assembly video](animations/assembly.mp4). The green colour distinguishes the separate module in the renders; both parts can be printed in the same material.
+[Download the six-second assembly video](animations/assembly.mp4). Both parts use the same black finish.
 
 ![Exploded assembly](renders/exploded.png)
 

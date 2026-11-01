@@ -6,7 +6,8 @@
     ],
     "linked_libraries": [],
     "external_images": [],
-    "render_output": "//"
+    "render_output": "//",
+    "part_colour": "black"
   },
   "rendering/assembly.blend": {
     "objects": [
@@ -27,6 +28,25 @@
       "66": 21.0,
       "108": 0.0,
       "144": 0.0
-    }
+    },
+    "part_colour": "black"
+  },
+  "rendering/orbit.blend": {
+    "objects": [
+      "Ball module - 17 mm",
+      "Base - rounded roots - no ribs",
+      "Camera",
+      "Camera orbit",
+      "Fill softbox",
+      "Key softbox",
+      "Rim softbox",
+      "Studio ground"
+    ],
+    "linked_libraries": [],
+    "external_images": [],
+    "render_output": "//../generated/orbit-frames/",
+    "orbit_degrees": 360,
+    "frames": 96,
+    "part_colour": "black"
   }
 }

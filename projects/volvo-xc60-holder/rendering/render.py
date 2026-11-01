@@ -1,6 +1,6 @@
 """Blender 5: render accepted geometry. Paths resolve from this script.
 blender -b --python projects/volvo-xc60-holder/rendering/render.py -- preview
-Modes: preview, stills, animation. Frames remain in generated/frames/.
+Modes: preview, stills, animation, orbit. Frames remain in generated/.
 """
 import bpy, math, sys, shutil
 from pathlib import Path
@@ -25,8 +25,9 @@ def material(name,color,roughness):
     shader.inputs['Roughness'].default_value=roughness
     shader.inputs['Specular IOR Level'].default_value=.28
     return m
-base.data.materials.append(material('Graphite satin plastic',(.065,.085,.095),.38))
-ball.data.materials.append(material('Sage satin plastic',(.30,.43,.33),.4))
+black=material('Black satin plastic',(.004,.004,.004),.38)
+base.data.materials.append(black)
+ball.data.materials.append(black)
 for p in ball.data.polygons:
     # Smooth the ball; keep its flat underside, neck and dovetail edges crisp.
     if p.center.z>.013: p.use_smooth=True
@@ -83,8 +84,8 @@ if mode in ('stills','preview'):
         view((85,65,155),(0,17,3),118,1400,1400);render('exploded.png')
         ball.location.y=0
 elif mode=='animation':
-    view((70,50,155),(0,16,4),123,1080,1080)
-    scene.cycles.samples=24
+    view((70,50,155),(0,16,4),123,800,800)
+    scene.cycles.samples=16
     for frame,y in [(1,.042),(24,.042),(108,0),(144,0)]:
         ball.location.y=y;ball.keyframe_insert(data_path='location',frame=frame)
     scene.frame_set(1)
@@ -99,4 +100,22 @@ elif mode=='animation':
             continue
         scene.frame_set(frame);scene.render.filepath=str(path)
         bpy.ops.render.render(write_still=True)
+elif mode=='orbit':
+    view((95,65,135),(0,0,0),102,800,800)
+    scene.cycles.samples=16;scene.frame_end=96
+    pivot=bpy.data.objects.new('Camera orbit',None);scene.collection.objects.link(pivot)
+    cam.parent=pivot
+    for frame,angle in [(1,0),(97,2*math.pi)]:
+        pivot.rotation_euler.y=angle;pivot.keyframe_insert(data_path='rotation_euler',frame=frame)
+    for layer in pivot.animation_data.action.layers:
+        for strip in layer.strips:
+            for bag in strip.channelbags:
+                for curve in bag.fcurves:
+                    for key in curve.keyframe_points:key.interpolation='LINEAR'
+    scene.frame_set(1)
+    frames=PROJECT/'generated/orbit-frames';frames.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath='//../generated/orbit-frames/'
+    bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'rendering/orbit.blend'))
+    scene.render.filepath=str(frames)+'/'
+    bpy.ops.render.render(animation=True)
 else: raise ValueError(mode)

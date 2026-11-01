@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product rendering"
+  short_description: "Warm product images and smooth Blender animations"
+  default_prompt: "Use $product-rendering to create product images and a short camera animation from this approved 3D model."

@@ -24,10 +24,13 @@ projects/<project>/
   rendering/    Rendering notes and redistributable source files
   analysis/     Simulation viewers, results and assumptions
 rendering/      Shared styling tools, palettes and encoder
+skills/         Reusable Codex workflows
 docs/           Adding and maintaining projects
 ```
 
 [Add a project](docs/adding-a-project.md), [make product renders and animations](docs/product-renders-and-animations.md), or [reuse a rendering style](rendering/README.md).
+
+The [product-rendering skill](skills/product-rendering/SKILL.md) packages the rendering workflow, palettes and video exporter for Codex. Copy `skills/product-rendering` into `${CODEX_HOME:-$HOME/.codex}/skills/`, then invoke `$product-rendering` in a new chat. For example: “Use $product-rendering to make warm product images and a six-second animation of this model.”
 
 ## Use the files
 

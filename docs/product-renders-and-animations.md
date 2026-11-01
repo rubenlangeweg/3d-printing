@@ -4,6 +4,8 @@ Use the accepted print mesh, soft light and a slow camera move. The Linea images
 
 This workflow was used with Blender 5.0.1. The [exact Linea recipe](../projects/leander-linea/rendering/README.md#exact-scene-recipe) records the lights, materials, cameras and output settings. For the black holder, use the [Volvo rendering setup](../projects/volvo-xc60-holder/rendering/README.md).
 
+For Codex, use the self-contained [product-rendering skill](../skills/product-rendering/SKILL.md). It includes the workflow, material presets, video exporter and Linea recipe. Installation and invocation are in the [repository README](../README.md#repository-layout).
+
 ## 1. Prepare a scene copy
 
 Start from a complete scene when you have one. Save a working copy under `local/`, which is ignored by Git. Keep the accepted STL in `models/` unchanged.

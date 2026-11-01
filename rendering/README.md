@@ -2,6 +2,8 @@
 
 Start with [Make product renders and animations](../docs/product-renders-and-animations.md). It covers scene preparation, soft lighting, materials, camera moves, previews and video export using the settings from the finished Linea media.
 
+The portable [Codex skill](../skills/product-rendering/SKILL.md) bundles copies of `apply_style.py`, `encode_mp4.swift`, `presets/*.json` and the Linea `scene-recipe.json`. Keep those copies in sync when updating the shared files. Keep `presets/` beside the bundled style script so it also works outside this repository.
+
 The shared presets change named product materials while preserving geometry and camera motion. Complete Leander scenes stay local because they contain the licensed Linea table model. The public gallery contains the finished mounted views.
 
 ## Styles

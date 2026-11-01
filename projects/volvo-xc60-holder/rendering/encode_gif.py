@@ -5,17 +5,18 @@ import sys
 
 project = Path(__file__).resolve().parents[1]
 name = sys.argv[1] if len(sys.argv)>1 else 'assembly'
-folder, count = {'assembly':('frames',144),'orbit':('orbit-frames',288)}[name]
-paths = sorted((project / 'generated' / folder).glob('*.png'))
-if len(paths) != count:
-    raise SystemExit(f'Expected {count} frames, found {len(paths)}')
+count = {'assembly':144,'orbit':288}[name]
+paths = sorted((project / 'generated' / name / 'frames').glob('*.png'))
+if [p.name for p in paths] != [f'{i:04d}.png' for i in range(1,count+1)]:
+    raise SystemExit('Missing, extra or incorrectly numbered frames')
 frames = []
 size = 480 if name == 'orbit' else 600
 for path in paths[::2]:
     with Image.open(path) as image:
-        frames.append(image.convert('RGB').resize((size, size), Image.Resampling.LANCZOS))
+        height=round(size*image.height/image.width)
+        frames.append(image.convert('RGB').resize((size, height), Image.Resampling.LANCZOS))
 # Use one shared palette so the static background stays visually stable.
-palette_source = Image.new('RGB', (size * 3, size))
+palette_source = Image.new('RGB', (size * 3, height))
 for i, index in enumerate((0, len(frames)//2, len(frames)-1)):
     palette_source.paste(frames[index], (i * size, 0))
 palette = palette_source.quantize(colors=128)

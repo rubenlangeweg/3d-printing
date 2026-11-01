@@ -2,7 +2,7 @@
 
 Vent mount for the 2022 Volvo XC60 T8, with a separate 17 mm ball module. This is the restored v10 design without cross ribs. It keeps the rounded outer corners and curved reinforcement at both arm roots.
 
-The media below are standalone technical previews. Mounted product views required by the repository are pending an accurate XC60 vent or dashboard model.
+These standalone assembly views follow the [product-rendering skill](../../skills/product-rendering/SKILL.md). Mounted views remain pending an accurate XC60 vent or dashboard model.
 
 ![Assembled holder](renders/assembled.png)
 
@@ -23,13 +23,13 @@ The base is approximately **56.57 × 50.38 × 28.00 mm**. The ball diameter is *
 
 The saved profile uses a Bambu X1 Carbon, PETG-CF, a 0.4 mm nozzle, 0.2 mm layers, six walls and 25% infill. Both parts were sliced without supports. The base has an approximately 12 mm bridge across its recessed slide. The recorded slicer estimate is **55 minutes and 25.7 g** for both parts. Check the preview and material settings for your printer.
 
-## Rotation view
+## Slow camera view
 
-Both parts are shown in black, matching the intended print colour.
+Both parts are shown in matte black, with warm studio lighting. The camera eases through a small arc over twelve seconds.
 
-![Rotation around the black holder](animations/orbit.gif)
+![Gentle camera arc around the black holder](animations/orbit.gif)
 
-[Download the twelve-second rotation video](animations/orbit.mp4).
+[Download the twelve-second camera video](animations/orbit.mp4).
 
 ## Assembly
 

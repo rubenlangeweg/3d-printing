@@ -1,46 +1,57 @@
-# Holder renders
+# Holder product renders
 
-The renderer loads the accepted Blender source, converts millimetres to metres for lighting, and reads the shared `rendering/presets/black.json` preset for the parts, ground and world. It does not change the printed geometry. The model's Y axis points up; the module moves 42 mm down that axis into its seated position.
+This setup follows the repository's [product-rendering skill](../../../skills/product-rendering/SKILL.md). It uses the accepted holder assembly, black matte plastic, a warm cream ground, broad soft lighting and a slow camera move. The print geometry and seated part positions are unchanged.
 
-Run from the repository root with Blender 5.0:
+The views show the holder assembly itself. They do not demonstrate vehicle fit. Mounted views still need an accurate XC60 vent or dashboard model; the rejected approximate vent is not used.
+
+## Render from the repository
+
+Use Blender 5.0.1. Paths resolve relative to the script, with the shared `black-warm-matte` preset loaded by default.
 
 ```sh
 blender -b --python projects/volvo-xc60-holder/rendering/render.py -- preview
+blender -b --python projects/volvo-xc60-holder/rendering/render.py -- orbit --preview-motion
+blender -b --python projects/volvo-xc60-holder/rendering/render.py -- animation --preview-motion
 blender -b --python projects/volvo-xc60-holder/rendering/render.py -- stills
 blender -b --python projects/volvo-xc60-holder/rendering/render.py -- animation
 blender -b --python projects/volvo-xc60-holder/rendering/render.py -- orbit
 ```
 
-`preview` writes a smaller assembled image. `stills` writes the three finished images. `animation` writes `assembly.blend` and 144 PNG frames under `../generated/frames/`, at 800 × 800 and 24 fps. The six-second clip pauses before insertion and after seating. `orbit` writes `orbit.blend` and 288 frames under `../generated/orbit-frames/`. It moves the camera through a full circle in twelve seconds, with a fixed assembled model. Render commands replace their own previous outputs.
+Preview images stay separate from the complete sequences. Each clip has its own `generated/<clip>/previews`, `frames` and `encoded-checks` folders. Render commands replace their own previous outputs. Use `--preset /path/to/preset.json` to run outside the repository or choose another palette.
 
-The saved `assembly.blend` is self-contained. Render it directly to keep manual changes to lighting or materials:
+## Appearance and camera
+
+| Setting | Value |
+| --- | --- |
+| Part colour | Linear RGB `(0.004, 0.004, 0.004)` |
+| Part roughness / specular | `0.56` / `0.28` |
+| Ground colour / roughness | `(0.72, 0.665, 0.575)` / `0.82` |
+| World colour / strength | `(0.90, 0.855, 0.76)` / `0.18` |
+| Colour management | AgX, Medium High Contrast, exposure `+0.2`, gamma `1.0` |
+| Lighting | Three large area lights, warm key and rim, weaker fill |
+| Render engine | EEVEE, ray tracing off, shadow jitter off |
+| Still output | 2000 × 1500 PNG, 128 samples |
+| Video output | 1280 × 960, 24 fps, 64 samples |
+
+The script converts the source's millimetres to metres once. Its light powers are for that metre-sized scene. No bevels, displacement or extra product geometry are added. The black finish is a presentation material, not a simulation of individual print layers.
+
+The 12-second camera arc contains 288 frames. It moves from +35° to −35° across the front, lowers slightly and tightens the framing. Position and framing follow `e = t*t*(3-2*t)` for a gentle start and finish. The assembled holder remains fixed. The rear still shows the inner root reinforcement.
+
+The six-second assembly clip contains 144 frames. The ball module slides 42 mm down the Y axis into its accepted seated position, with a pause before and after insertion.
+
+Both `orbit.blend` and `assembly.blend` are self-contained rendering scenes. To preserve manual scene edits, render the saved scene directly instead of rebuilding it with the script.
+
+## Encode and check
+
+Use the shared encoder, which is also bundled with the skill. Choose fresh video filenames because the encoder preserves existing outputs.
 
 ```sh
-blender -b projects/volvo-xc60-holder/rendering/assembly.blend -a
+swift rendering/encode_mp4.swift projects/volvo-xc60-holder/generated/orbit/frames local/orbit-new.mp4 288 24 8
+swift rendering/encode_mp4.swift projects/volvo-xc60-holder/generated/assembly/frames local/assembly-new.mp4 144 24 8
+python3 projects/volvo-xc60-holder/rendering/encode_gif.py orbit
+python3 projects/volvo-xc60-holder/rendering/encode_gif.py assembly
 ```
 
-Encode with the repository's macOS tool:
+The GIF script requires Pillow and preserves the video's aspect ratio. Its previews run at 12 fps; the MP4s retain 24 fps.
 
-```sh
-swift rendering/encode_mp4.swift \
-  projects/volvo-xc60-holder/generated/frames \
-  projects/volvo-xc60-holder/animations/assembly.mp4 144 24
-```
-
-The encoder preserves existing video files. Choose another output path when rebuilding an existing video. It verifies duration, frame count and successful decoding.
-
-Create the GIF with `python3 projects/volvo-xc60-holder/rendering/encode_gif.py` after installing Pillow. The GIF is a smaller 12 fps preview of the same rendered frames. The MP4 is the full-resolution version. Keep frame sequences local; commit the finished media and scene.
-
-These are assembly views of the holder itself. No vehicle vent geometry is included, so the media does not demonstrate vehicle fit. The black material is also available as the repository's shared `black` preset.
-
-For the rotation video, use `generated/orbit-frames`, `animations/orbit.mp4` and a frame count of `288` with the same encoder. Create its GIF with `python3 projects/volvo-xc60-holder/rendering/encode_gif.py orbit`.
-
-## Mounted-view status
-
-The repository requires the actual host product in published product views. These standalone technical previews do not yet meet that requirement. An accurate XC60 vent or dashboard model is needed for the mounted hero, detail views and animations. The earlier approximate vent reconstruction is excluded because it was rejected as unsuitable.
-
-## Verification
-
-The finished videos are decoded in full. First, middle and last frames are checked visually. `analysis/media-checks.json` records file hashes, dimensions, duration and the outstanding host-product requirement. Print files remain unchanged.
-
-The renderer accepts `--preset /path/to/preset.json` when run outside the repository. To change a saved scene without rebuilding it, use the shared `rendering/apply_style.py` with the `black` preset and material name `Black satin plastic`.
+Before encoding, check sequential frame names and consistent dimensions. The encoder fully decodes the result and verifies duration and frame count. Inspect the decoded first, middle and last frames and play the full clips. Keep frame sequences, scene backups and verification reports local. Publish the checked final media and permitted editable scenes.

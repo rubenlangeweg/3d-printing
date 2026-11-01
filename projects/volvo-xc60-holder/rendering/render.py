@@ -9,7 +9,8 @@ from mathutils import Vector, Matrix
 PROJECT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
 parser.add_argument('mode',choices=['preview','stills','animation','orbit'],nargs='?',default='preview')
-parser.add_argument('--preset',type=Path,default=PROJECT.parents[1]/'rendering/presets/black.json')
+parser.add_argument('--preset',type=Path,default=PROJECT.parents[1]/'rendering/presets/black-warm-matte.json')
+parser.add_argument('--preview-motion',action='store_true')
 options=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 mode=options.mode
 palette=json.loads(options.preset.read_text())
@@ -47,57 +48,64 @@ def aim(obj,position,target):
     obj.rotation_euler=Matrix((right,up,-f)).transposed().to_euler()
 def light(name,position,power,size):
     d=bpy.data.lights.new(name,'AREA');d.energy=power;d.shape='DISK';d.size=size*.001
+    d.use_shadow_jitter=False
     o=bpy.data.objects.new(name,d);scene.collection.objects.link(o);aim(o,position,(0,0,0))
-light('Key softbox',(-80,100,110),.6,90)
-light('Fill softbox',(100,40,60),.25,80)
-light('Rim softbox',(10,100,-100),.8,70)
-bpy.ops.mesh.primitive_plane_add(size=2000,location=(0,-.0253,0),rotation=(math.pi/2,0,0))
+light('Key softbox',(-90,130,100),1.3,150)
+light('Fill softbox',(110,60,55),.23,160)
+light('Rim softbox',(35,95,-105),.6,120)
+bpy.data.objects['Key softbox'].data.color=(1,.95,.85)
+bpy.data.objects['Rim softbox'].data.color=(1,.93,.8)
+bpy.ops.mesh.primitive_plane_add(size=20,location=(0,-.0252,0),rotation=(math.pi/2,0,0))
 floor=bpy.context.object;floor.name='Studio ground';floor.data.materials.append(material('Warm grey ground',palette['floor']['base_color'][:3],palette['floor']['roughness']))
 camera_data=bpy.data.cameras.new('Camera');cam=bpy.data.objects.new('Camera',camera_data);scene.collection.objects.link(cam);scene.camera=cam
 cam.data.type='ORTHO';cam.data.clip_start=.001;cam.data.clip_end=20
-scene.render.engine='CYCLES';scene.cycles.samples=40;scene.cycles.use_denoising=True
-scene.render.use_persistent_data=True
-if sys.platform=='darwin':
-    prefs=bpy.context.preferences.addons['cycles'].preferences
-    prefs.compute_device_type='METAL';prefs.get_devices()
-    if any(d.type=='METAL' for d in prefs.devices):
-        for d in prefs.devices:d.use=(d.type=='METAL')
-        scene.cycles.device='GPU'
+scene.render.engine='BLENDER_EEVEE'
+scene.eevee.taa_render_samples=128;scene.eevee.use_raytracing=False
 scene.render.use_compositing=False;scene.render.use_sequencer=False
 scene.render.threads_mode='FIXED';scene.render.threads=8
 scene.view_settings.view_transform=palette['view_transform']
+scene.view_settings.look='AgX - Medium High Contrast'
+scene.view_settings.exposure=.2;scene.view_settings.gamma=1
 scene.render.image_settings.file_format='PNG';scene.render.film_transparent=False
 scene.render.resolution_percentage=100
 scene.render.fps=24;scene.frame_start=1;scene.frame_end=144
 scene.render.use_file_extension=True
 scene.render.image_settings.color_mode='RGB'
 scene.render.use_stamp=False
-def view(position,target,scale,width=1400,height=1100):
+def view(position,target,scale,width=2000,height=1500):
     aim(cam,position,target);cam.data.ortho_scale=scale*.001
     scene.render.resolution_x=width;scene.render.resolution_y=height
 def render(name):
-    scene.render.filepath=str(PROJECT/'renders'/name);bpy.ops.render.render(write_still=True)
+    folder=PROJECT/('generated/hero/previews' if mode=='preview' else 'renders')
+    folder.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath=str(folder/name);bpy.ops.render.render(write_still=True)
 
 if mode in ('stills','preview'):
     view((95,70,135),(0,0,0),102)
     if mode=='preview':
-        scene.render.resolution_percentage=60;scene.cycles.samples=24
+        scene.render.resolution_percentage=40;scene.eevee.taa_render_samples=32
     render('assembled.png')
     if mode=='stills':
         ball.hide_render=True
         view((-90,80,-130),(0,0,-6),95);render('rear-roots.png')
         ball.hide_render=False;ball.location.y=.042
-        view((85,65,155),(0,17,3),118,1400,1400);render('exploded.png')
+        view((85,65,155),(0,17,3),140);render('exploded.png')
         ball.location.y=0
 elif mode=='animation':
-    view((70,50,155),(0,16,4),123,800,800)
-    scene.cycles.samples=16
+    view((70,50,155),(0,16,4),145,1280,960)
+    scene.eevee.taa_render_samples=64
     for frame,y in [(1,.042),(24,.042),(108,0),(144,0)]:
         ball.location.y=y;ball.keyframe_insert(data_path='location',frame=frame)
     scene.frame_set(1)
-    frames=PROJECT/'generated/frames';frames.mkdir(parents=True,exist_ok=True)
-    scene.render.filepath='//../generated/frames/'
+    frames=PROJECT/'generated/assembly/frames';frames.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath='//../generated/assembly/frames/'
     bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'rendering/assembly.blend'))
+    if options.preview_motion:
+        scene.render.resolution_percentage=50;scene.eevee.taa_render_samples=32
+        previews=frames.parent/'previews';previews.mkdir(parents=True,exist_ok=True)
+        for frame in [1,73,144]:
+            scene.frame_set(frame);scene.render.filepath=str(previews/f'{frame:04d}.png');bpy.ops.render.render(write_still=True)
+        sys.exit(0)
     for frame in range(1,145):
         path=frames/f'{frame:04d}.png'
         held=1 if 1<frame<=24 else 108 if frame>108 else None
@@ -107,21 +115,25 @@ elif mode=='animation':
         scene.frame_set(frame);scene.render.filepath=str(path)
         bpy.ops.render.render(write_still=True)
 elif mode=='orbit':
-    view((95,65,135),(0,0,0),102,800,800)
-    scene.cycles.samples=16;scene.frame_end=288
-    pivot=bpy.data.objects.new('Camera orbit',None);scene.collection.objects.link(pivot)
-    cam.parent=pivot
-    for frame,angle in [(1,0),(289,2*math.pi)]:
-        pivot.rotation_euler.y=angle;pivot.keyframe_insert(data_path='rotation_euler',frame=frame)
-    for layer in pivot.animation_data.action.layers:
-        for strip in layer.strips:
-            for bag in strip.channelbags:
-                for curve in bag.fcurves:
-                    for key in curve.keyframe_points:key.interpolation='LINEAR'
+    view((95,65,135),(0,0,0),110,1280,960)
+    scene.eevee.taa_render_samples=64;scene.frame_end=288
+    for frame in range(1,289):
+        t=(frame-1)/287;e=t*t*(3-2*t);angle=math.radians(35-70*e)
+        aim(cam,(170*math.sin(angle),65-20*e,170*math.cos(angle)),(0,0,0))
+        cam.data.ortho_scale=(110-5*e)*.001
+        cam.keyframe_insert(data_path='location',frame=frame)
+        cam.keyframe_insert(data_path='rotation_euler',frame=frame)
+        cam.data.keyframe_insert(data_path='ortho_scale',frame=frame)
     scene.frame_set(1)
-    frames=PROJECT/'generated/orbit-frames';frames.mkdir(parents=True,exist_ok=True)
-    scene.render.filepath='//../generated/orbit-frames/'
+    frames=PROJECT/'generated/orbit/frames';frames.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath='//../generated/orbit/frames/'
     bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'rendering/orbit.blend'))
+    if options.preview_motion:
+        scene.render.resolution_percentage=50;scene.eevee.taa_render_samples=32
+        previews=frames.parent/'previews';previews.mkdir(parents=True,exist_ok=True)
+        for frame in [1,145,288]:
+            scene.frame_set(frame);scene.render.filepath=str(previews/f'{frame:04d}.png');bpy.ops.render.render(write_still=True)
+        sys.exit(0)
     scene.render.filepath=str(frames)+'/'
     bpy.ops.render.render(animation=True)
 else: raise ValueError(mode)

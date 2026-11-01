@@ -12,6 +12,7 @@ The shared presets change named product materials while preserving geometry and 
 | --- | --- |
 | `warm-ivory` | Soft ivory accessories with warm neutral surroundings |
 | `neutral-technical` | Neutral satin material for geometry comparisons |
+| `black-warm-matte` | Matte black parts, warm cream ground and soft light |
 | `black` | Black satin plastic, used for the Volvo XC60 holder |
 | `graphite` | Satin graphite holder on a warm grey ground |
 

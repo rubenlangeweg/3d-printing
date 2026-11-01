@@ -43,6 +43,20 @@ Slide the ball module down into the dovetail from the open top until it reaches 
 
 ![Rear view showing the curved arm roots](renders/rear-roots.png)
 
+## Mous magnetic head
+
+The [Mous Adhesive Car Mount head](https://eu.mous.co/en-nl/products/magsafe-compatible-adhesive-car-mount) is shown attaching to the printed ball. The original Mous adhesive pedestal is not used in this assembly.
+
+![Mous head attached to the holder](renders/mous-assembled.png)
+
+![Mous head approaching and attaching](animations/mous-attachment.gif)
+
+[Watch the ten-second attachment animation](animations/mous-attachment.mp4). It shows the head approaching, seating on the ball and the collar turning to illustrate tightening.
+
+The reference model uses the owner's measurements: **63 mm** head diameter, **10.5 mm** head thickness, **26.37 mm** outside socket/collar diameter and **39 mm** across the two tightening tabs. Total depth is estimated at **28.3 mm** from the photos. Internal socket geometry and the collar's 60° turn are illustrative. Original Mous ball diameter and physical compatibility with this 17 mm printed ball have not been verified.
+
+The [separate head reference](rendering/mous-head-reference.blend) and [complete animated scene](rendering/mous-attachment.blend) are presentation models. They are not replacement-part print files or official Mous CAD. The accepted holder print files are unchanged.
+
 ## Checks and limits
 
 The selected base export is one closed solid, with no non-manifold edges or zero-area triangles. The 3MF geometry matches the STL within 0.00000005 mm. Seven sampled positions along the module's insertion path show no solid intersection. Bambu Studio completed slicing without reported warnings. Reports are in [analysis](analysis/).
@@ -53,4 +67,4 @@ These are digital checks. Physical vent fit, glue retention, strength and resist
 
 Open the clean Blender source to edit the model. The source contains only the base and ball module. Accepted STL and 3MF files remain separate from rendering work. The [rendering instructions](rendering/README.md) reproduce the images and animation in Blender 5.0.
 
-Models and original media follow the repository's [CC BY-NC 4.0 terms](../../LICENSING.md); the rendering script is MIT. Volvo names and trademarks retain their respective rights. This is an independently designed compatible accessory, not an official Volvo product.
+Models and original media follow the repository's [CC BY-NC 4.0 terms](../../LICENSING.md); the rendering script is MIT. Volvo and Mous names, product designs and trademarks retain their respective rights. This is an independently designed compatible accessory, not an official Volvo product.

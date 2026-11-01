@@ -55,3 +55,32 @@ python3 projects/volvo-xc60-holder/rendering/encode_gif.py assembly
 The GIF script requires Pillow and preserves the video's aspect ratio. Its previews run at 12 fps; the MP4s retain 24 fps.
 
 Before encoding, check sequential frame names and consistent dimensions. The encoder fully decodes the result and verifies duration and frame count. Inspect the decoded first, middle and last frames and play the full clips. Keep frame sequences, scene backups and verification reports local. Publish the checked final media and permitted editable scenes.
+
+
+## Mous head attachment
+
+`mous-render.py` reads the existing `orbit.blend` scene and adds an independently authored visual reference of the Mous magnetic head. No manufacturer mesh, texture or product photo is packed into the scene. The shape follows the [Mous product photos](https://eu.mous.co/en-nl/products/magsafe-compatible-adhesive-car-mount) and owner measurements.
+
+| Dimension | mm | Basis |
+| --- | --- | --- |
+| Head diameter | 63 | Measured |
+| Head thickness | 10.5 | Measured |
+| Outside socket/collar diameter | 26.37 | Measured |
+| Span across tightening tabs | 39 | Measured |
+| Total depth | 28.3 | Estimated from photos |
+
+Socket internals, rear-opening placement and collar engagement are illustrative. The existing printed ball remains 17 mm. Do not use the reference as manufacturing CAD or proof of fit. The manufacturer's product design and trademarks remain theirs; this is an independent visualization.
+
+```sh
+blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --mode preview
+blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --mode stills
+blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --mode animation
+swift rendering/encode_mp4.swift projects/volvo-xc60-holder/generated/mous-attachment/frames local/mous-attachment-new.mp4 240 24 8
+python3 projects/volvo-xc60-holder/rendering/encode_gif.py mous-attachment
+```
+
+Pass `--depth` to replace the estimated total depth when measured. Other dimensions can be set with `--diameter`, `--thickness`, `--socket-diameter` and `--tab-span`. Defaults match the table.
+
+The ten-second clip contains 240 frames at 24 fps. The head approaches from 55 mm away, seats, pauses and the collar turns 60°. A small camera move finishes the clip. This is a motion illustration, not a snap-fit or thread simulation. Warm lighting and matte black materials match the holder media.
+
+`mous-head-reference.blend` contains only the visual head assembly, with its socket's assumed ball centre at the origin. `mous-attachment.blend` contains the complete editable animation. Both are self-contained. The head is excluded from the accepted print models.

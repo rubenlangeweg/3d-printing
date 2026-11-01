@@ -8,7 +8,7 @@ The independently modeled accessories, clean accessory Blender scenes, documenta
 
 Suggested credit: “Leander Linea accessories by Ruben Langeweg — [3d-printing](https://github.com/rubenlangeweg/3d-printing), CC BY-NC 4.0.” Identify any changes you make.
 
-The original renders and animations in `projects/volvo-xc60-holder/` also use CC BY-NC 4.0. They contain only the holder geometry and a procedural studio background.
+The original renders and animations in `projects/volvo-xc60-holder/` also use CC BY-NC 4.0. The Mous attachment media and reference scenes also include an independently authored approximation of the Mous magnetic head, based on product photos and owner measurements. No Mous mesh, texture or product photo is distributed. Mous product designs and trademarks retain their respective rights; this repository grants only rights held by its author.
 
 The holder geometry, clean source scene and standalone media in `projects/pedestal-ps5-holder/` also use CC BY-NC 4.0. No Pedestal frame, television or PlayStation reference meshes or context media are distributed in that project. Their publication terms have not been established. Pedestal and PlayStation names and designs retain their respective rights; this independent accessory is not an official or endorsed product.
 

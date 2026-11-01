@@ -14,6 +14,7 @@ p.add_argument('--depth',type=float,default=28.3,help='Estimated total depth; no
 p.add_argument('--socket-diameter',type=float,default=26.37)
 p.add_argument('--tab-span',type=float,default=39)
 p.add_argument('--mode',choices=['preview','stills','animation'],default='preview')
+p.add_argument('--sequence',choices=['attachment','full'],default='attachment')
 a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
 assert 30<a.diameter<100 and 2<a.thickness<a.depth<60
 PROJECT=Path(__file__).resolve().parents[1]
@@ -77,7 +78,7 @@ for sign in [-1,1]:
     bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
     bevel=tab.modifiers.new('Moulded grip corners','BEVEL');bevel.width=.0008;bevel.segments=4
     tab.data.materials.append(collar_mat)
-# The complete assembly remains fixed, with the lowest product edge on the ground.
+# Keep the ground just below the lowest edge of the assembled model.
 bpy.data.objects['Studio ground'].location.y=min(-.0252,cy-r*.001)-.0001
 
 def aim(position,target):
@@ -87,28 +88,54 @@ def aim(position,target):
     cam.rotation_euler=Matrix((right,up,-f)).transposed().to_euler()
 def smooth(t):
     t=max(0,min(1,t));return t*t*(3-2*t)
-s.frame_start=1;s.frame_end=240;s.render.fps=24
+full=a.sequence=='full'
+clip='full-assembly' if full else 'mous-attachment'
+count=336 if full else 240
+ball=bpy.data.objects['Ball module - 17 mm']
+s.frame_start=1;s.frame_end=count;s.render.fps=24
 s.render.resolution_x=1280;s.render.resolution_y=960;s.render.resolution_percentage=100
-s.eevee.taa_render_samples=64
-for frame in range(1,241):
-    seat=smooth((frame-30)/105);turn=smooth((frame-145)/48);orbit=smooth((frame-193)/47)
+s.eevee.taa_render_samples=32
+for frame in range(1,count+1):
+    orbit=smooth((frame-1)/(count-1))
+    if full:
+        # Stage one: the separate ball module descends into its existing dovetail.
+        slide=smooth((frame-24)/96)
+        ball.location.y=.042*(1-slide)
+        ball.keyframe_insert(data_path='location',frame=frame)
+        # Keep the Mous head separate and visible while the module seats.
+        seat=smooth((frame-150)/108)
+        turn=smooth((frame-270)/42)
+        target_y=12*(1-slide)
+        target_z=30-12*seat
+        scale=195-35*orbit
+    else:
+        seat=smooth((frame-30)/105)
+        turn=smooth((frame-145)/48)
+        target_y=0
+        target_z=30-12*seat
+        scale=170-25*orbit
     head.location.z=cz+.055*(1-seat);head.keyframe_insert(data_path='location',frame=frame)
     collar.rotation_euler.z=math.radians(-60+60*turn);collar.keyframe_insert(data_path='rotation_euler',frame=frame)
-    aim((195-20*orbit,90,115+30*orbit),(0,0,33))
-    cam.data.ortho_scale=.17
+    # Continuous camera orbit starts with the first movement, through both stages.
+    angle=math.radians(67-22*orbit)
+    aim((230*math.sin(angle),90-20*orbit,target_z+230*math.cos(angle)),(0,target_y,target_z))
+    cam.data.ortho_scale=scale*.001
     cam.keyframe_insert(data_path='location',frame=frame);cam.keyframe_insert(data_path='rotation_euler',frame=frame)
+    cam.data.keyframe_insert(data_path='ortho_scale',frame=frame)
 s.frame_set(1)
-folder=PROJECT/'generated/mous-attachment';folder.mkdir(parents=True,exist_ok=True)
-s.render.filepath='//../generated/mous-attachment/frames/'
+folder=PROJECT/'generated'/clip;folder.mkdir(parents=True,exist_ok=True)
+s.render.filepath=f'//../generated/{clip}/frames/'
 bpy.context.view_layer.update()
-bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'rendering/mous-attachment.blend'))
+bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'rendering'/f'{clip}.blend'))
 if a.mode=='preview':
-    s.render.resolution_percentage=50;s.eevee.taa_render_samples=32
+    s.render.resolution_percentage=50;s.eevee.taa_render_samples=24
     dest=folder/'previews';dest.mkdir(exist_ok=True)
-    for frame in [1,83,145,193,240]:
+    frames=[1,72,120,150,210,258,294,336] if full else [1,83,145,193,240]
+    for frame in frames:
         s.frame_set(frame);s.render.filepath=str(dest/f'{frame:04d}.png');bpy.ops.render.render(write_still=True)
 elif a.mode=='stills':
-    s.frame_set(240);cam.animation_data_clear();s.render.resolution_x=2000;s.render.resolution_y=1500;s.eevee.taa_render_samples=128
+    s.frame_set(count);cam.animation_data_clear();cam.data.animation_data_clear()
+    s.render.resolution_x=2000;s.render.resolution_y=1500;s.eevee.taa_render_samples=128
     aim((150,85,155),(0,0,14));cam.data.ortho_scale=.145
     s.render.filepath=str(PROJECT/'renders/mous-assembled.png');bpy.ops.render.render(write_still=True)
 else:
@@ -116,8 +143,8 @@ else:
     bpy.ops.render.render(animation=True)
 
 # Export a normal editable Blender scene containing only the reference head.
-bpy.ops.wm.open_mainfile(filepath=str(PROJECT/'rendering/mous-attachment.blend'))
-s=bpy.context.scene;s.frame_set(240)
+bpy.ops.wm.open_mainfile(filepath=str(PROJECT/'rendering'/f'{clip}.blend'))
+s=bpy.context.scene;s.frame_set(count)
 for obj in list(bpy.data.objects):
     if not obj.name.startswith('Mous'):
         bpy.data.objects.remove(obj,do_unlink=True)

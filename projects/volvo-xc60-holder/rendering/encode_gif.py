@@ -5,7 +5,7 @@ import sys
 
 project = Path(__file__).resolve().parents[1]
 name = sys.argv[1] if len(sys.argv)>1 else 'assembly'
-count = {'assembly':144,'orbit':288,'mous-attachment':240}[name]
+count = {'assembly':144,'orbit':288,'mous-attachment':240,'full-assembly':336}[name]
 paths = sorted((project / 'generated' / name / 'frames').glob('*.png'))
 if [p.name for p in paths] != [f'{i:04d}.png' for i in range(1,count+1)]:
     raise SystemExit('Missing, extra or incorrectly numbered frames')

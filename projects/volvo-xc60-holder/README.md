@@ -51,11 +51,15 @@ The [Mous Adhesive Car Mount head](https://eu.mous.co/en-nl/products/magsafe-com
 
 ![Mous head approaching and attaching](animations/mous-attachment.gif)
 
-[Watch the ten-second attachment animation](animations/mous-attachment.mp4). It shows the head approaching, seating on the ball and the collar turning to illustrate tightening.
+[Watch the ten-second attachment animation](animations/mous-attachment.mp4). The camera moves throughout while the head approaches, seats on the ball and the collar turns to illustrate tightening.
+
+[Watch the fourteen-second full assembly video](animations/full-assembly.mp4). All three components start apart. The ball module slides down into the base, then the Mous head seats on the ball and the collar turns. The camera moves during both steps.
+
+![Full assembly of the base, ball module and Mous head](animations/full-assembly.gif)
 
 The reference model uses the owner's measurements: **63 mm** head diameter, **10.5 mm** head thickness, **26.37 mm** outside socket/collar diameter and **39 mm** across the two tightening tabs. Total depth is estimated at **28.3 mm** from the photos. Internal socket geometry and the collar's 60° turn are illustrative. Original Mous ball diameter and physical compatibility with this 17 mm printed ball have not been verified.
 
-The [separate head reference](rendering/mous-head-reference.blend) and [complete animated scene](rendering/mous-attachment.blend) are presentation models. They are not replacement-part print files or official Mous CAD. The accepted holder print files are unchanged.
+The [separate head reference](rendering/mous-head-reference.blend), [Mous attachment scene](rendering/mous-attachment.blend) and [full assembly scene](rendering/full-assembly.blend) are presentation models. They are not replacement-part print files or official Mous CAD. The accepted holder print files are unchanged.
 
 ## Checks and limits
 

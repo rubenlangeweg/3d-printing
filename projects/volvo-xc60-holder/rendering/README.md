@@ -31,7 +31,7 @@ Preview images stay separate from the complete sequences. Each clip has its own 
 | Lighting | Three large area lights, warm key and rim, weaker fill |
 | Render engine | EEVEE, ray tracing off, shadow jitter off |
 | Still output | 2000 × 1500 PNG, 128 samples |
-| Video output | 1280 × 960, 24 fps, 64 samples |
+| Video output | 1280 × 960, 24 fps; 64 samples for original clips, 32 for Mous sequences |
 
 The script converts the source's millimetres to metres once. Its light powers are for that metre-sized scene. No bevels, displacement or extra product geometry are added. The black finish is a presentation material, not a simulation of individual print layers.
 
@@ -77,10 +77,16 @@ blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --mod
 blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --mode animation
 swift rendering/encode_mp4.swift projects/volvo-xc60-holder/generated/mous-attachment/frames local/mous-attachment-new.mp4 240 24 8
 python3 projects/volvo-xc60-holder/rendering/encode_gif.py mous-attachment
+blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --sequence full --mode preview
+blender -b --python projects/volvo-xc60-holder/rendering/mous-render.py -- --sequence full --mode animation
+swift rendering/encode_mp4.swift projects/volvo-xc60-holder/generated/full-assembly/frames local/full-assembly-new.mp4 336 24 8
+python3 projects/volvo-xc60-holder/rendering/encode_gif.py full-assembly
 ```
 
 Pass `--depth` to replace the estimated total depth when measured. Other dimensions can be set with `--diameter`, `--thickness`, `--socket-diameter` and `--tab-span`. Defaults match the table.
 
-The ten-second clip contains 240 frames at 24 fps. The head approaches from 55 mm away, seats, pauses and the collar turns 60°. A small camera move finishes the clip. This is a motion illustration, not a snap-fit or thread simulation. Warm lighting and matte black materials match the holder media.
+The ten-second clip contains 240 frames at 24 fps. The head approaches from 55 mm away, seats, pauses and the collar turns 60°. The camera moves continuously through a 22° arc during insertion and tightening, with eased framing and a gradual move closer. This is a motion illustration, not a snap-fit or thread simulation. Warm lighting and matte black materials match the holder media.
 
-`mous-head-reference.blend` contains only the visual head assembly, with its socket's assumed ball centre at the origin. `mous-attachment.blend` contains the complete editable animation. Both are self-contained. The head is excluded from the accepted print models.
+The full assembly clip contains 336 frames over fourteen seconds. The ball module starts 42 mm above its seated position and slides down during frames 24–120. The Mous head stays separate until frame 150, then seats by frame 258. Collar rotation follows during frames 270–312. The camera moves through both stages. All three components are visible at the start, then their connections are shown in order. The accepted meshes and final assembly positions are unchanged.
+
+`mous-head-reference.blend` contains only the visual head assembly, with its socket's assumed ball centre at the origin. `mous-attachment.blend` and `full-assembly.blend` contain the two editable animations. All scenes are self-contained. The head is excluded from the accepted print models.

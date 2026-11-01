@@ -2,9 +2,13 @@
 
 A printed holder for mounting a PlayStation 5 behind a Pedestal A-frame TV stand. This project preserves the original revisions and presents the complete holder from the existing Blender assembly.
 
-![Complete holder in graphite](renders/pedestal-holder.png)
+![Black holder mounted behind the Pedestal A-frame with a PlayStation 5](renders/pedestal-assembly.png)
 
-[Watch the holder animation](animations/pedestal-holder.mp4). Eight seconds, 1920 × 1080, 24 fps.
+[Watch the mounted assembly](animations/pedestal-assembly.mp4) or [the holder on its own](animations/pedestal-holder.mp4). Both clips are eight seconds, 1920 × 1080, 24 fps.
+
+The intended print colour is **black**. The rendered holder uses matte black plastic. STL files carry geometry; choose black filament in your slicer.
+
+![Matte black holder on its own](renders/pedestal-holder.png)
 
 ## Choose a model
 
@@ -27,7 +31,7 @@ The archived STL files are byte-for-byte copies. The scene export preserves the 
 
 [Open the clean holder scene](source/pedestal-holder.blend) in Blender 5.0.1. It includes the holder, procedural materials, studio lights and animated camera. [Rendering notes](rendering/README.md) cover reproduction.
 
-A second animation was made locally using the original Pedestal frame, TV and PlayStation assembly. The original mounting transforms were preserved. Its source scene and finished context media are not included here because the reference assets' publication terms have not been established.
+The assembly animation uses the original Pedestal frame, TV and PlayStation reference models, preserving their mounting transforms. Finished context renders are included with permission to publish renders. The frame and console source meshes remain local and are not redistributed.
 
 ## Validation
 
@@ -37,4 +41,4 @@ Print orientation, material, supports, fasteners, fit, ventilation clearance and
 
 ## Rights
 
-The independently authored holder, clean scene, documentation and standalone media use the repository's CC BY-NC 4.0 licence. Rendering code uses MIT. Pedestal and PlayStation names and designs retain their respective rights. This is an independent accessory, not an official or endorsed product. See [repository licensing](../../LICENSING.md).
+The independently authored holder, clean scene, documentation and standalone media use the repository's CC BY-NC 4.0 licence. Rendering code uses MIT. The assembly image and video contain third-party reference assets and are excluded from that CC grant. Pedestal and PlayStation names and designs retain their respective rights. This is an independent accessory, not an official or endorsed product. See [repository licensing](../../LICENSING.md).

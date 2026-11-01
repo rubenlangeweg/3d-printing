@@ -6,7 +6,8 @@ blender -b scene.blend --python rendering/apply_style.py -- \
     --output generated/styled.blend
 
 Only explicitly named materials change. Meshes, transforms, cameras and lights
-are preserved. World changes require --world.
+are preserved. World changes require --world. Available presets are read from
+the adjacent presets/*.json files.
 """
 import argparse
 import json
@@ -33,8 +34,11 @@ def apply_material(name, settings):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    presets = sorted(p.stem for p in (Path(__file__).resolve().parent / 'presets').glob('*.json'))
-    parser.add_argument('--preset', choices=presets, default='warm-ivory')
+    preset_directory = Path(__file__).resolve().parent / 'presets'
+    presets = {path.stem: path for path in sorted(preset_directory.glob('*.json'))
+               if path.is_file() and path.resolve().parent == preset_directory}
+    parser.add_argument('--preset', choices=sorted(presets), default='warm-ivory',
+                        help='Palette from rendering/presets/*.json (default: warm-ivory).')
     parser.add_argument('--material', action='append', required=True, help='Exact product-material name; repeat for multiple materials.')
     parser.add_argument('--floor-material', action='append', default=[])
     parser.add_argument('--world', action='store_true')
@@ -47,7 +51,9 @@ def main():
         parser.error('Choose a new output path; the input scene cannot be overwritten')
     if destination.exists():
         parser.error('Output already exists; choose a new path')
-    settings = json.loads((Path(__file__).resolve().parent / 'presets' / f'{options.preset}.json').read_text())
+    if options.preset not in presets:
+        parser.error(f'Preset not found: {options.preset}')
+    settings = json.loads(presets[options.preset].read_text())
     # Validate the full selection before any material changes.
     for name in options.material + options.floor_material:
         material = bpy.data.materials.get(name)

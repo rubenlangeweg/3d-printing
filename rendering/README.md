@@ -1,5 +1,7 @@
 # Rendering
 
+Start with [Make product renders and animations](../docs/product-renders-and-animations.md). It covers scene preparation, soft lighting, materials, camera moves, previews and video export using the settings from the finished Linea media.
+
 The shared presets change named product materials while preserving geometry and camera motion. Complete Leander scenes stay local because they contain the licensed Linea table model. The public gallery contains the finished mounted views.
 
 ## Styles
@@ -44,6 +46,8 @@ swift rendering/encode_mp4.swift /path/to/rendered-frames /path/to/shelf-v4.mp4 
 ```
 
 Use 144 frames for the shelf and organizer clips, or 192 for the eight-second combination. Keep the frame directory and output video outside the repository while working. The encoder preserves an existing video and writes validation details beside the frame directory.
+
+Add a fifth numeric argument for the target bitrate in Mbps. The default is `8`; the final organizer clip used `20` to retain fine wood texture. For example: `swift rendering/encode_mp4.swift /path/to/frames /path/to/organizer.mp4 144 24 20`.
 
 ## Keep reference scenes local
 

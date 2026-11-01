@@ -27,7 +27,7 @@ rendering/      Shared styling tools, palettes and encoder
 docs/           Adding and maintaining projects
 ```
 
-[Add a project](docs/adding-a-project.md) or [reuse a rendering style](rendering/README.md).
+[Add a project](docs/adding-a-project.md), [make product renders and animations](docs/product-renders-and-animations.md), or [reuse a rendering style](rendering/README.md).
 
 ## Use the files
 

@@ -1,7 +1,9 @@
 // macOS: encode a numbered JPEG/PNG sequence as an H.264 MP4, without audio.
 // Run from this folder after rendering:
 //   swift encode_mp4.swift rendered-frames warm-shelf-v4.mp4 192 24
-// The final two arguments default to 192 frames and 24 fps (eight seconds).
+//   swift encode_mp4.swift rendered-frames organizer.mp4 144 24 20
+// Optional arguments default to 192 frames, 24 fps and 8 Mbps.
+// Bitrate is a whole number from 1 through 1000 Mbps; 20 is useful for finer detail.
 // Existing output files are preserved. Validation also writes preview frames
 // and a JSON report beside the input frames, in an encoded-checks directory.
 
@@ -20,6 +22,14 @@ enum VideoError: Error, CustomStringConvertible {
 
 func check(_ condition: Bool, _ message: String) throws {
     if !condition { throw VideoError.message(message) }
+}
+
+func positiveInteger(_ arguments: [String], at index: Int, fallback: Int, name: String) throws -> Int {
+    guard index < arguments.count else { return fallback }
+    guard let value = Int(arguments[index]), value > 0 else {
+        throw VideoError.message("\(name) must be a positive integer")
+    }
+    return value
 }
 
 func readImage(_ url: URL) throws -> CGImage {
@@ -83,12 +93,15 @@ func verify(_ output: URL, expectedCount: Int, fps: Int32, previewDirectory: URL
 
 func main() throws {
     let arguments = Array(CommandLine.arguments.dropFirst())
-    try check(arguments.count >= 2, "Usage: swift encode_mp4.swift FRAME_DIRECTORY OUTPUT.mp4 [EXPECTED_FRAMES=192] [FPS=24]")
+    try check((2...5).contains(arguments.count), "Usage: swift encode_mp4.swift FRAME_DIRECTORY OUTPUT.mp4 [EXPECTED_FRAMES=192] [FPS=24] [BITRATE_MBPS=8]")
     let directory = URL(fileURLWithPath: arguments[0], isDirectory: true)
     let output = URL(fileURLWithPath: arguments[1])
-    let expectedCount = arguments.count > 2 ? Int(arguments[2]) ?? 192 : 192
-    let fps = arguments.count > 3 ? Int32(arguments[3]) ?? 24 : 24
-    try check(expectedCount > 0 && fps > 0, "Frame count and FPS must be positive")
+    let expectedCount = try positiveInteger(arguments, at: 2, fallback: 192, name: "Frame count")
+    let fpsValue = try positiveInteger(arguments, at: 3, fallback: 24, name: "FPS")
+    try check(fpsValue <= Int(Int32.max), "FPS exceeds the supported integer range")
+    let fps = Int32(fpsValue)
+    let bitrateMbps = try positiveInteger(arguments, at: 4, fallback: 8, name: "Bitrate in Mbps")
+    try check(bitrateMbps <= 1000, "Bitrate must be between 1 and 1000 Mbps")
     let files = try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
         .filter { ["jpg", "jpeg", "png"].contains($0.pathExtension.lowercased()) }
         .sorted { $0.lastPathComponent < $1.lastPathComponent }
@@ -102,7 +115,7 @@ func main() throws {
     let writer = try AVAssetWriter(outputURL: output, fileType: .mp4)
     writer.shouldOptimizeForNetworkUse = true
     let compression: [String: Any] = [
-        AVVideoAverageBitRateKey: 8_000_000,
+        AVVideoAverageBitRateKey: bitrateMbps * 1_000_000,
         AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
         AVVideoMaxKeyFrameIntervalKey: Int(fps),
         AVVideoAllowFrameReorderingKey: false

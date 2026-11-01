@@ -1,0 +1,401 @@
+{
+  "scope": "Settings used for mounted Linea product images and animations in Blender 5.0.1. Numeric recipe only; no reference furniture geometry or textures.",
+  "units": {
+    "system": "METRIC",
+    "scale_length": 0.001,
+    "length_unit": "MILLIMETERS",
+    "numeric_coordinates": "1 scene coordinate unit =1 mm in this project",
+    "shelf_object_scale": [
+      1,
+      1,
+      1
+    ],
+    "organizer_object_scale": [
+      1000,
+      1000,
+      1000
+    ],
+    "organizer_scale_reason": "Original organizer vertex coordinates are in metres;1000\u00d7 transform converts to the millimetre scene. Do not apply this conversion a second time to an STL already in mm."
+  },
+  "shared_surface_settings": {
+    "principled_product": {
+      "base_color_rgba": [
+        0.78,
+        0.735,
+        0.645,
+        1
+      ],
+      "roughness": 0.52,
+      "specular_ior_level": 0.28,
+      "ior": 1.5,
+      "metallic": 0,
+      "coat_weight": 0,
+      "subsurface_weight": 0
+    },
+    "principled_floor": {
+      "base_color_rgba": [
+        0.72,
+        0.665,
+        0.575,
+        1
+      ],
+      "roughness": 0.82,
+      "specular_ior_level": 0.28,
+      "ior": 1.5,
+      "metallic": 0
+    },
+    "floor_plane": {
+      "size_mm": [
+        200000,
+        200000
+      ],
+      "z_mm": -0.5
+    },
+    "world_background": {
+      "color_rgba": [
+        0.9,
+        0.855,
+        0.76,
+        1
+      ],
+      "strength": 0.4
+    },
+    "color_values": "Numeric Blender node values, assigned directly in Python; not sRGB hex values."
+  },
+  "lighting": [
+    {
+      "name": "Large soft nursery window",
+      "shape": "DISK",
+      "location_mm": [
+        -1000.0,
+        -1300.0,
+        2000.0
+      ],
+      "aim_target_mm": [
+        0,
+        0,
+        550
+      ],
+      "power_in_mm_scene": 28000000.0,
+      "diameter_mm": 1500.0,
+      "color_rgb": [
+        1.0,
+        0.949999988079071,
+        0.8500000238418579
+      ],
+      "shadow_jitter": false,
+      "shadows": true
+    },
+    {
+      "name": "Soft daylight fill",
+      "shape": "DISK",
+      "location_mm": [
+        1300.0,
+        -500.0,
+        1500.0
+      ],
+      "aim_target_mm": [
+        100,
+        -50,
+        750
+      ],
+      "power_in_mm_scene": 15000000.0,
+      "diameter_mm": 1300.0,
+      "color_rgb": [
+        1.0,
+        0.9850000143051147,
+        0.9399999976158142
+      ],
+      "shadow_jitter": false,
+      "shadows": true
+    },
+    {
+      "name": "Warm edge separation",
+      "shape": "DISK",
+      "location_mm": [
+        0.0,
+        1300.0,
+        1900.0
+      ],
+      "aim_target_mm": [
+        0,
+        0,
+        650
+      ],
+      "power_in_mm_scene": 16000000.0,
+      "diameter_mm": 1100.0,
+      "color_rgb": [
+        1.0,
+        0.9300000071525574,
+        0.800000011920929
+      ],
+      "shadow_jitter": false,
+      "shadows": true
+    }
+  ],
+  "shared_render": {
+    "color_management": "AgX / AgX - Medium High Contrast",
+    "exposure": 0.2,
+    "gamma": 1,
+    "display_device": "sRGB",
+    "transparent_film": false,
+    "stamp_flags": "All use_stamp* boolean fields false",
+    "threads": 4,
+    "fps": 24,
+    "fps_base": 1,
+    "resolution_percentage": 100,
+    "color_mode": "RGB",
+    "color_depth": "8"
+  },
+  "final_output_overrides": [
+    {
+      "output": "combined full table still",
+      "engine": "BLENDER_EEVEE",
+      "samples": 128,
+      "raytracing": true,
+      "resolution": [
+        2000,
+        1500
+      ],
+      "format": "PNG",
+      "camera": "Linea V4 | full table"
+    },
+    {
+      "output": "combined close still",
+      "engine": "BLENDER_EEVEE",
+      "samples": 128,
+      "raytracing": true,
+      "resolution": [
+        1600,
+        1200
+      ],
+      "format": "PNG",
+      "camera": "Linea V4 | combined detail"
+    },
+    {
+      "output": "combined clip",
+      "engine": "BLENDER_EEVEE",
+      "samples": 64,
+      "raytracing": true,
+      "resolution": [
+        1280,
+        960
+      ],
+      "frames": [
+        1,
+        192
+      ],
+      "format": "JPEG",
+      "jpeg_quality": 96,
+      "duration_seconds": 8,
+      "camera": "Linea V4 | context to accessories",
+      "h264_target_bitrate": 8000000
+    },
+    {
+      "output": "shelf hero and rib detail stills",
+      "engine": "BLENDER_EEVEE",
+      "samples": 128,
+      "raytracing": true,
+      "resolution": [
+        2000,
+        1500
+      ],
+      "format": "PNG",
+      "camera": [
+        "Shelf mounted hero",
+        "Shelf curved ribs with Linea context"
+      ]
+    },
+    {
+      "output": "shelf clip",
+      "engine": "BLENDER_EEVEE",
+      "samples": 64,
+      "raytracing": true,
+      "resolution": [
+        1280,
+        960
+      ],
+      "frames": [
+        1,
+        144
+      ],
+      "format": "JPEG",
+      "jpeg_quality": 96,
+      "duration_seconds": 6,
+      "camera": "Shelf on Linea motion",
+      "h264_target_bitrate": 8000000
+    },
+    {
+      "output": "organizer hero and context stills",
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 32,
+      "denoising": true,
+      "max_bounces": 12,
+      "resolution": [
+        2000,
+        1500
+      ],
+      "format": "PNG",
+      "png_compression": 15,
+      "camera": [
+        "Organizer | warm mounted hero",
+        "Organizer | mounted gentle move"
+      ],
+      "frame": 1
+    },
+    {
+      "output": "organizer clip",
+      "engine": "BLENDER_EEVEE",
+      "samples": 32,
+      "raytracing": false,
+      "resolution": [
+        1280,
+        960
+      ],
+      "frames": [
+        1,
+        144
+      ],
+      "format": "PNG",
+      "png_compression": 15,
+      "duration_seconds": 6,
+      "camera": "Organizer | mounted gentle move",
+      "h264_target_bitrate": 20000000
+    }
+  ],
+  "static_camera_recipe": [
+    {
+      "name": "combined full table",
+      "location_mm": [
+        1600,
+        -2050,
+        1500
+      ],
+      "target_mm": [
+        70,
+        -30,
+        490
+      ],
+      "ortho_scale": 1750
+    },
+    {
+      "name": "combined close",
+      "location_mm": [
+        1050,
+        -800,
+        1210
+      ],
+      "target_mm": [
+        320,
+        -85,
+        880
+      ],
+      "ortho_scale": 690
+    },
+    {
+      "name": "shelf hero",
+      "location_mm": [
+        1050,
+        -800,
+        1210
+      ],
+      "target_mm": [
+        350,
+        0,
+        910
+      ],
+      "ortho_scale": 490
+    },
+    {
+      "name": "shelf curved rib detail",
+      "location_mm": [
+        1100,
+        650,
+        850
+      ],
+      "target_mm": [
+        345,
+        30,
+        900
+      ],
+      "ortho_scale": 460
+    },
+    {
+      "name": "organizer hero",
+      "target_mm": [
+        303,
+        -212,
+        880
+      ],
+      "azimuth_degrees": -51,
+      "radius_mm": 1200,
+      "height_above_target_mm": 500,
+      "ortho_scale": 600
+    }
+  ],
+  "camera_shared": {
+    "type": "ORTHO",
+    "dof": false,
+    "clip_start_mm": 0.1,
+    "clip_end_combined_and_shelf_mm": 100000,
+    "clip_end_organizer_mm": 10000,
+    "aim_formula": "(target-camera.location).to_track_quat('-Z','Y').to_euler()",
+    "position_formula": "theta = math.radians(azimuth_degrees); target + Vector((radius * math.cos(theta), radius * math.sin(theta), height))",
+    "orthographic_note": "ortho_scale is the Blender camera property; do not rename it as a lens focal length.",
+    "angle_unit": "degrees; convert to radians before trigonometric functions"
+  },
+  "motion_formula": {
+    "combined": {
+      "frames": 192,
+      "u": "(frame-1)/191",
+      "p": "max(0,(u-0.18)/0.82)",
+      "e": "p*p*(3-2*p)",
+      "target": "lerp((70,-30,490),(315,-95,860),e)",
+      "azimuth_degrees": "-53+20*e",
+      "radius_mm": "2535-1385*e",
+      "height_mm": "1010-600*e",
+      "ortho_scale": "1750-960*e",
+      "opening": "Held initially until about18% of clip, then smooth push; actual table stays visible."
+    },
+    "shelf": {
+      "frames": 144,
+      "u": "(frame-1)/143",
+      "e": "u*u*(3-2*u)",
+      "target": "lerp((325,0,885),(350,20,900),e)",
+      "azimuth_degrees": "-45+70*e",
+      "radius_mm": "1300-250*e",
+      "height_mm": "320-235*e",
+      "ortho_scale": "620-140*e"
+    },
+    "organizer": {
+      "frames": 144,
+      "u": "(frame-1)/143",
+      "e": "u*u*(3-2*u)",
+      "target": "lerp((250,-160,785),(303,-212,880),e)",
+      "azimuth_degrees": "-58+18*e",
+      "radius_mm": "1500-350*e",
+      "height_mm": "560-120*e",
+      "ortho_scale": "820-220*e"
+    },
+    "keys": "Insert location, rotation_euler and camera.data.ortho_scale keys every frame. Saved F-curves are BEZIER with AUTO_CLAMPED handles; actual rendered frame values follow the explicit smoothstep formulas."
+  },
+  "encoding": {
+    "container": "MP4",
+    "codec": "H.264 High Auto Level",
+    "max_keyframe_interval": 24,
+    "frame_reordering": false,
+    "audio_tracks": 0,
+    "network_optimization": true,
+    "validation": "Decode every frame; verify count/duration/resolution/fps; inspect decoded first/middle/last. Encoder bitrate targets differ byclip; not all were20Mbps."
+  },
+  "notes": [
+    "The saved scene defaults differ from some final-output profiles; select the required camera and output settings before rendering.",
+    "Coordinate values use millimetres. Keep the complete geometry, light and camera rig at this scale when using the listed power values.",
+    "The original organizer scene stores metre-based vertices with a scale transform of 1000. Accepted exported STLs are already in millimetres.",
+    "Colour values are raw Blender node inputs. Keep AgX, Medium High Contrast and exposure +0.2 together.",
+    "Keep the actual Linea table visible in product views and preserve the accepted accessory geometry and mounting transforms.",
+    "Complete table-containing scenes and packed reference textures remain local; this file contains only rendering settings.",
+    "Final videos were encoded from numbered frames with the macOS AVFoundation encoder."
+  ]
+}

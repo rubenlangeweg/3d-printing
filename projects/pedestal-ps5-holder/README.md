@@ -4,7 +4,7 @@ A printed holder for mounting a PlayStation 5 behind a Pedestal A-frame TV stand
 
 ![Black holder mounted behind the Pedestal A-frame with a PlayStation 5](renders/pedestal-assembly.png)
 
-[Watch the assembly steps](animations/pedestal-installation.mp4): the holder slides onto the frame, then the PlayStation slides into the holder. The clip is 12 seconds.
+[Watch the assembly steps](animations/pedestal-installation.mp4): the holder slides onto the frame, then the PlayStation slides into the holder. The 12-second clip uses slow camera orbits and gentle push-ins, with no labels or overlays.
 
 Also available: [the mounted assembly](animations/pedestal-assembly.mp4) and [the holder on its own](animations/pedestal-holder.mp4), eight seconds each. All videos are 1920 × 1080 at 24 fps.
 
@@ -33,7 +33,7 @@ The archived STL files are byte-for-byte copies. The scene export preserves the 
 
 [Open the clean holder scene](source/pedestal-holder.blend) in Blender 5.0.1. It includes the holder, procedural materials, studio lights and animated camera. [Rendering notes](rendering/README.md) cover reproduction.
 
-The assembly animation uses the original Pedestal frame, TV and PlayStation reference models, preserving their mounting transforms. Finished context renders are included with permission to publish renders. The frame and console source meshes remain local and are not redistributed.
+The context videos use the original Pedestal frame, TV and PlayStation reference models. Their final mounted positions match the source scene. Finished context renders are included with permission to publish renders. The frame and console source meshes remain local and are not redistributed.
 
 ## Validation
 

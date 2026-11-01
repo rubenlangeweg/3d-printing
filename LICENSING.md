@@ -12,7 +12,7 @@ The original renders and assembly animation in `projects/volvo-xc60-holder/` als
 
 ## Scripts
 
-The original Python, Swift, JavaScript and HTML source code and rendering preset configurations are licensed under the [MIT License](LICENSES/MIT.txt). The result arrays in `projects/leander-linea/analysis/organizer/data.js` are analysis data covered by CC BY-NC 4.0, despite their JavaScript file extension. The generated models and media retain the license described above; using a script does not replace those asset terms.
+The original Python, Swift, JavaScript and HTML source code and rendering preset configurations are licensed under the [MIT License](LICENSES/MIT.txt). The numerical result and mesh data bundles in `projects/leander-linea/analysis/`, including `data.js` and `mount-data.js` files, are analysis data covered by CC BY-NC 4.0 despite their JavaScript file extensions. The generated models and media retain the license described above; using a script does not replace those asset terms.
 
 ## Third-party material
 

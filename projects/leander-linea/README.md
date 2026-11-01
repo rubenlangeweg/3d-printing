@@ -50,7 +50,7 @@ The resulting scenes are saved in `generated/editable/`. [Model checksums](model
 
 ## Strength studies
 
-Open [the organizer viewer](analysis/organizer/index.html) after cloning or downloading the repository. It runs locally and includes 300 g and 2 kg contents cases. The [analysis notes](analysis/README.md) explain the mounting assumptions and link to the full shelf comparison.
+Open the [shelf study](analysis/shelf/index.html) or [organizer viewer](analysis/organizer/index.html) after cloning or downloading the repository. Both include 300 g and 2 kg cases. The shelf page contains the latest V3/V4 contact comparison and links to the earlier V2/V3 interactive 3D study. The [analysis notes](analysis/README.md) explain their different mounting and self-weight assumptions.
 
 ## References
 

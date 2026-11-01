@@ -1,0 +1,71 @@
+{
+  "solidMassKg": 0.3822587275099162,
+  "solidCentreOfMassMm": [
+    1.6838420929233293e-06,
+    38.6315307029246,
+    -2.315390865434664
+  ],
+  "scenarios": [
+    {
+      "id": "300g-front",
+      "addedMassKg": 0.3,
+      "position": "front",
+      "addedForceN": 2.941995,
+      "shelfWeightN": 3.7486775501351195,
+      "totalDownwardForceN": 6.690672550135118,
+      "addedPitchMomentNm": 0.38245935,
+      "totalPitchMomentNm": 0.527276501873409,
+      "addedTwistMomentNm": 0.0,
+      "reference": "Moments about the nominal outer rail-top point; local X runs along rail, Y outwards, Z upwards"
+    },
+    {
+      "id": "300g-corner",
+      "addedMassKg": 0.3,
+      "position": "corner",
+      "addedForceN": 2.941995,
+      "shelfWeightN": 3.7486775501351195,
+      "totalDownwardForceN": 6.690672550135118,
+      "addedPitchMomentNm": 0.38245935,
+      "totalPitchMomentNm": 0.527276501873409,
+      "addedTwistMomentNm": 0.191229675,
+      "reference": "Moments about the nominal outer rail-top point; local X runs along rail, Y outwards, Z upwards"
+    },
+    {
+      "id": "2000g-front",
+      "addedMassKg": 2.0,
+      "position": "front",
+      "addedForceN": 19.6133,
+      "shelfWeightN": 3.7486775501351195,
+      "totalDownwardForceN": 23.361977550135116,
+      "addedPitchMomentNm": 2.549729,
+      "totalPitchMomentNm": 2.6945461518734093,
+      "addedTwistMomentNm": 0.0,
+      "reference": "Moments about the nominal outer rail-top point; local X runs along rail, Y outwards, Z upwards"
+    },
+    {
+      "id": "2000g-corner",
+      "addedMassKg": 2.0,
+      "position": "corner",
+      "addedForceN": 19.6133,
+      "shelfWeightN": 3.7486775501351195,
+      "totalDownwardForceN": 23.361977550135116,
+      "addedPitchMomentNm": 2.549729,
+      "totalPitchMomentNm": 2.6945461518734093,
+      "addedTwistMomentNm": 1.2748645,
+      "reference": "Moments about the nominal outer rail-top point; local X runs along rail, Y outwards, Z upwards"
+    }
+  ],
+  "scope": "Statics gives the net load passed to the rail. Frame, joints, floor reactions, table flex and tipping are not solved.",
+  "referenceTableFit": {
+    "clipOpeningMm": 13.0,
+    "downloadedMeshRailThicknessMm": [
+      10.05,
+      10.1
+    ],
+    "downloadedMeshTiltDegrees": 25.658,
+    "clipTiltDegrees": 26.0,
+    "physicalRailThicknessMm": null,
+    "userConfirmedSnug13mmClipFit": true,
+    "note": "User confirms the 13 mm opening fits the real table nicely. The downloaded thinner rail is a reference-mesh discrepancy, not evidence of real clearance. Exact physical thickness was not measured."
+  }
+}

@@ -4,9 +4,19 @@ These results compare small static loads under stated assumptions. They do not e
 
 ## View the results
 
-Open [organizer/index.html](organizer/index.html) in a browser after cloning or downloading the repository. The viewer loads its bundled data locally, with no server or external libraries. Choose 300 g or 2 kg, rotate the model and compare movement with stress. Red marks the upper end of the selected colour scale. It does not mark failure.
+Open these pages in a browser after cloning or downloading the repository. They load bundled data locally, with no server or external libraries.
+
+| Study | Versions and assumptions | Controls |
+| --- | --- | --- |
+| [Latest shelf comparison](shelf/index.html) | V3 and selected V4, snug rail contact with self-weight | 300 g or 2 kg summary charts |
+| [Earlier shelf 3D study](shelf/earlier/index.html) | V2 and V3, fixed bonded mount, added load only | Rotate, material stiffness, load position, movement, stress and magnification |
+| [Organizer 3D study](organizer/index.html) | Original organizer, fixed lip with self-weight | 300 g or 2 kg, rotate, movement and stress |
+
+The earlier shelf page also includes the separate V3 contact mounting table and a load-transfer diagram. Its top controls do not change that table. There is no V4 interactive 3D heatmap in this package. Red in a heatmap marks the upper end of the selected colour scale, not failure.
 
 Full results are in [organizer/results.json](organizer/results.json) and [shelf-v3-v4-comparison.json](shelf-v3-v4-comparison.json). The numerical fields are copied from the original studies without new solves or changes.
+
+The earlier shelf data is preserved in [earlier/results.json](shelf/earlier/results.json), [mount-results.json](shelf/earlier/mount-results.json) and [mount-context.json](shelf/earlier/mount-context.json). The 1 mm V2/V3 heatmaps scale verified linear solutions for the selected force and uniform material stiffness. They exclude shelf self-weight and model a bonded backplate, so their movement values differ from the later contact studies.
 
 ## Shelf mounting
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Print strength studies"
+  short_description: "Blender strength studies with VoxelSim and mount checks"
+  default_prompt: "Use $print-strength to study this printed part under its expected loads and mounting conditions, and show displacement and stress in Blender."

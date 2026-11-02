@@ -42,3 +42,5 @@ To work on a design, clone the repository and use the source files. Geometry gen
 ## Licensing and credits
 
 Our models, data, documentation and clean accessory scenes use **CC BY-NC 4.0**. Code uses **MIT**. The table images and videos contain third-party assets and are excluded from that CC grant. See [LICENSING.md](LICENSING.md) for the scope and credits. Downloaded furniture source assets are not included.
+
+The [print-strength skill](skills/print-strength/SKILL.md) sets up Blender strength studies, mounting assumptions and numerical checks. Copy `skills/print-strength` into `${CODEX_HOME:-$HOME/.codex}/skills/` and use `$print-strength` in a new chat. It includes a fixed-support scene helper and a solver benchmark. VoxelSim is installed separately.

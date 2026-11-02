@@ -46,3 +46,5 @@ Both studies use solid, homogeneous, isotropic PLA with E = 2.06 GPa, ν = 0.35 
 Print orientation, layer bonding, infill, creep, fracture, impact and wood movement are absent. Physical testing is needed before assigning a capacity.
 
 The solver was [VoxelSim FEA 2.5.6](https://github.com/RandomLambda/VoxelSim-FEA), pinned to commit [`cc9f7b2252ceda0730f4f331408de9e6b276ddfd`](https://github.com/RandomLambda/VoxelSim-FEA/tree/cc9f7b2252ceda0730f4f331408de9e6b276ddfd), using fully integrated Hex8 linear elasticity. This folder contains the results and local viewer, not a solver installation. Solver code, third-party dependencies and raw calculation caches are not bundled.
+
+Reuse the setup and validation workflow through the [print-strength skill](../../../skills/print-strength/SKILL.md). It covers Blender setup, fixed supports, rail contact, self-weight, mesh refinement and reading heatmaps.

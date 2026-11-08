@@ -6,11 +6,18 @@
   "brim_width_mm": 10,
   "brim_object_gap_mm": 0,
   "brim_confirmed_on_both_parts": true,
-  "mesh_and_placement_entries_byte_identical": true,
   "stl_hashes_unchanged": true,
   "slice_success": true,
   "slicer_warnings": [],
   "estimated_total_seconds": 4100.95361328125,
-  "estimated_filament_g": 22.640064239501953,
-  "physical_print_verified": false
+  "estimated_filament_g": 22.64,
+  "physical_print_verified": false,
+  "mesh_and_placement_max_rounding_mm": 1.0000000116860974e-06,
+  "triangle_topology_unchanged": true,
+  "build_plate": "Textured PEI Plate",
+  "bambu_studio_gui_open_verified": true,
+  "bambu_studio_gui_slice_verified": true,
+  "bambu_studio_version": "02.08.02.61",
+  "configuration_repair": "Native project format; process override keys retained; explicit per-plate Textured PEI setting.",
+  "estimated_gui_total": "1h8m"
 }

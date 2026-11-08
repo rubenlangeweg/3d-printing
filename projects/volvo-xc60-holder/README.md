@@ -21,7 +21,9 @@ The selected files are in `models/`. Their [SHA-256 hashes](models/SHA256SUMS) i
 
 The base is approximately **56.57 × 50.38 × 28.00 mm**. The ball diameter is **17 mm**. Outer corner radii are **1.5 mm**; the curved inner roots have a **5 mm** radius. The root curves occupy 5 mm of clearance inside each arm. Small hook end-face corrections reach approximately 0.31 mm; the hook cross-section and overall envelope are retained.
 
-The saved profile uses a Bambu X1 Carbon, PETG-CF, a 0.4 mm nozzle, 0.2 mm layers, six walls and 25% infill. Both parts were sliced without supports. The base has an approximately 12 mm bridge across its recessed slide. The recorded slicer estimate is **55 minutes and 25.7 g** for both parts. Check the preview and material settings for your printer.
+The saved profile uses a Bambu X1 Carbon, **Bambu PAHT-CF**, a 0.4 mm nozzle, 0.2 mm layers, six walls and 25% infill. Both parts use a **continuous 10 mm outer brim with zero separation**, replacing the automatic brim. Trim the attached brim after printing. Both parts were sliced without supports. The base has an approximately 12 mm bridge across its recessed slide. The recorded slicer estimate is **68 minutes and 22.6 g** for both parts. Check the preview and material settings for your printer.
+
+[View the sliced first layer](analysis/paht-cf-brim-preview.png). The PAHT-CF/brim update changes only print settings; the model geometry and placement are unchanged. [Verification](analysis/paht-cf-brim-checks.json).
 
 ## Slow camera view
 

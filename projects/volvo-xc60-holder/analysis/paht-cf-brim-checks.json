@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-08",
+  "material_preset": "Bambu PAHT-CF @BBL X1C",
+  "printer": "Bambu Lab X1 Carbon 0.4 nozzle",
+  "brim_type": "outer_only",
+  "brim_width_mm": 10,
+  "brim_object_gap_mm": 0,
+  "brim_confirmed_on_both_parts": true,
+  "mesh_and_placement_entries_byte_identical": true,
+  "stl_hashes_unchanged": true,
+  "slice_success": true,
+  "slicer_warnings": [],
+  "estimated_total_seconds": 4100.95361328125,
+  "estimated_filament_g": 22.640064239501953,
+  "physical_print_verified": false
+}

@@ -1,0 +1,81 @@
+{
+  "revision": "PAHT-CF fit 5",
+  "ball_diameter_mm": 16.8,
+  "slider_width_reduction_mm": 0.7,
+  "slider_depth_mm": 3.2,
+  "slider_length_mm": 28.0,
+  "neck_width_mm": 8.5,
+  "neck_section": "rounded rectangle",
+  "neck_height_mm": 10.0,
+  "ball_rise_mm": 6.0,
+  "lead_in_chamfer_mm": 0.3,
+  "lead_in_edge_count": 6,
+  "non_manifold_edges": 0,
+  "zero_area_faces": 0,
+  "volume_mm3": 3727.0067331963164,
+  "physical_fit_verified": false,
+  "main_holder_physical_fit": "Confirmed by owner 2026-11-09",
+  "ball_center_mm": [
+    0.06851959228515625,
+    6.044055938720703,
+    19.91200065612793
+  ],
+  "minimum_triangle_area_mm2": 2.764863893389702e-10,
+  "tiny_positive_seam_triangles": 10,
+  "neck_construction": "joined rectangular-to-circular loft",
+  "base_stl_sha256": "320ace41e92fb2a40bed5f473900502800d0a23d0226ac147310f2905f31ab50",
+  "insertion_path": [
+    {
+      "offset_y_mm": 42,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 35,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 28,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 21,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 14,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 7,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 0,
+      "intersection_mm3": 0.0
+    }
+  ],
+  "ball-module-paht-fit-v5": {
+    "connected_solids": 1,
+    "manifold": true,
+    "volume_mm3": 3727.0069269740693,
+    "slice_success": true,
+    "estimated_seconds": 1090.7518310546875,
+    "estimated_grams": 3.3870575428009033,
+    "brim_present": true,
+    "supports_generated": false
+  },
+  "slider-paht-fit-test-v5": {
+    "connected_solids": 1,
+    "manifold": true,
+    "volume_mm3": 867.2110034162415,
+    "slice_success": true,
+    "estimated_seconds": 701.423583984375,
+    "estimated_grams": 1.275588035583496,
+    "brim_present": true,
+    "supports_generated": false
+  },
+  "ball_surface_translation_error_mm": 4.76837158203125e-07,
+  "dovetail_surfaces_identical_to_v4": true,
+  "strength_load_test_performed": false,
+  "gui_import_verified": false
+}

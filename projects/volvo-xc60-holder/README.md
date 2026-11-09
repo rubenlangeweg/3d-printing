@@ -10,8 +10,8 @@ These standalone assembly views follow the [product-rendering skill](../../skill
 
 | File | Use |
 | --- | --- |
-| [Revised small part, PAHT-CF](models/ball-module-paht-fit-v4.3mf) | Print only the smaller ball module for the existing base |
-| [Slider fit test](models/slider-paht-fit-test-v4.3mf) | Full 28 mm slider to check the longer engagement |
+| [Revised small part, PAHT-CF](models/ball-module-paht-fit-v5.3mf) | Print only the smaller ball module for the existing base |
+| [Slider fit test](models/slider-paht-fit-test-v5.3mf) | Full 28 mm slider to check the longer engagement |
 | [Original two-part project](models/holder-without-ribs.3mf) | Original 17 mm ball module and unchanged base |
 | [Base STL](models/base-front-down.stl) | Base already oriented front down |
 | [Ball module STL](models/ball-module.stl) | Separate ball module, oriented on its flat back |
@@ -19,19 +19,21 @@ These standalone assembly views follow the [product-rendering skill](../../skill
 
 The selected files are in `models/`. Their [SHA-256 hashes](models/SHA256SUMS) identify each file. The original ball module remains available. Earlier ribbed variants are not included.
 
-### PAHT-CF reinforced revision 4, 9 November 2026
+### PAHT-CF reinforced revision 5, 9 November 2026
 
-The slider is now **28 mm tall**, up from 16 mm. It extends toward the open top of the slot, retaining the v3 cross-section, lower stop and 0.30 mm lead-in chamfer. The neck's narrow section increases from **7.1 to 8.5 mm**, with the existing tapered transition into the ball. The **16.8 mm ball surface and centre are unchanged**. The main holder remains unchanged.
+The **16.8 mm ball and neck sit 6 mm higher**, centred on the 28 mm slider. The neck has an **8.5 × 10 mm rounded rectangular section**, with a 6.4 × 10 mm root and a tapered transition into the ball. The slider's v3/v4 mating surfaces, lower stop and 0.30 mm lead-in chamfer remain unchanged. The main holder remains unchanged.
+
+The ball surface is identical to revision 4, translated upward only. The rectangular neck and higher mounting position still need a physical check with the Mous socket and the car.
 
 The owner reported a better fit with the v3 slider test and requested these reinforcements. The sliding section remains 0.70 mm narrower overall than the original (0.35 mm per side), with a 3.2 mm dovetail depth. These are geometry changes intended to improve stiffness and load transfer, not a tested strength rating.
 
-[Print the revised ball module](models/ball-module-paht-fit-v4.3mf), or first use the [full-length slider test](models/slider-paht-fit-test-v4.3mf) to check the longer contact area. Trim the brim flush before fitting. Check the Mous head's grip and tilt with the thicker neck before final assembly.
+[Print the revised ball module](models/ball-module-paht-fit-v5.3mf), or first use the [full-length slider test](models/slider-paht-fit-test-v5.3mf) to check the longer contact area. Trim the brim flush before fitting. Check the Mous head's grip, tilt and surrounding clearance with the higher rectangular neck before final assembly.
 
-Both files use Bambu PAHT-CF, X1 Carbon 0.4 mm, textured PEI, six walls, 25% infill, 0.2 mm layers, and a 10 mm outer brim with zero gap. The ball module slices without supports in about **18 minutes**, using **3.3 g**. The full-length slider test takes about **12 minutes** and **1.3 g**. Physical fit and load testing of revision 4 remain open.
+Both files use Bambu PAHT-CF, X1 Carbon 0.4 mm, textured PEI, six walls, 25% infill, 0.2 mm layers, and a 10 mm outer brim with zero gap. The ball module slices without supports in about **18 minutes**, using **3.4 g**. The full-length slider test takes about **12 minutes** and **1.3 g**. Physical fit and load testing of revision 5 remain open.
 
-![Reinforced small part](renders/ball-module-paht-fit-v4.png)
+![Reinforced small part](renders/ball-module-paht-fit-v5.png)
 
-[Ball module STL](models/ball-module-paht-fit-v4.stl) · [Full-length slider test STL](models/slider-paht-fit-test-v4.stl) · [Editable model](source/holder-paht-fit-v4.blend). Other renders and animations show the original 17 mm model.
+[Ball module STL](models/ball-module-paht-fit-v5.stl) · [Full-length slider test STL](models/slider-paht-fit-test-v5.stl) · [Editable model](source/holder-paht-fit-v5.blend). Other renders and animations show the original 17 mm model.
 
 ## Dimensions and printing
 
@@ -83,7 +85,7 @@ The [separate head reference](rendering/mous-head-reference.blend), [Mous attach
 
 The selected base export is one closed solid, with no non-manifold edges or zero-area triangles. The 3MF geometry matches the STL within 0.00000005 mm. Seven sampled positions along the module's insertion path show no solid intersection. Bambu Studio completed slicing without reported warnings. Reports are in [analysis](analysis/).
 
-The owner confirmed physical vent fit of the base on 9 November 2026. Revised slider and ball fit, glue retention, strength and resistance to heat remain unverified. The fit revision passed manifold checks and seven sampled insertion positions with no solid intersection. Bambu Studio command-line slicing succeeded; GUI import verification was blocked by an unresponsive file picker. See [fit checks](analysis/paht-fit-checks-v4.json).
+The owner confirmed physical vent fit of the base on 9 November 2026. Revised slider and ball fit, glue retention, strength and resistance to heat remain unverified. The fit revision passed manifold checks and seven sampled insertion positions with no solid intersection. Bambu Studio command-line slicing succeeded; GUI import has not been verified for this revision. See [fit checks](analysis/paht-fit-checks-v5.json).
 
 ## Edit and render
 
@@ -91,6 +93,6 @@ Open the clean Blender source to edit the model. The source contains only the ba
 
 Models and original media follow the repository's [CC BY-NC 4.0 terms](../../LICENSING.md); the rendering script is MIT. Volvo and Mous names, product designs and trademarks retain their respective rights. This is an independently designed compatible accessory, not an official Volvo product.
 
-Rebuild the fit revision with `blender -b --python source/build_paht_fit.py`, then `python3 source/package_paht_fit.py`, from this project directory. These commands build revision 4 by default. For revision 1, append `-- --revision 1` to the Blender command and `--revision 1` to the Python command.
+Rebuild the fit revision with `blender -b --python source/build_paht_fit.py`, then `python3 source/package_paht_fit.py`, from this project directory. These commands build revision 5 by default. For revision 1, append `-- --revision 1` to the Blender command and `--revision 1` to the Python command.
 
-Render revision 4 with `blender -b --python rendering/render_v4.py`. The separate [render scene](rendering/paht-fit-v4.blend) uses the repository black product style.
+Render revision 5 with `blender -b --python rendering/render_v5.py`. The separate [render scene](rendering/paht-fit-v5.blend) uses the repository black product style.

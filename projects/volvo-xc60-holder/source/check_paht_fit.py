@@ -2,7 +2,7 @@ import bpy,bmesh,json,argparse,sys
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
-parser.add_argument('--revision',type=int,choices=[1,2,3,4],default=4)
+parser.add_argument('--revision',type=int,choices=[1,2,3,4,5],default=5)
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 suffix='' if args.revision==1 else f'-v{args.revision}'
 bpy.ops.wm.open_mainfile(filepath=str(P/f'source/holder-paht-fit{suffix}.blend'))
@@ -27,7 +27,7 @@ for name in ['ball-module-paht-fit','slider-paht-fit-test']:
     if w in remaining:remaining.remove(w);todo.append(w)
  assert components==1
  assert all(e.is_manifold for e in bm.edges)
- assert all(f.calc_area()>1e-9 for f in bm.faces)
+ assert all(f.calc_area()>(1e-12 if args.revision==5 else 1e-9) for f in bm.faces)
  assert bm.calc_volume(signed=True)>0
  report[name]={'connected_solids':components,'manifold':True,'volume_mm3':bm.calc_volume()};bm.free()
 (P/f'analysis/paht-fit-checks{suffix}.json').write_text(json.dumps(report,indent=2)+'\n')

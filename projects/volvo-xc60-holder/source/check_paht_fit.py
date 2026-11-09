@@ -2,9 +2,9 @@ import bpy,bmesh,json,argparse,sys
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
-parser.add_argument('--revision',type=int,choices=[1,2],default=2)
+parser.add_argument('--revision',type=int,choices=[1,2,3],default=3)
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-suffix='' if args.revision==1 else '-v2'
+suffix='' if args.revision==1 else f'-v{args.revision}'
 bpy.ops.wm.open_mainfile(filepath=str(P/f'source/holder-paht-fit{suffix}.blend'))
 base=bpy.data.objects['Base - rounded roots - no ribs'];ball=bpy.data.objects['Ball module - 16.8 mm - PAHT fit'];values=[]
 for y in [42,35,28,21,14,7,0]:

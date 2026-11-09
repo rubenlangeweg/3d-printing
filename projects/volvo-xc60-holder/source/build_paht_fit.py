@@ -7,11 +7,11 @@ from mathutils import Vector
 
 PROJECT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
-parser.add_argument('--revision', type=int, choices=[1, 2], default=2)
+parser.add_argument('--revision', type=int, choices=[1, 2, 3], default=3)
 args = parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 REVISION = args.revision
-SUFFIX = '' if REVISION == 1 else '-v2'
-SIDE_RELIEF = 0.20 if REVISION == 1 else 0.30
+SUFFIX = '' if REVISION == 1 else f'-v{REVISION}'
+SIDE_RELIEF = {1: 0.20, 2: 0.30, 3: 0.35}[REVISION]
 BALL_DIAMETER = 16.80
 LEAD_IN = 0.30
 bpy.ops.wm.open_mainfile(filepath=str(PROJECT/'source/holder-without-ribs.blend'))

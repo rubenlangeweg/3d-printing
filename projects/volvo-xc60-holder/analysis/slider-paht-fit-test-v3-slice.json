@@ -1,0 +1,75 @@
+{
+    "error_string": "Success.",
+    "export_time": 0,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 1,
+    "prepare_time": 5,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Brim": 26.292076110839844,
+                "Custom": 483.30712890625,
+                "Flush": 29.0,
+                "Inner wall": 25.209081649780273,
+                "Internal solid infill": 4.6750712394714355,
+                "Outer wall": 10.9002685546875,
+                "Top surface": 1.7060364484786987,
+                "Travel": 25.831626892089844,
+                "Undefined": 10.491622924804688
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFN04",
+                    "id": 1,
+                    "main_used_g": 0.5803617835044861,
+                    "total_used_g": 0.5803617835044861
+                }
+            ],
+            "generate_support_material_time": 1,
+            "id": 1,
+            "infill_time": 2,
+            "layer_filament_change": 0,
+            "main_predication": 65.64208984375,
+            "make_perimeters_time": 1,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 6.0,
+                        "height": 3.700000047683716,
+                        "width": 10.457145690917969,
+                        "x": 122.8399429321289,
+                        "y": 120.04405212402344,
+                        "z": 0.0
+                    },
+                    "id": 5,
+                    "name": "XC60 slider fit test revision 3",
+                    "triangle_count": 146
+                }
+            ],
+            "sliced_time": 39,
+            "sliced_time_with_cache": 33,
+            "total_predication": 591.57861328125,
+            "triangle_count": 146,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 25.0,
+    "upward_compatible_machine": [
+        "Bambu Lab P1S 0.4 nozzle",
+        "Bambu Lab P1P 0.4 nozzle",
+        "Bambu Lab X1 0.4 nozzle",
+        "Bambu Lab X1E 0.4 nozzle",
+        "Bambu Lab A1 0.4 nozzle",
+        "Bambu Lab H2D 0.4 nozzle",
+        "Bambu Lab H2D Pro 0.4 nozzle",
+        "Bambu Lab H2S 0.4 nozzle",
+        "Bambu Lab P2S 0.4 nozzle",
+        "Bambu Lab H2C 0.4 nozzle",
+        "Bambu Lab X2D 0.4 nozzle",
+        "Bambu Lab A2L 0.4 nozzle"
+    ],
+    "wall_loops": 6
+}

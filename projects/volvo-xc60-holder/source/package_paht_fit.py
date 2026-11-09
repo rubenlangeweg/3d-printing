@@ -3,9 +3,9 @@ from pathlib import Path
 import struct,zipfile,xml.etree.ElementTree as E, argparse
 P=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
-parser.add_argument('--revision',type=int,choices=[1,2],default=2)
+parser.add_argument('--revision',type=int,choices=[1,2,3],default=3)
 revision=parser.parse_args().revision
-suffix='' if revision==1 else '-v2'
+suffix='' if revision==1 else f'-v{revision}'
 M='http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
 PR='http://schemas.microsoft.com/3dmanufacturing/production/2015/06'
 E.register_namespace('',M);E.register_namespace('p',PR)

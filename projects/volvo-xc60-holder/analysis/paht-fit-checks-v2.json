@@ -65,5 +65,6 @@
     "brim_present": true
   },
   "additional_side_relief_vs_v1_mm": 0.1,
-  "ball_and_neck_vertices_unchanged_from_v1": true
+  "ball_and_neck_vertices_unchanged_from_v1": true,
+  "owner_fit_feedback": "Almost fits; owner requested one more small adjustment on 2026-11-09."
 }

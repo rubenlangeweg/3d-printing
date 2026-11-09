@@ -10,12 +10,24 @@ These standalone assembly views follow the [product-rendering skill](../../skill
 
 | File | Use |
 | --- | --- |
-| [Bambu Studio project](models/holder-without-ribs.3mf) | Both parts arranged on one plate, with the saved print profile |
+| [Revised small part, PAHT-CF](models/ball-module-paht-fit.3mf) | Print only the smaller ball module for the existing base |
+| [Slider fit test](models/slider-paht-fit-test.3mf) | Short test section to check sliding clearance first |
+| [Original two-part project](models/holder-without-ribs.3mf) | Original 17 mm ball module and unchanged base |
 | [Base STL](models/base-front-down.stl) | Base already oriented front down |
 | [Ball module STL](models/ball-module.stl) | Separate ball module, oriented on its flat back |
 | [Editable Blender model](source/holder-without-ribs.blend) | Both parts assembled, in millimetres |
 
-The selected files are in `models/`. Their [SHA-256 hashes](models/SHA256SUMS) identify this revision. The ball module is unchanged from v07. Earlier ribbed variants are not included.
+The selected files are in `models/`. Their [SHA-256 hashes](models/SHA256SUMS) identify each file. The original ball module remains available. Earlier ribbed variants are not included.
+
+### PAHT-CF fit revision, 9 November 2026
+
+The owner confirmed that the printed base fits the car. The slider and ball were too tight. The revised small part has a **16.8 mm ball**, a dovetail **0.40 mm narrower overall** (0.20 mm per side), and a **0.30 mm lead-in chamfer**. Dovetail depth remains 3.2 mm. The base geometry is unchanged.
+
+Print the short slider test first, remove the brim fully, and check it against the existing base. Then print the revised ball module. These are initial fit allowances; physical sliding fit and Mous socket grip still need checking. No material expansion factor is assumed.
+
+Both new 3MF files use Bambu PAHT-CF, X1 Carbon 0.4 mm, textured PEI, six walls, 25% infill, 0.2 mm layers, and a 10 mm outer brim with zero gap. The revised ball module slices in about **17 minutes**, using **2.9 g**.
+
+[Revised ball STL](models/ball-module-paht-fit.stl) · [Slider test STL](models/slider-paht-fit-test.stl) · [Editable revised model](source/holder-paht-fit.blend). Existing renders show the original 17 mm model.
 
 ## Dimensions and printing
 
@@ -67,10 +79,12 @@ The [separate head reference](rendering/mous-head-reference.blend), [Mous attach
 
 The selected base export is one closed solid, with no non-manifold edges or zero-area triangles. The 3MF geometry matches the STL within 0.00000005 mm. Seven sampled positions along the module's insertion path show no solid intersection. Bambu Studio completed slicing without reported warnings. Reports are in [analysis](analysis/).
 
-These are digital checks. Physical vent fit, glue retention, strength and resistance to heat have not been validated for this revision. Test the fit before final assembly.
+The owner confirmed physical vent fit of the base on 9 November 2026. Revised slider and ball fit, glue retention, strength and resistance to heat remain unverified. The fit revision passed manifold checks and seven sampled insertion positions with no solid intersection. Bambu Studio command-line slicing succeeded; GUI import verification was blocked by an unresponsive file picker. See [fit checks](analysis/paht-fit-checks.json).
 
 ## Edit and render
 
 Open the clean Blender source to edit the model. The source contains only the base and ball module. Accepted STL and 3MF files remain separate from rendering work. The [rendering instructions](rendering/README.md) reproduce the images and animation in Blender 5.0.
 
 Models and original media follow the repository's [CC BY-NC 4.0 terms](../../LICENSING.md); the rendering script is MIT. Volvo and Mous names, product designs and trademarks retain their respective rights. This is an independently designed compatible accessory, not an official Volvo product.
+
+Rebuild the fit revision with `blender -b --python source/build_paht_fit.py`, then `python3 source/package_paht_fit.py`, from this project directory.

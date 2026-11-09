@@ -1,0 +1,79 @@
+{
+    "error_string": "Success.",
+    "export_time": 0,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 1,
+    "prepare_time": 55,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 7.987707138061523,
+                "Bridge": 1.20769202709198,
+                "Brim": 44.00041580200195,
+                "Custom": 483.2989807128906,
+                "Flush": 29.0,
+                "Gap infill": 0.6944676637649536,
+                "Inner wall": 232.781005859375,
+                "Internal solid infill": 54.8927116394043,
+                "Outer wall": 100.54205322265625,
+                "Sparse infill": 54.879703521728516,
+                "Top surface": 8.862177848815918,
+                "Travel": 63.48051071166992,
+                "Undefined": 48.14862823486328
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFN04",
+                    "id": 1,
+                    "main_used_g": 3.275703191757202,
+                    "total_used_g": 3.275703191757202
+                }
+            ],
+            "generate_support_material_time": 8,
+            "id": 1,
+            "infill_time": 38,
+            "layer_filament_change": 0,
+            "main_predication": 540.3502197265625,
+            "make_perimeters_time": 45,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 28.399993896484375,
+                        "height": 24.512001037597656,
+                        "width": 16.79998779296875,
+                        "x": 119.66852569580078,
+                        "y": 119.64405822753906,
+                        "z": 0.0
+                    },
+                    "id": 5,
+                    "name": "XC60 ball 16.8 mm PAHT fit revision 4",
+                    "triangle_count": 19814
+                }
+            ],
+            "sliced_time": 306,
+            "sliced_time_with_cache": 198,
+            "total_predication": 1066.2867431640625,
+            "triangle_count": 19814,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 25.0,
+    "upward_compatible_machine": [
+        "Bambu Lab P1S 0.4 nozzle",
+        "Bambu Lab P1P 0.4 nozzle",
+        "Bambu Lab X1 0.4 nozzle",
+        "Bambu Lab X1E 0.4 nozzle",
+        "Bambu Lab A1 0.4 nozzle",
+        "Bambu Lab H2D 0.4 nozzle",
+        "Bambu Lab H2D Pro 0.4 nozzle",
+        "Bambu Lab H2S 0.4 nozzle",
+        "Bambu Lab P2S 0.4 nozzle",
+        "Bambu Lab H2C 0.4 nozzle",
+        "Bambu Lab X2D 0.4 nozzle",
+        "Bambu Lab A2L 0.4 nozzle"
+    ],
+    "wall_loops": 6
+}

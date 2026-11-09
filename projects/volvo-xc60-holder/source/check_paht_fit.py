@@ -2,7 +2,7 @@ import bpy,bmesh,json,argparse,sys
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
-parser.add_argument('--revision',type=int,choices=[1,2,3],default=3)
+parser.add_argument('--revision',type=int,choices=[1,2,3,4],default=4)
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 suffix='' if args.revision==1 else f'-v{args.revision}'
 bpy.ops.wm.open_mainfile(filepath=str(P/f'source/holder-paht-fit{suffix}.blend'))

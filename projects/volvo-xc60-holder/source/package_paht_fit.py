@@ -3,7 +3,7 @@ from pathlib import Path
 import struct,zipfile,xml.etree.ElementTree as E, argparse
 P=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
-parser.add_argument('--revision',type=int,choices=[1,2,3],default=3)
+parser.add_argument('--revision',type=int,choices=[1,2,3,4],default=4)
 revision=parser.parse_args().revision
 suffix='' if revision==1 else f'-v{revision}'
 M='http://schemas.microsoft.com/3dmanufacturing/core/2015/02'

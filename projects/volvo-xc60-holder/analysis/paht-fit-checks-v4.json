@@ -1,0 +1,76 @@
+{
+  "revision": "PAHT-CF fit 4",
+  "ball_diameter_mm": 16.8,
+  "slider_width_reduction_mm": 0.7,
+  "slider_depth_mm": 3.2,
+  "slider_length_mm": 28.0,
+  "neck_diameter_mm": 8.5,
+  "lead_in_chamfer_mm": 0.3,
+  "lead_in_edge_count": 6,
+  "non_manifold_edges": 0,
+  "zero_area_faces": 0,
+  "volume_mm3": 3593.234448967534,
+  "physical_fit_verified": false,
+  "main_holder_physical_fit": "Confirmed by owner 2026-11-09",
+  "ball_center_mm": [
+    0.06851959228515625,
+    0.044055938720703125,
+    19.91200065612793
+  ],
+  "base_stl_sha256": "320ace41e92fb2a40bed5f473900502800d0a23d0226ac147310f2905f31ab50",
+  "insertion_path": [
+    {
+      "offset_y_mm": 42,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 35,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 28,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 21,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 14,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 7,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_y_mm": 0,
+      "intersection_mm3": 0.0
+    }
+  ],
+  "ball-module-paht-fit-v4": {
+    "connected_solids": 1,
+    "manifold": true,
+    "volume_mm3": 3593.2346492286874,
+    "slice_success": true,
+    "estimated_seconds": 1066.2867431640625,
+    "estimated_grams": 3.275703191757202,
+    "brim_present": true,
+    "supports_generated": false
+  },
+  "slider-paht-fit-test-v4": {
+    "connected_solids": 1,
+    "manifold": true,
+    "volume_mm3": 867.2110034162412,
+    "slice_success": true,
+    "estimated_seconds": 701.4797973632812,
+    "estimated_grams": 1.275588035583496,
+    "brim_present": true,
+    "supports_generated": false
+  },
+  "ball_surface_vertices_identical_to_v3": true,
+  "sliding_cross_section_and_lower_stop_identical_to_v3": true,
+  "measured_slider_length_mm": 28.0,
+  "measured_neck_diameter_mm": 8.499999523162842,
+  "strength_load_test_performed": false
+}

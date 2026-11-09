@@ -7,13 +7,15 @@ from mathutils import Vector
 
 PROJECT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
-parser.add_argument('--revision', type=int, choices=[1, 2, 3], default=3)
+parser.add_argument('--revision', type=int, choices=[1, 2, 3, 4], default=4)
 args = parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 REVISION = args.revision
 SUFFIX = '' if REVISION == 1 else f'-v{REVISION}'
-SIDE_RELIEF = {1: 0.20, 2: 0.30, 3: 0.35}[REVISION]
+SIDE_RELIEF = {1: 0.20, 2: 0.30, 3: 0.35, 4: 0.35}[REVISION]
 BALL_DIAMETER = 16.80
 LEAD_IN = 0.30
+SLIDER_LENGTH = 28.0 if REVISION == 4 else 16.0
+NECK_DIAMETER = 8.5 if REVISION == 4 else 7.1
 bpy.ops.wm.open_mainfile(filepath=str(PROJECT/'source/holder-without-ribs.blend'))
 base = bpy.data.objects['Base - rounded roots - no ribs']
 ball = bpy.data.objects['Ball module - 17 mm']
@@ -31,6 +33,15 @@ for vertex in ball.data.vertices:
         p.x -= SIDE_RELIEF if p.x > center.x else -SIDE_RELIEF
     elif p.z < 7.501:
         p.x = center.x+(p.x-center.x)*(7.5-2*SIDE_RELIEF)/7.5
+    if REVISION == 4:
+        # Extend only the trailing end. Preserve the seated stop, ball centre
+        # and every sliding cross-section from the accepted v3 fit.
+        if p.z < 7.501 and abs(p.y-(leading_y+16)) < 1e-4:
+            p.y += SLIDER_LENGTH-16
+        # Widen the existing narrow neck ring, keeping the ball surface intact.
+        if abs(p.z-11.4412) < 1e-3:
+            p.x = center.x+(p.x-center.x)*NECK_DIAMETER/7.1
+            p.y = center.y+(p.y-center.y)*NECK_DIAMETER/7.1
     # Include the truncated sphere's bottom rings so its surface remains
     # spherical. Connecting neck faces follow those rings continuously.
     if p.z > 13.89:
@@ -49,6 +60,7 @@ assert all(f.calc_area()>1e-9 for f in mesh.faces)
 assert mesh.calc_volume(signed=True)>0
 report = {'revision':f'PAHT-CF fit {REVISION}','ball_diameter_mm':BALL_DIAMETER,
           'slider_width_reduction_mm':2*SIDE_RELIEF,'slider_depth_mm':3.2,
+          'slider_length_mm':SLIDER_LENGTH,'neck_diameter_mm':NECK_DIAMETER,
           'lead_in_chamfer_mm':LEAD_IN,'lead_in_edge_count':len(end_edges),
           'non_manifold_edges':0,'zero_area_faces':0,
           'volume_mm3':mesh.calc_volume(),'physical_fit_verified':False,
@@ -63,14 +75,15 @@ bpy.ops.object.select_all(action='DESELECT');ball.select_set(True);bpy.context.v
 ball.location.z=-3.8
 bpy.ops.wm.stl_export(filepath=str(PROJECT/f'models/ball-module-paht-fit{SUFFIX}.stl'),export_selected_objects=True)
 ball.location.z=0
-# Short, full-cross-section fit coupon, cut from the revised leading end.
+# Fit coupon: short leading section for v1-v3; full-length slider for v4.
 trial=ball.copy();trial.data=ball.data.copy();bpy.context.collection.objects.link(trial)
 m=bmesh.new();m.from_mesh(trial.data)
 bmesh.ops.bisect_plane(m,geom=list(m.verts)+list(m.edges)+list(m.faces),dist=1e-6,
                       plane_co=(0,0,7.5),plane_no=(0,0,1),clear_outer=True)
 bmesh.ops.holes_fill(m,edges=[e for e in m.edges if e.is_boundary],sides=0)
-r=bmesh.ops.bisect_plane(m,geom=list(m.verts)+list(m.edges)+list(m.faces),dist=1e-6,
-                        plane_co=(0,leading_y+6,0),plane_no=(0,1,0),clear_outer=True)
+if REVISION != 4:
+    bmesh.ops.bisect_plane(m,geom=list(m.verts)+list(m.edges)+list(m.faces),dist=1e-6,
+                          plane_co=(0,leading_y+6,0),plane_no=(0,1,0),clear_outer=True)
 boundary=[e for e in m.edges if e.is_boundary]
 bmesh.ops.holes_fill(m,edges=boundary,sides=0)
 bmesh.ops.triangulate(m,faces=list(m.faces));bmesh.ops.recalc_face_normals(m,faces=list(m.faces))

@@ -1,12 +1,18 @@
 """Package the revised small part using the GUI-verified PAHT-CF preset."""
 from pathlib import Path
-import struct,zipfile,xml.etree.ElementTree as E
+import struct,zipfile,xml.etree.ElementTree as E, argparse
 P=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser()
+parser.add_argument('--revision',type=int,choices=[1,2],default=2)
+revision=parser.parse_args().revision
+suffix='' if revision==1 else '-v2'
 M='http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
 PR='http://schemas.microsoft.com/3dmanufacturing/production/2015/06'
 E.register_namespace('',M);E.register_namespace('p',PR)
 ns={'m':M};q=lambda n:'{'+M+'}'+n
 for stem,title in [('ball-module-paht-fit','XC60 ball 16.8 mm PAHT fit'),('slider-paht-fit-test','XC60 slider fit test')]:
+ stem+=suffix
+ title+=f' revision {revision}'
  E.register_namespace('',M)
  raw=(P/'models'/f'{stem}.stl').read_bytes();count=struct.unpack_from('<I',raw,80)[0];vertices=[];faces=[];lookup={}
  for i in range(count):

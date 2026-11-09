@@ -2,11 +2,16 @@
 Run with Blender --background --python source/build_paht_fit.py.
 """
 from pathlib import Path
-import bpy, bmesh, json, hashlib
+import bpy, bmesh, json, hashlib, argparse, sys
 from mathutils import Vector
 
 PROJECT = Path(__file__).resolve().parents[1]
-SIDE_RELIEF = 0.20
+parser = argparse.ArgumentParser()
+parser.add_argument('--revision', type=int, choices=[1, 2], default=2)
+args = parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+REVISION = args.revision
+SUFFIX = '' if REVISION == 1 else '-v2'
+SIDE_RELIEF = 0.20 if REVISION == 1 else 0.30
 BALL_DIAMETER = 16.80
 LEAD_IN = 0.30
 bpy.ops.wm.open_mainfile(filepath=str(PROJECT/'source/holder-without-ribs.blend'))
@@ -42,7 +47,7 @@ bmesh.ops.recalc_face_normals(mesh, faces=list(mesh.faces))
 assert all(e.is_manifold for e in mesh.edges)
 assert all(f.calc_area()>1e-9 for f in mesh.faces)
 assert mesh.calc_volume(signed=True)>0
-report = {'revision':'PAHT-CF fit 1','ball_diameter_mm':BALL_DIAMETER,
+report = {'revision':f'PAHT-CF fit {REVISION}','ball_diameter_mm':BALL_DIAMETER,
           'slider_width_reduction_mm':2*SIDE_RELIEF,'slider_depth_mm':3.2,
           'lead_in_chamfer_mm':LEAD_IN,'lead_in_edge_count':len(end_edges),
           'non_manifold_edges':0,'zero_area_faces':0,
@@ -52,11 +57,11 @@ report = {'revision':'PAHT-CF fit 1','ball_diameter_mm':BALL_DIAMETER,
 mesh.to_mesh(ball.data);mesh.free();ball.data.update()
 assert [tuple(v.co) for v in base.data.vertices]==original_base
 ball.name='Ball module - 16.8 mm - PAHT fit'
-bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/'source/holder-paht-fit.blend'))
+bpy.ops.wm.save_as_mainfile(filepath=str(PROJECT/f'source/holder-paht-fit{SUFFIX}.blend'))
 bpy.ops.object.select_all(action='DESELECT');ball.select_set(True);bpy.context.view_layer.objects.active=ball
 # Print the same flat back on the bed as the accepted STL.
 ball.location.z=-3.8
-bpy.ops.wm.stl_export(filepath=str(PROJECT/'models/ball-module-paht-fit.stl'),export_selected_objects=True)
+bpy.ops.wm.stl_export(filepath=str(PROJECT/f'models/ball-module-paht-fit{SUFFIX}.stl'),export_selected_objects=True)
 ball.location.z=0
 # Short, full-cross-section fit coupon, cut from the revised leading end.
 trial=ball.copy();trial.data=ball.data.copy();bpy.context.collection.objects.link(trial)
@@ -72,7 +77,7 @@ bmesh.ops.triangulate(m,faces=list(m.faces));bmesh.ops.recalc_face_normals(m,fac
 assert all(e.is_manifold for e in m.edges)
 m.to_mesh(trial.data);m.free();trial.location.z=-3.8
 bpy.ops.object.select_all(action='DESELECT');trial.select_set(True)
-bpy.ops.wm.stl_export(filepath=str(PROJECT/'models/slider-paht-fit-test.stl'),export_selected_objects=True)
+bpy.ops.wm.stl_export(filepath=str(PROJECT/f'models/slider-paht-fit-test{SUFFIX}.stl'),export_selected_objects=True)
 report['base_stl_sha256']=hashlib.sha256((PROJECT/'models/base-front-down.stl').read_bytes()).hexdigest()
-(PROJECT/'analysis/paht-fit-checks.json').write_text(json.dumps(report,indent=2)+'\n')
+(PROJECT/f'analysis/paht-fit-checks{SUFFIX}.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))

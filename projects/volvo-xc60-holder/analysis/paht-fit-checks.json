@@ -65,5 +65,6 @@
     "brim_present": true
   },
   "gui_import_verified": false,
-  "gui_import_note": "File picker unresponsive during attempted GUI verification; CLI slicing successful."
+  "gui_import_note": "File picker unresponsive during attempted GUI verification; CLI slicing successful.",
+  "owner_fit_feedback": "Slider test almost inserts, but too tight to push all the way down. Reported 2026-11-09."
 }

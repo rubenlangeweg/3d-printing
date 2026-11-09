@@ -1,7 +1,11 @@
-import bpy,bmesh,json
+import bpy,bmesh,json,argparse,sys
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]
-bpy.ops.wm.open_mainfile(filepath=str(P/'source/holder-paht-fit.blend'))
+parser=argparse.ArgumentParser()
+parser.add_argument('--revision',type=int,choices=[1,2],default=2)
+args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+suffix='' if args.revision==1 else '-v2'
+bpy.ops.wm.open_mainfile(filepath=str(P/f'source/holder-paht-fit{suffix}.blend'))
 base=bpy.data.objects['Base - rounded roots - no ribs'];ball=bpy.data.objects['Ball module - 16.8 mm - PAHT fit'];values=[]
 for y in [42,35,28,21,14,7,0]:
  ball.location.y=y;bpy.context.view_layer.update()
@@ -9,8 +13,9 @@ for y in [42,35,28,21,14,7,0]:
  mod=test.modifiers.new('Check collision','BOOLEAN');mod.operation='INTERSECT';mod.solver='EXACT';mod.object=ball
  dg=bpy.context.evaluated_depsgraph_get();mesh=bpy.data.meshes.new_from_object(test.evaluated_get(dg));bm=bmesh.new();bm.from_mesh(mesh);vol=abs(bm.calc_volume());bm.free();bpy.data.meshes.remove(mesh);bpy.data.objects.remove(test,do_unlink=True)
  assert vol<1e-5,(y,vol);values.append({'offset_y_mm':y,'intersection_mm3':vol})
-report=json.loads((P/'analysis/paht-fit-checks.json').read_text());report['insertion_path']=values
+report=json.loads((P/f'analysis/paht-fit-checks{suffix}.json').read_text());report['insertion_path']=values
 for name in ['ball-module-paht-fit','slider-paht-fit-test']:
+ name+=suffix
  bpy.ops.wm.stl_import(filepath=str(P/'models'/f'{name}.stl'));o=bpy.context.object;bm=bmesh.new();bm.from_mesh(o.data)
  remaining=set(bm.verts);components=0
  while remaining:
@@ -25,5 +30,5 @@ for name in ['ball-module-paht-fit','slider-paht-fit-test']:
  assert all(f.calc_area()>1e-9 for f in bm.faces)
  assert bm.calc_volume(signed=True)>0
  report[name]={'connected_solids':components,'manifold':True,'volume_mm3':bm.calc_volume()};bm.free()
-(P/'analysis/paht-fit-checks.json').write_text(json.dumps(report,indent=2)+'\n')
+(P/f'analysis/paht-fit-checks{suffix}.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))
